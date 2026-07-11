@@ -1,0 +1,61 @@
+{
+  "roboto": [
+    {
+      "w": "300",
+      "fn": "Roboto-300.woff2",
+      "family": "'Roboto'"
+    },
+    {
+      "w": "400",
+      "fn": "Roboto-400.woff2",
+      "family": "'Roboto'"
+    },
+    {
+      "w": "500",
+      "fn": "Roboto-500.woff2",
+      "family": "'Roboto'"
+    },
+    {
+      "w": "700",
+      "fn": "Roboto-700.woff2",
+      "family": "'Roboto'"
+    },
+    {
+      "w": "900",
+      "fn": "Roboto-900.woff2",
+      "family": "'Roboto'"
+    }
+  ],
+  "cairo": [
+    {
+      "w": "300",
+      "fn": "Cairo-300.woff2",
+      "family": "'Cairo'"
+    },
+    {
+      "w": "400",
+      "fn": "Cairo-400.woff2",
+      "family": "'Cairo'"
+    },
+    {
+      "w": "500",
+      "fn": "Cairo-500.woff2",
+      "family": "'Cairo'"
+    },
+    {
+      "w": "600",
+      "fn": "Cairo-600.woff2",
+      "family": "'Cairo'"
+    },
+    {
+      "w": "700",
+      "fn": "Cairo-700.woff2",
+      "family": "'Cairo'"
+    },
+    {
+      "w": "900",
+      "fn": "Cairo-900.woff2",
+      "family": "'Cairo'"
+    }
+  ]
+}

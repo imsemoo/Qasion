@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Qasioun Theme — fonts.css  (self-hosted, no CDN)
+   Brand typefaces per the visual-identity guideline:
+     • Neo Sans Arabic — primary Arabic typeface  (PROPRIETARY, Monotype)
+     • Roboto          — Latin text & numerals    (Apache 2.0, bundled)
+     • Cairo           — free Arabic fallback for Neo Sans Arabic (OFL, bundled)
+
+   Neo Sans Arabic is a licensed font and is NOT distributed with this theme.
+   Drop your licensed .woff2 files into  fonts/neo-sans-arabic/  (filenames
+   below) and it becomes the primary Arabic face automatically. Until then,
+   Arabic renders in the bundled Cairo fallback.
+   ========================================================================== */
+
+/* ----------------------------- Neo Sans Arabic ---------------------------- */
+/* Provide these files to activate the brand Arabic face (see README). */
+@font-face {
+  font-family: "Neo Sans Arabic";
+  font-weight: 300; font-style: normal; font-display: swap;
+  src: url("../fonts/neo-sans-arabic/NeoSansArabic-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Neo Sans Arabic";
+  font-weight: 400; font-style: normal; font-display: swap;
+  src: url("../fonts/neo-sans-arabic/NeoSansArabic-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Neo Sans Arabic";
+  font-weight: 500; font-style: normal; font-display: swap;
+  src: url("../fonts/neo-sans-arabic/NeoSansArabic-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Neo Sans Arabic";
+  font-weight: 700; font-style: normal; font-display: swap;
+  src: url("../fonts/neo-sans-arabic/NeoSansArabic-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Neo Sans Arabic";
+  font-weight: 800; font-style: normal; font-display: swap;
+  src: url("../fonts/neo-sans-arabic/NeoSansArabic-Ultra.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Neo Sans Arabic";
+  font-weight: 900; font-style: normal; font-display: swap;
+  src: url("../fonts/neo-sans-arabic/NeoSansArabic-Black.woff2") format("woff2");
+}
+
+/* --------------------------- Cairo (fallback) ----------------------------- */
+@font-face { font-family: "Cairo"; font-weight: 300; font-style: normal; font-display: swap; src: url("../fonts/cairo/Cairo-300.woff2") format("woff2"); }
+@font-face { font-family: "Cairo"; font-weight: 400; font-style: normal; font-display: swap; src: url("../fonts/cairo/Cairo-400.woff2") format("woff2"); }
+@font-face { font-family: "Cairo"; font-weight: 500; font-style: normal; font-display: swap; src: url("../fonts/cairo/Cairo-500.woff2") format("woff2"); }
+@font-face { font-family: "Cairo"; font-weight: 600; font-style: normal; font-display: swap; src: url("../fonts/cairo/Cairo-600.woff2") format("woff2"); }
+@font-face { font-family: "Cairo"; font-weight: 700; font-style: normal; font-display: swap; src: url("../fonts/cairo/Cairo-700.woff2") format("woff2"); }
+@font-face { font-family: "Cairo"; font-weight: 900; font-style: normal; font-display: swap; src: url("../fonts/cairo/Cairo-900.woff2") format("woff2"); }
+
+/* ------------------------------- Roboto ----------------------------------- */
+@font-face { font-family: "Roboto"; font-weight: 300; font-style: normal; font-display: swap; src: url("../fonts/roboto/Roboto-300.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-weight: 400; font-style: normal; font-display: swap; src: url("../fonts/roboto/Roboto-400.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-weight: 500; font-style: normal; font-display: swap; src: url("../fonts/roboto/Roboto-500.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-weight: 700; font-style: normal; font-display: swap; src: url("../fonts/roboto/Roboto-700.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-weight: 900; font-style: normal; font-display: swap; src: url("../fonts/roboto/Roboto-900.woff2") format("woff2"); }

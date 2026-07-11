@@ -44,9 +44,10 @@
   --pal-amber-bg:  #FDF3E7;  --pal-amber-fg:  #C2711B;
   --pal-green-bg:  #EAF5EE;  --pal-green-fg:  #2E7D4F;
 
-  /* Type */
-  --font:     'IBM Plex Sans Arabic', 'Roboto', sans-serif;
-  --font-num: 'Roboto', 'IBM Plex Sans Arabic', sans-serif;
+  /* Type — brand pair: Neo Sans Arabic (Arabic) + Roboto (Latin/numerals).
+     Cairo is the bundled free fallback until licensed Neo Sans Arabic is added. */
+  --font:     'Neo Sans Arabic', 'Cairo', 'Roboto', sans-serif;
+  --font-num: 'Roboto', 'Neo Sans Arabic', 'Cairo', sans-serif;
 
   /* Layout */
   --wrap:      1440px;
