@@ -27,9 +27,17 @@ qasioun-theme/
 ├── contact.html        تواصل معنا (نموذج)
 ├── article.html        صفحة المقالة (شريط تقدّم القراءة)
 │
-├── assets/img/         الشعارات والصور المحلية
+├── favicon.ico · site.webmanifest   أيقونات الموقع (من شعار المركز)
+│
+├── assets/img/         الشعارات والأيقونات المحلية (favicon-*, apple-touch, icon-*)
+│
+├── fonts/              الخطوط محلياً (self-hosted)
+│   ├── roboto/         Roboto woff2 (لاتيني/أرقام)
+│   ├── cairo/          Cairo woff2 (بديل عربي مجاني)
+│   └── neo-sans-arabic/  ← ضع هنا ملفات Neo Sans Arabic المرخّصة
 │
 ├── css/
+│   ├── fonts.css       تعريفات @font-face (Neo Sans Arabic · Cairo · Roboto)
 │   ├── base.css        المتغيّرات (tokens)، reset، الأساسيات، الشبكات، keyframes
 │   ├── layout.css      الهيدر، التنقّل، الفوتر، ترويسة الصفحة، responsive
 │   ├── components.css   عناصر مشتركة: أزرار، شارات، بطاقات، نماذج، فلاتر…
@@ -56,12 +64,33 @@ qasioun-theme/
 - **متغيّرات التصميم (Design tokens)** في `:root` داخل `css/base.css` — الألوان والخطوط والمقاسات في مكان واحد.
 - **responsive** — تتجاوب الصفحات حتى شاشات الجوال مع قائمة تنقّل منسدلة.
 
+## الخطوط (الهوية البصرية)
+
+حسب دليل الهوية، الخطوط الرسمية:
+
+| الاستخدام | الخط | الترخيص | الحالة |
+|-----------|------|---------|--------|
+| العربية (أساسي) | **Neo Sans Arabic** | تجاري (Monotype) | ليس مرفقاً — يُضاف يدوياً |
+| اللاتيني/الأرقام | **Roboto** | Apache 2.0 | ✅ مرفق محلياً |
+| بديل عربي مجاني | **Cairo** | OFL | ✅ مرفق محلياً |
+
+كل الخطوط **مستضافة محلياً** (`fonts/`) بلا CDN، ومُعرّفة في `css/fonts.css`.
+Neo Sans Arabic خط مرخّص لا يجوز توزيعه، لذلك تُعرض العربية بخط **Cairo** كبديل قريب.
+**لتفعيل Neo Sans Arabic:** ضع ملفات woff2 المرخّصة في `fonts/neo-sans-arabic/`
+(الأسماء في `fonts/neo-sans-arabic/README.txt`) — يصبح الخط الأساسي تلقائياً.
+
+## الأيقونات (Favicon)
+
+مولّدة من شعار المركز (`logo-mark`): `favicon.ico` + `favicon-16/32`،
+`apple-touch-icon` و`icon-192/512` (شعار أبيض على خلفية كحلية) + `site.webmanifest`.
+
 ## التخصيص
 
-- الألوان/الخطوط: عدّل المتغيّرات في أعلى `css/base.css`.
+- الألوان: متغيّرات `:root` في أعلى `css/base.css` (مطابقة للدليل: كحلي `#24326B`، برتقالي `#EB6224`، أزرق `#287EAB`، رمادي `#D2D4D4`).
+- الخطوط: `--font` / `--font-num` في `css/base.css`، والتعريفات في `css/fonts.css`.
 - روابط/عناصر التنقّل: مصفوفة `NAV` في `js/layout.js`.
 - البيانات: `js/data/publications.js` (استبدلها بمصدر حقيقي لاحقاً).
-- الخطوط وSwiper تُحمَّل من CDN؛ يمكن استضافتها محلياً عند الحاجة.
+- Swiper (سلايدر الصفحة الرئيسية) لا يزال من CDN؛ يمكن استضافته محلياً عند الحاجة.
 
 ## ملاحظات
 
