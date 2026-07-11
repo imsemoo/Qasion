@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff;font-family:'IBM Plex Sans Arabic','Roboto',sans-serif}
+a{color:#24326B;text-decoration:none}
+a:hover{color:#EB6224}
+::selection{background:#EB6224;color:#fff}
+</style>
+</helmet>
+<div dir="rtl" data-screen-label="تواصل معنا" style="font-family:'IBM Plex Sans Arabic','Roboto',sans-serif;background:#fff">
+
+  <dc-import name="SiteHeader" active="contact" hint-size="100%,158px"></dc-import>
+
+  <div style="background:#F7F9FC;border-bottom:1px solid #EEF1F6;position:relative;overflow:hidden;padding:42px 48px 46px">
+    <img src="assets/logo-mark.png" alt="" style="position:absolute;left:-40px;bottom:-120px;height:380px;opacity:.06;pointer-events:none">
+    <div style="max-width:1344px;margin:0 auto;position:relative">
+      <div style="display:flex;align-items:center;gap:8px;color:#6F7891;font-size:13px;margin:0 0 16px">
+        <a href="Home.dc.html" style="color:#6F7891;font-size:13px" style-hover="color:#EB6224">الرئيسية</a>
+        <span>/</span>
+        <span style="color:#EB6224;font-weight:600">تواصل معنا</span>
+      </div>
+      <h1 style="color:#24326B;font-size:38px;font-weight:700;margin:0 0 12px">تواصل معنا</h1>
+      <p style="color:#3D4763;font-size:16px;line-height:1.9;margin:0;max-width:800px;text-wrap:pretty">نرحب بتواصلكم سواء للاستفسار عن أعمالنا البحثية، أو لاقتراح موضوع للدراسة، أو للتعاون الأكاديمي والإعلامي.</p>
+    </div>
+  </div>
+
+  <div style="padding:64px 48px 80px;max-width:1440px;margin:0 auto;box-sizing:border-box;display:grid;grid-template-columns:1.25fr 1fr;gap:26px;align-items:start">
+
+    <!-- form -->
+    <div style="background:#fff;border:1px solid #E4E8F0;border-radius:18px;padding:38px 36px">
+      <h2 style="color:#24326B;font-size:24px;font-weight:700;margin:0 0 26px">نموذج التواصل</h2>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 16px">
+          <div>
+            <label style="display:block;color:#24326B;font-size:13.5px;font-weight:600;margin:0 0 8px">الاسم <span style="color:#EB6224">*</span></label>
+            <input value="{{ name }}" onChange="{{ onName }}" placeholder="اسمك الكامل" style="width:100%;box-sizing:border-box;background:#F4F6FA;border:1px solid #E4E8F0;border-radius:10px;color:#24326B;font-size:14px;font-family:'IBM Plex Sans Arabic',sans-serif;padding:12px 16px;outline:none" style-focus="border:1px solid #EB6224;background:#fff">
+          </div>
+          <div>
+            <label style="display:block;color:#24326B;font-size:13.5px;font-weight:600;margin:0 0 8px">البريد الإلكتروني <span style="color:#EB6224">*</span></label>
+            <input value="{{ email }}" onChange="{{ onEmail }}" placeholder="you@example.com" style="width:100%;box-sizing:border-box;background:#F4F6FA;border:1px solid #E4E8F0;border-radius:10px;color:#24326B;font-size:14px;font-family:'Roboto','IBM Plex Sans Arabic',sans-serif;padding:12px 16px;outline:none;direction:ltr;text-align:right" style-focus="border:1px solid #EB6224;background:#fff">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 16px">
+          <div>
+            <label style="display:block;color:#24326B;font-size:13.5px;font-weight:600;margin:0 0 8px">الجهة / المؤسسة <span style="color:#8A93AB;font-weight:400">(اختياري)</span></label>
+            <input value="{{ org }}" onChange="{{ onOrg }}" placeholder="اسم الجهة أو المؤسسة" style="width:100%;box-sizing:border-box;background:#F4F6FA;border:1px solid #E4E8F0;border-radius:10px;color:#24326B;font-size:14px;font-family:'IBM Plex Sans Arabic',sans-serif;padding:12px 16px;outline:none" style-focus="border:1px solid #EB6224;background:#fff">
+          </div>
+          <div>
+            <label style="display:block;color:#24326B;font-size:13.5px;font-weight:600;margin:0 0 8px">طبيعة التواصل</label>
+            <select value="{{ kind }}" onChange="{{ onKind }}" style="width:100%;box-sizing:border-box;background:#F4F6FA;border:1px solid #E4E8F0;border-radius:10px;color:#24326B;font-size:14px;font-family:'IBM Plex Sans Arabic',sans-serif;padding:12px 16px;outline:none;cursor:pointer">
+              <option value="استفسار بحثي">استفسار بحثي</option>
+              <option value="تعاون مؤسسي">تعاون مؤسسي</option>
+              <option value="طلب إعلامي">طلب إعلامي</option>
+              <option value="أخرى">أخرى</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin:0 0 22px">
+          <label style="display:block;color:#24326B;font-size:13.5px;font-weight:600;margin:0 0 8px">الرسالة <span style="color:#EB6224">*</span></label>
+          <textarea value="{{ msg }}" onChange="{{ onMsg }}" placeholder="اكتب رسالتك هنا…" rows="6" style="width:100%;box-sizing:border-box;background:#F4F6FA;border:1px solid #E4E8F0;border-radius:10px;color:#24326B;font-size:14px;font-family:'IBM Plex Sans Arabic',sans-serif;padding:12px 16px;outline:none;resize:vertical" style-focus="border:1px solid #EB6224;background:#fff"></textarea>
+        </div>
+        <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+          <div style="margin:0 0 16px;color:#C43D3D;font-size:13px;font-weight:600">يرجى تعبئة الحقول الإلزامية (الاسم، البريد، الرسالة).</div>
+        </sc-if>
+        <button onClick="{{ onSend }}" style="background:#EB6224;color:#fff;border:none;font-size:15.5px;font-weight:700;font-family:'IBM Plex Sans Arabic',sans-serif;padding:14px 36px;border-radius:10px;cursor:pointer;transition:background .2s;box-shadow:0 8px 20px rgba(235,98,36,.25)" style-hover="background:#FF7635">إرسال الرسالة</button>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#EAF5EE;border:1px solid #BFE3CC;border-radius:12px;padding:28px;text-align:center">
+          <div style="width:52px;height:52px;background:#2E7D4F;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px">✓</div>
+          <div style="color:#2E7D4F;font-size:18px;font-weight:700;margin:0 0 8px">تم استلام رسالتك بنجاح</div>
+          <div style="color:#4A6455;font-size:14px;line-height:1.8">شكراً لتواصلك مع مركز قاسيون — سيرد عليك فريقنا على بريدك الإلكتروني في أقرب وقت.</div>
+        </div>
+      </sc-if>
+    </div>
+
+    <!-- direct channels -->
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="background:#24326B;border-radius:18px;padding:30px 28px;position:relative;overflow:hidden">
+        <img src="assets/logo-mark-white.png" alt="" style="position:absolute;left:-40px;bottom:-70px;height:240px;opacity:.06;pointer-events:none">
+        <h3 style="color:#fff;font-size:18px;font-weight:700;margin:0 0 20px;position:relative">قنوات التواصل المباشر</h3>
+        <div style="display:flex;flex-direction:column;gap:14px;position:relative">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px">
+            <span style="color:rgba(255,255,255,.7);font-size:13px">البريد الإلكتروني</span>
+            <span style="color:#fff;font-size:13.5px;font-family:'Roboto',sans-serif;direction:ltr">info@qasiounstudies.com</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px">
+            <span style="color:rgba(255,255,255,.7);font-size:13px">تيلجرام</span>
+            <span style="color:#fff;font-size:13.5px;font-family:'Roboto',sans-serif;direction:ltr">@QasiounStudies</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px">
+            <span style="color:rgba(255,255,255,.7);font-size:13px">إكس (X)</span>
+            <span style="color:#fff;font-size:13.5px;font-family:'Roboto',sans-serif;direction:ltr">@QasiounStudies</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px">
+            <span style="color:rgba(255,255,255,.7);font-size:13px">فيسبوك</span>
+            <span style="color:#fff;font-size:13.5px">مركز قاسيون للدراسات الاستراتيجية</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E8F0;border-radius:18px;padding:30px 28px;border-right:4px solid #EB6224">
+        <div style="display:flex;align-items:center;gap:9px;color:#EB6224;font-size:13.5px;font-weight:700;margin:0 0 12px">
+          <span style="width:7px;height:7px;background:#EB6224;transform:rotate(45deg)"></span>
+          للصحفيين والإعلاميين
+        </div>
+        <p style="color:#3D4763;font-size:14px;line-height:1.95;margin:0;text-wrap:pretty">يسعدنا تقديم تعليق أو تحليل متخصص للمؤسسات الإعلامية. تواصلوا معنا عبر البريد الإلكتروني مع ذكر المؤسسة الإعلامية والموضوع المطلوب.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <dc-import name="SiteFooter" hint-size="100%,380px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { name: '', email: '', org: '', kind: 'استفسار بحثي', msg: '', sent: false, showError: false };
+
+  renderVals() {
+    const s = this.state;
+    return {
+      name: s.name, email: s.email, org: s.org, kind: s.kind, msg: s.msg,
+      onName: (e) => this.setState({ name: e.target.value, showError: false }),
+      onEmail: (e) => this.setState({ email: e.target.value, showError: false }),
+      onOrg: (e) => this.setState({ org: e.target.value }),
+      onKind: (e) => this.setState({ kind: e.target.value }),
+      onMsg: (e) => this.setState({ msg: e.target.value, showError: false }),
+      onSend: () => {
+        if (s.name.trim() && s.email.trim() && s.msg.trim()) this.setState({ sent: true });
+        else this.setState({ showError: true });
+      },
+      sent: s.sent,
+      notSent: !s.sent,
+      showError: s.showError
+    };
+  }
+}
+</script>
+</body>
+</html>

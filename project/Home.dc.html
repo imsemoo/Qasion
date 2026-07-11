@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<style>
+body{margin:0;background:#fff;font-family:'IBM Plex Sans Arabic','Roboto',sans-serif}
+a{color:#24326B;text-decoration:none}
+a:hover{color:#EB6224}
+@keyframes qTicker{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes qPulse{0%,100%{opacity:1}50%{opacity:.3}}
+::selection{background:#EB6224;color:#fff}
+</style>
+</helmet>
+<div dir="rtl" data-screen-label="الرئيسية" style="font-family:'IBM Plex Sans Arabic','Roboto',sans-serif;background:#fff">
+
+  <dc-import name="SiteHeader" active="home" hint-size="100%,158px"></dc-import>
+
+  <!-- موجز اليوم -->
+  <sc-if value="{{ showTicker }}" hint-placeholder-val="{{ true }}">
+  <div style="background:#F7F9FC;border-bottom:1px solid #EEF1F6;display:flex;align-items:stretch;overflow:hidden">
+    <div style="background:#EB6224;color:#fff;font-size:13px;font-weight:700;padding:10px 22px;display:flex;align-items:center;gap:8px;flex:none;z-index:1">
+      <span style="width:6px;height:6px;background:#fff;transform:rotate(45deg)"></span>
+      موجز اليوم
+    </div>
+    <div style="overflow:hidden;flex:1;display:flex;align-items:center">
+      <div style="display:inline-flex;gap:56px;white-space:nowrap;width:max-content;animation:qTicker 46s linear infinite;padding:0 28px">
+        <span style="color:#333F63;font-size:13px">صدور إحاطة سوريا الشهرية لشهر حزيران/يونيو <span style="color:#EB6224">◆</span></span>
+        <span style="color:#333F63;font-size:13px">تقدير موقف: قراءة في الانتشار العسكري شمال شرق سوريا <span style="color:#EB6224">◆</span></span>
+        <span style="color:#333F63;font-size:13px">ترجمة نوعية من الصحافة العبرية حول إعادة التموضع الإقليمي <span style="color:#EB6224">◆</span></span>
+        <span style="color:#333F63;font-size:13px">تحليل استراتيجي جديد: مستقبل إعادة الإعمار والاقتصاد السياسي السوري <span style="color:#EB6224">◆</span></span>
+        <span style="color:#333F63;font-size:13px">صدور إحاطة سوريا الشهرية لشهر حزيران/يونيو <span style="color:#EB6224">◆</span></span>
+        <span style="color:#333F63;font-size:13px">تقدير موقف: قراءة في الانتشار العسكري شمال شرق سوريا <span style="color:#EB6224">◆</span></span>
+        <span style="color:#333F63;font-size:13px">ترجمة نوعية من الصحافة العبرية حول إعادة التموضع الإقليمي <span style="color:#EB6224">◆</span></span>
+        <span style="color:#333F63;font-size:13px">تحليل استراتيجي جديد: مستقبل إعادة الإعمار والاقتصاد السياسي السوري <span style="color:#EB6224">◆</span></span>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- آخر المستجدات: أخبار سريعة تُقرأ دون الانتقال -->
+  <div data-screen-label="آخر المستجدات" style="max-width:1440px;margin:0 auto;padding:28px 48px 0;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:12px;margin:0 0 16px">
+      <span style="width:9px;height:9px;background:#EB6224;border-radius:50%;animation:qPulse 1.6s infinite"></span>
+      <h2 style="color:#24326B;font-size:20px;font-weight:700;margin:0">آخر المستجدات</h2>
+      <span style="color:#8A93AB;font-size:12px">تحديث مستمر</span>
+      <span style="flex:1;height:1px;background:#EEF1F6"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      <div style="background:#F7F9FC;border:1px solid #EEF1F6;border-radius:12px;padding:16px 18px">
+        <div style="color:#EB6224;font-size:11.5px;font-weight:700;margin:0 0 6px">سوريا · منذ 20 دقيقة</div>
+        <div style="color:#24326B;font-size:13.5px;line-height:1.75;font-weight:600">قوات الأمن الداخلي تعلن انتشاراً موسعاً في ريف حلب الشمالي</div>
+      </div>
+      <div style="background:#F7F9FC;border:1px solid #EEF1F6;border-radius:12px;padding:16px 18px">
+        <div style="color:#EB6224;font-size:11.5px;font-weight:700;margin:0 0 6px">العراق · منذ ساعة</div>
+        <div style="color:#24326B;font-size:13.5px;line-height:1.75;font-weight:600">بغداد: جولة مباحثات جديدة حول حصر السلاح بيد الدولة</div>
+      </div>
+      <div style="background:#F7F9FC;border:1px solid #EEF1F6;border-radius:12px;padding:16px 18px">
+        <div style="color:#EB6224;font-size:11.5px;font-weight:700;margin:0 0 6px">لبنان · منذ 3 ساعات</div>
+        <div style="color:#24326B;font-size:13.5px;line-height:1.75;font-weight:600">تثبيت وقف إطلاق النار على المنطقة الحدودية جنوب الليطاني</div>
+      </div>
+      <div style="background:#F7F9FC;border:1px solid #EEF1F6;border-radius:12px;padding:16px 18px">
+        <div style="color:#EB6224;font-size:11.5px;font-weight:700;margin:0 0 6px">القرن الإفريقي · منذ 5 ساعات</div>
+        <div style="color:#24326B;font-size:13.5px;line-height:1.75;font-weight:600">تصعيد دبلوماسي متجدد بين أديس أبابا وأسمرة حول منفذ البحر الأحمر</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== شبكة الأخبار: آخر الإصدارات ===== -->
+  <div data-screen-label="آخر الإصدارات" style="max-width:1440px;margin:0 auto;padding:40px 48px 0;box-sizing:border-box">
+    <div style="display:grid;grid-template-columns:1.08fr 1fr;gap:26px;align-items:start">
+
+      <!-- المميز -->
+      <a href="Article.dc.html" style="display:block">
+        <div style="border-radius:16px;overflow:hidden;position:relative;height:462px;background:repeating-linear-gradient(45deg,#24326B 0 14px,#2A3A7A 14px 28px);display:flex;align-items:center;justify-content:center;transition:all .25s" style-hover="box-shadow:0 18px 40px rgba(36,50,107,.2)">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/City_of_Damascus_pictured_from_Mt_Qasioun.jpg/960px-City_of_Damascus_pictured_from_Mt_Qasioun.jpg" alt="دمشق من جبل قاسيون" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <img src="assets/logo-mark-white.png" alt="" style="position:absolute;top:16px;left:18px;height:40px;opacity:.9">
+          <span style="position:absolute;bottom:16px;right:0;background:#fff;color:#24326B;font-size:12px;font-weight:600;padding:6px 16px;border-radius:100px 0 0 100px;font-family:'IBM Plex Sans Arabic','Roboto',sans-serif">9 تموز/يوليو, 2026</span>
+        </div>
+        <h1 style="color:#24326B;font-size:27px;line-height:1.6;font-weight:700;margin:20px 0 12px;text-wrap:pretty">سوريا ما بعد الأسد: مسارات إعادة بناء الدولة في بيئة إقليمية متحوّلة</h1>
+        <p style="color:#3D4763;font-size:15px;line-height:1.95;margin:0 0 14px;text-wrap:pretty">كيف تُعيد الدولة السورية بناء مؤسساتها وسط إرادات إقليمية ودولية متقاطعة؟ تتناول هذه الدراسة مسارات المرحلة الانتقالية، من دمج الفصائل إلى ملفات الإعمار والعودة، وتستشرف سيناريوهاتها حتى نهاية 2026.</p>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="width:34px;height:34px;border-radius:50%;background:#EEF1F8;display:inline-flex;align-items:center;justify-content:center;flex:none"><span style="width:9px;height:9px;background:#24326B;transform:rotate(45deg);border-radius:2px"></span></span>
+          <span style="color:#24326B;font-size:13.5px;font-weight:600">وحدة الدراسات السورية</span>
+          <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+          <span style="color:#8A93AB;font-size:13px">تحليل استراتيجي</span>
+        </div>
+      </a>
+
+      <!-- 4 بطاقات -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+        <a href="Article.dc.html" style="display:block">
+          <div style="border-radius:14px;overflow:hidden;position:relative;height:172px;background:repeating-linear-gradient(45deg,#DDE4F0 0 12px,#EBF0F8 12px 24px);display:flex;align-items:center;justify-content:center;transition:all .25s" style-hover="box-shadow:0 12px 28px rgba(36,50,107,.16)">
+            <span style="font-family:ui-monospace,monospace;font-size:10px;color:#8A93AB;background:#fff;padding:4px 9px;border-radius:5px;border:1px solid #E4E8F0">صورة</span>
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Syria%2C_Damascus%2C_The_Umayyad_Mosque.jpg?width=800" alt="دمشق" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <img src="assets/logo-mark.png" alt="" style="position:absolute;top:10px;left:12px;height:28px;opacity:.85">
+            <span style="position:absolute;bottom:12px;right:0;background:#fff;color:#24326B;font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px 0 0 100px">8 تموز/يوليو, 2026</span>
+          </div>
+          <h3 style="color:#24326B;font-size:16px;line-height:1.65;font-weight:700;margin:14px 0 10px;text-wrap:pretty">قراءة في الانتشار العسكري شمال شرق سوريا ودلالاته</h3>
+          <div style="display:flex;align-items:center;gap:9px;color:#5A6480;font-size:12px">
+            <span style="color:#EB6224;font-weight:700">تقدير موقف</span>
+            <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+            <span>6 دقائق</span>
+          </div>
+        </a>
+        <a href="Article.dc.html" style="display:block">
+          <div style="border-radius:14px;overflow:hidden;position:relative;height:172px;background:repeating-linear-gradient(45deg,#DDE4F0 0 12px,#EBF0F8 12px 24px);display:flex;align-items:center;justify-content:center;transition:all .25s" style-hover="box-shadow:0 12px 28px rgba(36,50,107,.16)">
+            <span style="font-family:ui-monospace,monospace;font-size:10px;color:#8A93AB;background:#fff;padding:4px 9px;border-radius:5px;border:1px solid #E4E8F0">صورة</span>
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Damascus_courtyard_of_Umayyad_Mosque_from_east_portico_8065.jpg?width=800" alt="دمشق — الجامع الأموي" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <img src="assets/logo-mark.png" alt="" style="position:absolute;top:10px;left:12px;height:28px;opacity:.85">
+            <span style="position:absolute;bottom:12px;right:0;background:#fff;color:#24326B;font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px 0 0 100px">30 حزيران/يونيو, 2026</span>
+          </div>
+          <h3 style="color:#24326B;font-size:16px;line-height:1.65;font-weight:700;margin:14px 0 10px;text-wrap:pretty">إحاطة سوريا الشهرية — حزيران/يونيو 2026</h3>
+          <div style="display:flex;align-items:center;gap:9px;color:#5A6480;font-size:12px">
+            <span style="color:#287EAB;font-weight:700">إحاطة دورية</span>
+            <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+            <span>25 دقيقة</span>
+          </div>
+        </a>
+        <a href="Article.dc.html" style="display:block">
+          <div style="border-radius:14px;overflow:hidden;position:relative;height:172px;background:repeating-linear-gradient(45deg,#DDE4F0 0 12px,#EBF0F8 12px 24px);display:flex;align-items:center;justify-content:center;transition:all .25s" style-hover="box-shadow:0 12px 28px rgba(36,50,107,.16)">
+            <span style="font-family:ui-monospace,monospace;font-size:10px;color:#8A93AB;background:#fff;padding:4px 9px;border-radius:5px;border:1px solid #E4E8F0">صورة</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Jerusalem_Knesset_Building_%282543665854%29.jpg/960px-Jerusalem_Knesset_Building_%282543665854%29.jpg" alt="مبنى الكنيست في القدس" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <img src="assets/logo-mark.png" alt="" style="position:absolute;top:10px;left:12px;height:28px;opacity:.85">
+            <span style="position:absolute;bottom:12px;right:0;background:#fff;color:#24326B;font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px 0 0 100px">6 تموز/يوليو, 2026</span>
+          </div>
+          <h3 style="color:#24326B;font-size:16px;line-height:1.65;font-weight:700;margin:14px 0 10px;text-wrap:pretty">من الصحافة العبرية: إعادة التموضع الإسرائيلي بعد حرب يونيو 2025</h3>
+          <div style="display:flex;align-items:center;gap:9px;color:#5A6480;font-size:12px">
+            <span style="color:#4A5474;font-weight:700">ترجمة نوعية</span>
+            <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+            <span>9 دقائق</span>
+          </div>
+        </a>
+        <a href="Article.dc.html" style="display:block">
+          <div style="border-radius:14px;overflow:hidden;position:relative;height:172px;background:repeating-linear-gradient(45deg,#DDE4F0 0 12px,#EBF0F8 12px 24px);display:flex;align-items:center;justify-content:center;transition:all .25s" style-hover="box-shadow:0 12px 28px rgba(36,50,107,.16)">
+            <span style="font-family:ui-monospace,monospace;font-size:10px;color:#8A93AB;background:#fff;padding:4px 9px;border-radius:5px;border:1px solid #E4E8F0">صورة</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Tigris_River_in_Baghdad_%282016%29.jpg/960px-Tigris_River_in_Baghdad_%282016%29.jpg" alt="نهر دجلة في بغداد" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <img src="assets/logo-mark.png" alt="" style="position:absolute;top:10px;left:12px;height:28px;opacity:.85">
+            <span style="position:absolute;bottom:12px;right:0;background:#fff;color:#24326B;font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px 0 0 100px">2 تموز/يوليو, 2026</span>
+          </div>
+          <h3 style="color:#24326B;font-size:16px;line-height:1.65;font-weight:700;margin:14px 0 10px;text-wrap:pretty">العراق: مستقبل حصر السلاح بيد الدولة بين الضغوط والتوازنات</h3>
+          <div style="display:flex;align-items:center;gap:9px;color:#5A6480;font-size:12px">
+            <span style="color:#24326B;font-weight:700">تحليل استراتيجي</span>
+            <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+            <span>14 دقيقة</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:center;margin:36px 0 0">
+      <a href="Research.dc.html" style="border:1.5px solid #E4E8F0;color:#24326B;font-size:14.5px;font-weight:600;padding:12px 34px;border-radius:100px;transition:all .2s" style-hover="border:1.5px solid #EB6224;color:#EB6224">تصفح أحدث إنتاجنا البحثي ←</a>
+    </div>
+  </div>
+
+  <!-- ===== تقديرات الموقف: قائد + قائمة مرقمة ===== -->
+  <div data-screen-label="تقديرات الموقف" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:12px;margin:0 0 28px">
+      <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+      <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">تقديرات الموقف</h2>
+      <span style="color:#6F7891;font-size:13px;margin-top:6px">رصد يومي للمستجدات الميدانية والسياسية</span>
+      <span style="flex:1;height:1px;background:#EEF1F6"></span>
+      <a href="Research.dc.html" style="color:#EB6224;font-size:14px;font-weight:600;flex:none" style-hover="color:#FF7635">كل التقديرات ←</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start">
+      <!-- lead -->
+      <a href="Article.dc.html" style="display:block">
+        <div style="border-radius:14px;overflow:hidden;position:relative;height:250px;background:repeating-linear-gradient(45deg,#DDE4F0 0 12px,#EBF0F8 12px 24px);transition:all .25s" style-hover="box-shadow:0 14px 32px rgba(36,50,107,.16)">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Syria%2C_Damascus%2C_The_Umayyad_Mosque%2C_Islam_in_Syria.jpg?width=900" alt="دمشق" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <span style="position:absolute;top:14px;right:14px;background:#EB6224;color:#fff;font-size:11.5px;font-weight:700;padding:5px 14px;border-radius:100px">تقدير اليوم</span>
+        </div>
+        <h3 style="color:#24326B;font-size:20px;line-height:1.65;font-weight:700;margin:16px 0 8px;text-wrap:pretty">قراءة في الانتشار العسكري شمال شرق سوريا ودلالاته على مسار التفاوض</h3>
+        <div style="display:flex;align-items:center;gap:10px;color:#5A6480;font-size:12.5px">
+          <span style="color:#24326B;font-weight:600">وحدة الرصد والتحليل</span>
+          <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+          <span>اليوم · 10:40</span>
+        </div>
+      </a>
+      <!-- numbered wire -->
+      <div style="display:flex;flex-direction:column">
+        <a href="Article.dc.html" style="display:flex;gap:20px;align-items:flex-start;padding:0 0 18px;border-bottom:1px solid #EEF1F6">
+          <span style="font-family:'Roboto',sans-serif;font-size:30px;font-weight:700;color:#E4E8F0;line-height:1;flex:none;width:46px">01</span>
+          <div>
+            <div style="color:#EB6224;font-size:11.5px;font-weight:700;margin:0 0 5px">سوريا · منذ ساعتين</div>
+            <div style="color:#24326B;font-size:15.5px;font-weight:600;line-height:1.65" style-hover="color:#EB6224">اجتماع أمني رفيع في دمشق لبحث ترتيبات الجنوب السوري</div>
+          </div>
+        </a>
+        <a href="Article.dc.html" style="display:flex;gap:20px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #EEF1F6">
+          <span style="font-family:'Roboto',sans-serif;font-size:30px;font-weight:700;color:#E4E8F0;line-height:1;flex:none;width:46px">02</span>
+          <div>
+            <div style="color:#EB6224;font-size:11.5px;font-weight:700;margin:0 0 5px">العراق · منذ 4 ساعات</div>
+            <div style="color:#24326B;font-size:15.5px;font-weight:600;line-height:1.65" style-hover="color:#EB6224">بغداد تستضيف جولة جديدة من مباحثات حصر السلاح بيد الدولة</div>
+          </div>
+        </a>
+        <a href="Article.dc.html" style="display:flex;gap:20px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #EEF1F6">
+          <span style="font-family:'Roboto',sans-serif;font-size:30px;font-weight:700;color:#E4E8F0;line-height:1;flex:none;width:46px">03</span>
+          <div>
+            <div style="color:#EB6224;font-size:11.5px;font-weight:700;margin:0 0 5px">لبنان · منذ 6 ساعات</div>
+            <div style="color:#24326B;font-size:15.5px;font-weight:600;line-height:1.65" style-hover="color:#EB6224">لجنة المراقبة الدولية تعقد اجتماعها الدوري حول جنوب الليطاني</div>
+          </div>
+        </a>
+        <a href="Article.dc.html" style="display:flex;gap:20px;align-items:flex-start;padding:18px 0 0">
+          <span style="font-family:'Roboto',sans-serif;font-size:30px;font-weight:700;color:#E4E8F0;line-height:1;flex:none;width:46px">04</span>
+          <div>
+            <div style="color:#EB6224;font-size:11.5px;font-weight:700;margin:0 0 5px">القرن الإفريقي · منذ 8 ساعات</div>
+            <div style="color:#24326B;font-size:15.5px;font-weight:600;line-height:1.65" style-hover="color:#EB6224">وساطة خليجية جديدة في ملف منفذ البحر الأحمر بين أديس أبابا وأسمرة</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== من الملفات: أعمدة صحفية على شريط كحلي ===== -->
+  <div data-screen-label="من الملفات" style="background:linear-gradient(160deg,#1B2755,#24326B);margin:64px 0 0;position:relative;overflow:hidden">
+    <img src="assets/logo-mark-white.png" alt="" style="position:absolute;left:-60px;top:-90px;height:380px;opacity:.05;pointer-events:none">
+    <div style="max-width:1440px;margin:0 auto;padding:52px 48px 56px;box-sizing:border-box;position:relative">
+      <div style="display:flex;align-items:center;gap:12px;margin:0 0 34px">
+        <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+        <h2 style="color:#fff;font-size:28px;font-weight:700;margin:0">من الملفات</h2>
+        <span style="flex:1;height:1px;background:rgba(255,255,255,.12)"></span>
+        <a href="Files.dc.html" style="color:#FFB48C;font-size:14px;font-weight:600;flex:none" style-hover="color:#EB6224">كل الملفات ←</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0">
+        <div style="padding:0 28px 0 28px;border-left:1px solid rgba(255,255,255,.12)">
+          <div style="display:flex;align-items:center;gap:9px;color:#EB6224;font-size:14.5px;font-weight:700;margin:0 0 18px"><span style="width:6px;height:6px;background:#EB6224;transform:rotate(45deg)"></span>الملف السوري</div>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:0 0 14px;border-bottom:1px solid rgba(255,255,255,.08)" style-hover="color:#FFB48C">مسار تشكيل مؤسسات الدولة بعد التعديل الحكومي الأخير</a>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)" style-hover="color:#FFB48C">ملف قسد: جولة تفاوض جديدة برعاية أمريكية</a>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:14px 0 0" style-hover="color:#FFB48C">تمويل إعادة الإعمار بين العقوبات وضمانات الشفافية</a>
+        </div>
+        <div style="padding:0 28px;border-left:1px solid rgba(255,255,255,.12)">
+          <div style="display:flex;align-items:center;gap:9px;color:#EB6224;font-size:14.5px;font-weight:700;margin:0 0 18px"><span style="width:6px;height:6px;background:#EB6224;transform:rotate(45deg)"></span>الملف العراقي</div>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:0 0 14px;border-bottom:1px solid rgba(255,255,255,.08)" style-hover="color:#FFB48C">التوازنات السياسية قبيل الاستحقاق الانتخابي المقبل</a>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)" style-hover="color:#FFB48C">مستقبل الفصائل المسلحة بين الدمج والحل</a>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:14px 0 0" style-hover="color:#FFB48C">ملف الطاقة: عقود جديدة وضغوط إقليمية</a>
+        </div>
+        <div style="padding:0 28px;border-left:1px solid rgba(255,255,255,.12)">
+          <div style="display:flex;align-items:center;gap:9px;color:#EB6224;font-size:14.5px;font-weight:700;margin:0 0 18px"><span style="width:6px;height:6px;background:#EB6224;transform:rotate(45deg)"></span>الملف اللبناني</div>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:0 0 14px;border-bottom:1px solid rgba(255,255,255,.08)" style-hover="color:#FFB48C">ترتيبات ما بعد وقف إطلاق النار جنوب الليطاني</a>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)" style-hover="color:#FFB48C">مسار التسوية الداخلية واستحقاقات إعادة الإعمار</a>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:14px 0 0" style-hover="color:#FFB48C">الدور الدولي وتنفيذ القرار 1701</a>
+        </div>
+        <div style="padding:0 28px">
+          <div style="display:flex;align-items:center;gap:9px;color:#EB6224;font-size:14.5px;font-weight:700;margin:0 0 18px"><span style="width:6px;height:6px;background:#EB6224;transform:rotate(45deg)"></span>القرن الإفريقي</div>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:0 0 14px;border-bottom:1px solid rgba(255,255,255,.08)" style-hover="color:#FFB48C">التنافس الدولي على موانئ البحر الأحمر</a>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)" style-hover="color:#FFB48C">الأزمة السياسية في الصومال: خريطة الفاعلين</a>
+          <a href="Article.dc.html" style="display:block;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1.7;padding:14px 0 0" style-hover="color:#FFB48C">ملف اللاجئين والأزمات الإنسانية المتشابكة</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ترجمات نوعية: بطاقات اقتباس ===== -->
+  <div data-screen-label="ترجمات نوعية" style="background:#F7F9FC;border-bottom:1px solid #EEF1F6">
+    <div style="max-width:1440px;margin:0 auto;padding:56px 48px 60px;box-sizing:border-box">
+      <div style="display:flex;align-items:center;gap:12px;margin:0 0 28px">
+        <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+        <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">ترجمات نوعية</h2>
+        <span style="color:#6F7891;font-size:13px;margin-top:6px">من الصحافة الغربية والعبرية</span>
+        <span style="flex:1;height:1px;background:#E4E8F0"></span>
+        <a href="Research.dc.html" style="color:#EB6224;font-size:14px;font-weight:600;flex:none" style-hover="color:#FF7635">كل الترجمات ←</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+        <a href="Article.dc.html" style="display:block;background:#fff;border:1px solid #EEF1F6;border-radius:14px;padding:26px 26px 22px;position:relative;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 14px 32px rgba(36,50,107,.12)">
+          <span style="position:absolute;top:0;right:26px;width:34px;height:4px;background:#EB6224;border-radius:0 0 4px 4px"></span>
+          <div style="color:#EB6224;font-size:38px;line-height:.6;font-family:Georgia,serif;margin:8px 0 10px">”</div>
+          <h3 style="color:#24326B;font-size:16.5px;line-height:1.75;font-weight:700;margin:0 0 16px;text-wrap:pretty">إعادة التموضع الإسرائيلي بعد حرب يونيو 2025: قراءة في العقيدة الأمنية الجديدة</h3>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <span style="background:#EBEEF8;color:#24326B;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:100px">من الصحافة العبرية</span>
+            <span style="color:#6F7891;font-size:12px">6 تموز 2026</span>
+          </div>
+        </a>
+        <a href="Article.dc.html" style="display:block;background:#fff;border:1px solid #EEF1F6;border-radius:14px;padding:26px 26px 22px;position:relative;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 14px 32px rgba(36,50,107,.12)">
+          <span style="position:absolute;top:0;right:26px;width:34px;height:4px;background:#287EAB;border-radius:0 0 4px 4px"></span>
+          <div style="color:#287EAB;font-size:38px;line-height:.6;font-family:Georgia,serif;margin:8px 0 10px">”</div>
+          <h3 style="color:#24326B;font-size:16.5px;line-height:1.75;font-weight:700;margin:0 0 16px;text-wrap:pretty">مستقبل الوجود الروسي في الساحل السوري: إعادة تفاوض لا انسحاب</h3>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <span style="background:#EEF3FF;color:#287EAB;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:100px">من الصحافة الغربية</span>
+            <span style="color:#6F7891;font-size:12px">26 حزيران 2026</span>
+          </div>
+        </a>
+        <a href="Article.dc.html" style="display:block;background:#fff;border:1px solid #EEF1F6;border-radius:14px;padding:26px 26px 22px;position:relative;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 14px 32px rgba(36,50,107,.12)">
+          <span style="position:absolute;top:0;right:26px;width:34px;height:4px;background:#EB6224;border-radius:0 0 4px 4px"></span>
+          <div style="color:#EB6224;font-size:38px;line-height:.6;font-family:Georgia,serif;margin:8px 0 10px">”</div>
+          <h3 style="color:#24326B;font-size:16.5px;line-height:1.75;font-weight:700;margin:0 0 16px;text-wrap:pretty">التنافس الأمريكي-الصيني في الشرق الأوسط: من يملأ الفراغ؟</h3>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <span style="background:#EBEEF8;color:#24326B;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:100px">من مراكز الأبحاث</span>
+            <span style="color:#6F7891;font-size:12px">24 حزيران 2026</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== بصريات: خرائط وإنفوغرافيك ===== -->
+  <div data-screen-label="خرائط وإنفوغرافيك" style="max-width:1440px;margin:0 auto;padding:60px 48px 0;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:12px;margin:0 0 28px">
+      <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+      <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">خرائط وإنفوغرافيك</h2>
+      <span style="color:#6F7891;font-size:13px;margin-top:6px">التحليل في صورة</span>
+      <span style="flex:1;height:1px;background:#EEF1F6"></span>
+      <a href="Media.dc.html" style="color:#EB6224;font-size:14px;font-weight:600;flex:none" style-hover="color:#FF7635">كل الوسائط ←</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:stretch">
+      <!-- wide map tile -->
+      <a href="Media.dc.html" style="display:block;border-radius:16px;overflow:hidden;position:relative;min-height:320px;background:#EAF0F7;transition:all .25s" style-hover="box-shadow:0 16px 36px rgba(36,50,107,.16)">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Syria_location_map.svg?width=1000" alt="خريطة سوريا" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;right:0;left:0;bottom:0;background:linear-gradient(0deg,rgba(20,31,73,.92),rgba(20,31,73,0));padding:46px 24px 20px">
+          <span style="background:#EB6224;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px">خريطة</span>
+          <div style="color:#fff;font-size:18px;font-weight:700;margin:10px 0 0;line-height:1.6">خريطة السيطرة الميدانية في سوريا — تموز 2026</div>
+        </div>
+      </a>
+      <div style="display:grid;grid-template-rows:1fr 1fr;gap:20px">
+        <!-- data tile -->
+        <a href="Media.dc.html" style="display:block;border-radius:16px;background:#24326B;padding:22px 24px;position:relative;overflow:hidden;transition:all .25s" style-hover="box-shadow:0 14px 30px rgba(36,50,107,.28)">
+          <span style="background:rgba(235,98,36,.18);color:#FFB48C;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;border:1px solid rgba(235,98,36,.4)">إنفوغرافيك</span>
+          <div style="color:#fff;font-size:15.5px;font-weight:700;margin:12px 0 14px;line-height:1.6">اللجوء والنزوح في المنطقة — النصف الأول 2026</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="height:9px;width:72%;background:#EB6224;border-radius:100px"></span>
+              <span style="color:rgba(255,255,255,.75);font-size:11.5px;font-family:'Roboto',sans-serif;direction:ltr;flex:none">4.2M</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="height:9px;width:48%;background:#287EAB;border-radius:100px"></span>
+              <span style="color:rgba(255,255,255,.75);font-size:11.5px;font-family:'Roboto',sans-serif;direction:ltr;flex:none">2.8M</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="height:9px;width:26%;background:rgba(255,255,255,.35);border-radius:100px"></span>
+              <span style="color:rgba(255,255,255,.75);font-size:11.5px;font-family:'Roboto',sans-serif;direction:ltr;flex:none">1.5M</span>
+            </div>
+          </div>
+        </a>
+        <!-- second map tile -->
+        <a href="Media.dc.html" style="display:block;border-radius:16px;overflow:hidden;position:relative;background:#EAF0F7;transition:all .25s" style-hover="box-shadow:0 14px 30px rgba(36,50,107,.16)">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Middle_East_(orthographic_projection).svg?width=700" alt="خريطة الشرق الأوسط" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <div style="position:absolute;right:0;left:0;bottom:0;background:linear-gradient(0deg,rgba(20,31,73,.92),rgba(20,31,73,0));padding:40px 24px 18px">
+            <span style="background:#287EAB;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px">خريطة</span>
+            <div style="color:#fff;font-size:15.5px;font-weight:700;margin:10px 0 0;line-height:1.6">التمركزات الدولية والإقليمية في المنطقة</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== الإحاطة الشهرية: تقرير مميز بغلاف ===== -->
+  <div data-screen-label="الإحاطة الشهرية" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <div style="border:1px solid #EEF1F6;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:340px 1fr;background:#fff">
+      <!-- cover -->
+      <div style="background:linear-gradient(165deg,#24326B 0%,#1B2755 60%,#141F49 100%);padding:36px 30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:340px">
+        <img src="assets/logo-mark-white.png" alt="" style="position:absolute;left:-50px;bottom:-70px;height:280px;opacity:.09;pointer-events:none">
+        <div style="position:relative">
+          <img src="assets/logo-horizontal-white.png" alt="مركز قاسيون" style="height:40px;display:block;margin:0 0 26px">
+          <div style="color:#FFB48C;font-size:12px;font-weight:700;letter-spacing:1px;margin:0 0 10px">إحاطة دورية</div>
+          <div style="color:#fff;font-size:24px;font-weight:700;line-height:1.55">إحاطة سوريا الشهرية</div>
+          <div style="color:rgba(255,255,255,.65);font-size:14px;margin:8px 0 0">حزيران/يونيو 2026</div>
+        </div>
+        <div style="display:flex;gap:8px;position:relative">
+          <span style="width:7px;height:7px;background:#EB6224;transform:rotate(45deg)"></span>
+          <span style="width:7px;height:7px;background:rgba(235,98,36,.6);transform:rotate(45deg)"></span>
+          <span style="width:7px;height:7px;background:rgba(235,98,36,.3);transform:rotate(45deg)"></span>
+        </div>
+      </div>
+      <!-- content -->
+      <div style="padding:34px 38px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:10px;margin:0 0 14px">
+          <span style="background:#EEF3FF;color:#287EAB;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:100px">صدر حديثاً</span>
+          <span style="color:#6F7891;font-size:12.5px">30 حزيران 2026 · <span style="font-family:'Roboto',sans-serif">25</span> دقيقة قراءة · <span style="font-family:'Roboto',sans-serif">6,310</span> زيارات</span>
+        </div>
+        <h2 style="color:#24326B;font-size:24px;font-weight:700;margin:0 0 12px;line-height:1.55">شهرٌ من التحولات: قراءة شاملة في المشهد السوري</h2>
+        <p style="color:#3D4763;font-size:14.5px;line-height:1.95;margin:0 0 18px;max-width:640px;text-wrap:pretty">تستعرض الإحاطة أبرز تطورات الشهر عبر خمسة محاور: موجز تنفيذي، التطورات الأمنية والعسكرية، السياسية والدبلوماسية، الاقتصادية، واستشراف المرحلة القادمة.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px">
+          <span style="border:1px solid #E4E8F0;color:#3D4763;font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px">موجز تنفيذي</span>
+          <span style="border:1px solid #E4E8F0;color:#3D4763;font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px">أمنية وعسكرية</span>
+          <span style="border:1px solid #E4E8F0;color:#3D4763;font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px">سياسية ودبلوماسية</span>
+          <span style="border:1px solid #E4E8F0;color:#3D4763;font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px">اقتصادية</span>
+          <span style="border:1px solid #E4E8F0;color:#3D4763;font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px">استشراف</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;margin-top:auto">
+          <a href="Article.dc.html" style="background:#EB6224;color:#fff;font-size:14.5px;font-weight:700;padding:13px 28px;border-radius:10px;transition:background .2s" style-hover="background:#FF7635;color:#fff">اقرأ الإحاطة كاملة</a>
+          <a href="Library.dc.html" style="border:1.5px solid #E4E8F0;color:#24326B;font-size:14px;font-weight:600;padding:12px 24px;border-radius:10px;display:flex;align-items:center;gap:8px;transition:all .2s" style-hover="border:1.5px solid #24326B;color:#24326B">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="1" width="10" height="12" rx="1.5" stroke="#24326B" stroke-width="1.4"></rect><line x1="7" y1="4.5" x2="7" y2="9.5" stroke="#24326B" stroke-width="1.4"></line><path d="M4.8 7.8 L7 10 L9.2 7.8" stroke="#24326B" stroke-width="1.4" fill="none"></path></svg>
+            تحميل PDF
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== الأكثر قراءة: شريط مرتب ===== -->
+  <div data-screen-label="الأكثر قراءة" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:12px;margin:0 0 28px">
+      <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+      <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">الأكثر قراءة</h2>
+      <span style="color:#6F7891;font-size:13px;margin-top:6px">هذا الأسبوع</span>
+      <span style="flex:1;height:1px;background:#EEF1F6"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:2px solid #24326B">
+      <a href="Article.dc.html" style="display:block;padding:22px 22px 0 18px;border-left:1px solid #EEF1F6;position:relative" style-hover="background:#FBFCFE">
+        <span style="position:absolute;top:-2px;right:0;width:44px;height:3px;background:#EB6224"></span>
+        <span style="font-family:'Roboto',sans-serif;font-size:44px;font-weight:900;color:#EB6224;line-height:1;display:block">1</span>
+        <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:12px 0 8px">إحاطة سوريا الشهرية — حزيران/يونيو 2026</div>
+        <div style="color:#6F7891;font-size:12px;padding:0 0 18px"><span style="font-family:'Roboto',sans-serif">6,310</span> زيارة</div>
+      </a>
+      <a href="Article.dc.html" style="display:block;padding:22px 22px 0 18px;border-left:1px solid #EEF1F6" style-hover="background:#FBFCFE">
+        <span style="font-family:'Roboto',sans-serif;font-size:44px;font-weight:900;color:#C9CFDD;line-height:1;display:block">2</span>
+        <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:12px 0 8px">إنفوغرافيك: خريطة السيطرة الميدانية في سوريا</div>
+        <div style="color:#6F7891;font-size:12px;padding:0 0 18px"><span style="font-family:'Roboto',sans-serif">5,120</span> زيارة</div>
+      </a>
+      <a href="Article.dc.html" style="display:block;padding:22px 22px 0 18px;border-left:1px solid #EEF1F6" style-hover="background:#FBFCFE">
+        <span style="font-family:'Roboto',sans-serif;font-size:44px;font-weight:900;color:#C9CFDD;line-height:1;display:block">3</span>
+        <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:12px 0 8px">سوريا ما بعد الأسد: مسارات إعادة بناء الدولة</div>
+        <div style="color:#6F7891;font-size:12px;padding:0 0 18px"><span style="font-family:'Roboto',sans-serif">4,820</span> زيارة</div>
+      </a>
+      <a href="Article.dc.html" style="display:block;padding:22px 22px 0 18px;border-left:1px solid #EEF1F6" style-hover="background:#FBFCFE">
+        <span style="font-family:'Roboto',sans-serif;font-size:44px;font-weight:900;color:#C9CFDD;line-height:1;display:block">4</span>
+        <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:12px 0 8px">خريطة: التمركزات الدولية والإقليمية في المنطقة</div>
+        <div style="color:#6F7891;font-size:12px;padding:0 0 18px"><span style="font-family:'Roboto',sans-serif">3,890</span> زيارة</div>
+      </a>
+      <a href="Article.dc.html" style="display:block;padding:22px 22px 0 18px" style-hover="background:#FBFCFE">
+        <span style="font-family:'Roboto',sans-serif;font-size:44px;font-weight:900;color:#C9CFDD;line-height:1;display:block">5</span>
+        <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:12px 0 8px">التنافس الأمريكي-الصيني وانعكاساته على المنطقة</div>
+        <div style="color:#6F7891;font-size:12px;padding:0 0 18px"><span style="font-family:'Roboto',sans-serif">3,450</span> زيارة</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== هذا الأسبوع: خط زمني أفقي ===== -->
+  <div data-screen-label="هذا الأسبوع" style="background:#F7F9FC;border-top:1px solid #EEF1F6;border-bottom:1px solid #EEF1F6;margin:64px 0 0">
+    <div style="max-width:1440px;margin:0 auto;padding:52px 48px 56px;box-sizing:border-box">
+      <div style="display:flex;align-items:center;gap:12px;margin:0 0 36px">
+        <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+        <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">هذا الأسبوع في المنطقة</h2>
+        <span style="color:#6F7891;font-size:13px;margin-top:6px">أبرز المحطات يوماً بيوم</span>
+        <span style="flex:1;height:1px;background:#E4E8F0"></span>
+      </div>
+      <div style="position:relative">
+        <span style="position:absolute;top:5px;right:0;left:0;height:2px;background:#E4E8F0"></span>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative">
+          <div>
+            <span style="width:12px;height:12px;background:#EB6224;border-radius:50%;display:block;border:2.5px solid #fff;box-shadow:0 0 0 1.5px #EB6224;margin:0 0 16px"></span>
+            <div style="color:#EB6224;font-size:12.5px;font-weight:700;font-family:'Roboto','IBM Plex Sans Arabic',sans-serif;margin:0 0 8px">الأحد 5 تموز</div>
+            <a href="Article.dc.html" style="display:block;color:#24326B;font-size:14.5px;font-weight:600;line-height:1.7" style-hover="color:#EB6224">تقدير موقف: قراءة ميدانية في ترتيبات جنوب الليطاني</a>
+          </div>
+          <div>
+            <span style="width:12px;height:12px;background:#287EAB;border-radius:50%;display:block;border:2.5px solid #fff;box-shadow:0 0 0 1.5px #287EAB;margin:0 0 16px"></span>
+            <div style="color:#287EAB;font-size:12.5px;font-weight:700;font-family:'Roboto','IBM Plex Sans Arabic',sans-serif;margin:0 0 8px">الاثنين 6 تموز</div>
+            <a href="Article.dc.html" style="display:block;color:#24326B;font-size:14.5px;font-weight:600;line-height:1.7" style-hover="color:#EB6224">ترجمة: إعادة التموضع الإسرائيلي بعد حرب يونيو 2025</a>
+          </div>
+          <div>
+            <span style="width:12px;height:12px;background:#24326B;border-radius:50%;display:block;border:2.5px solid #fff;box-shadow:0 0 0 1.5px #24326B;margin:0 0 16px"></span>
+            <div style="color:#24326B;font-size:12.5px;font-weight:700;font-family:'Roboto','IBM Plex Sans Arabic',sans-serif;margin:0 0 8px">الثلاثاء 7 تموز</div>
+            <a href="Article.dc.html" style="display:block;color:#24326B;font-size:14.5px;font-weight:600;line-height:1.7" style-hover="color:#EB6224">تحليل استراتيجي: مسارات إعادة بناء الدولة السورية</a>
+          </div>
+          <div>
+            <span style="width:12px;height:12px;background:#EB6224;border-radius:50%;display:block;border:2.5px solid #fff;box-shadow:0 0 0 1.5px #EB6224;margin:0 0 16px"></span>
+            <div style="color:#EB6224;font-size:12.5px;font-weight:700;font-family:'Roboto','IBM Plex Sans Arabic',sans-serif;margin:0 0 8px">الأربعاء 8 تموز</div>
+            <a href="Article.dc.html" style="display:block;color:#24326B;font-size:14.5px;font-weight:600;line-height:1.7" style-hover="color:#EB6224">تقدير موقف: الانتشار العسكري شمال شرق سوريا ودلالاته</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== رف المكتبة: أحدث الإصدارات ===== -->
+  <div data-screen-label="رف المكتبة" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:12px;margin:0 0 32px">
+      <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+      <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">من مكتبة قاسيون</h2>
+      <span style="color:#6F7891;font-size:13px;margin-top:6px">إصدارات قابلة للتحميل PDF مجاناً</span>
+      <span style="flex:1;height:1px;background:#EEF1F6"></span>
+      <a href="Library.dc.html" style="color:#EB6224;font-size:14px;font-weight:600;flex:none" style-hover="color:#FF7635">تصفح المكتبة ←</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:26px;align-items:end">
+      <a href="Library.dc.html" style="display:block;transition:transform .25s" style-hover="transform:translateY(-8px)">
+        <div style="aspect-ratio:3/4;border-radius:6px 12px 12px 6px;background:linear-gradient(165deg,#24326B,#141F49);padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:-6px 10px 24px rgba(20,31,73,.25);border-right:5px solid #EB6224;box-sizing:border-box">
+          <img src="assets/logo-mark-white.png" alt="" style="height:34px;width:34px;object-fit:contain;object-position:right;opacity:.9">
+          <div>
+            <div style="color:#FFB48C;font-size:10.5px;font-weight:700;letter-spacing:.5px;margin:0 0 8px">إحاطة دورية</div>
+            <div style="color:#fff;font-size:16px;font-weight:700;line-height:1.6">إحاطة سوريا الشهرية — حزيران 2026</div>
+          </div>
+        </div>
+        <div style="color:#6F7891;font-size:12px;margin:12px 0 0;text-align:center"><span style="font-family:'Roboto',sans-serif">25</span> صفحة · PDF</div>
+      </a>
+      <a href="Library.dc.html" style="display:block;transition:transform .25s" style-hover="transform:translateY(-8px)">
+        <div style="aspect-ratio:3/4;border-radius:6px 12px 12px 6px;background:linear-gradient(165deg,#287EAB,#1B5E82);padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:-6px 10px 24px rgba(27,94,130,.25);border-right:5px solid #141F49;box-sizing:border-box">
+          <img src="assets/logo-mark-white.png" alt="" style="height:34px;width:34px;object-fit:contain;object-position:right;opacity:.9">
+          <div>
+            <div style="color:rgba(255,255,255,.75);font-size:10.5px;font-weight:700;letter-spacing:.5px;margin:0 0 8px">إحاطة دورية</div>
+            <div style="color:#fff;font-size:16px;font-weight:700;line-height:1.6">إحاطة العراق الشهرية — حزيران 2026</div>
+          </div>
+        </div>
+        <div style="color:#6F7891;font-size:12px;margin:12px 0 0;text-align:center"><span style="font-family:'Roboto',sans-serif">22</span> صفحة · PDF</div>
+      </a>
+      <a href="Library.dc.html" style="display:block;transition:transform .25s" style-hover="transform:translateY(-8px)">
+        <div style="aspect-ratio:3/4;border-radius:6px 12px 12px 6px;background:linear-gradient(165deg,#EB6224,#C24A15);padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:-6px 10px 24px rgba(194,74,21,.28);border-right:5px solid #141F49;box-sizing:border-box">
+          <img src="assets/logo-mark-white.png" alt="" style="height:34px;width:34px;object-fit:contain;object-position:right;opacity:.9">
+          <div>
+            <div style="color:rgba(255,255,255,.8);font-size:10.5px;font-weight:700;letter-spacing:.5px;margin:0 0 8px">تحليل استراتيجي</div>
+            <div style="color:#fff;font-size:16px;font-weight:700;line-height:1.6">سوريا ما بعد الأسد: مسارات إعادة بناء الدولة</div>
+          </div>
+        </div>
+        <div style="color:#6F7891;font-size:12px;margin:12px 0 0;text-align:center"><span style="font-family:'Roboto',sans-serif">34</span> صفحة · PDF</div>
+      </a>
+      <a href="Library.dc.html" style="display:block;transition:transform .25s" style-hover="transform:translateY(-8px)">
+        <div style="aspect-ratio:3/4;border-radius:6px 12px 12px 6px;background:linear-gradient(165deg,#3D4763,#232B45);padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:-6px 10px 24px rgba(35,43,69,.25);border-right:5px solid #EB6224;box-sizing:border-box">
+          <img src="assets/logo-mark-white.png" alt="" style="height:34px;width:34px;object-fit:contain;object-position:right;opacity:.9">
+          <div>
+            <div style="color:#FFB48C;font-size:10.5px;font-weight:700;letter-spacing:.5px;margin:0 0 8px">إحاطة دورية</div>
+            <div style="color:#fff;font-size:16px;font-weight:700;line-height:1.6">إحاطة القرن الإفريقي — التنافس على البحر الأحمر</div>
+          </div>
+        </div>
+        <div style="color:#6F7891;font-size:12px;margin:12px 0 0;text-align:center"><span style="font-family:'Roboto',sans-serif">18</span> صفحة · PDF</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== تغطية خاصة: بانر سينمائي بصورة كاملة ===== -->
+  <div data-screen-label="تغطية خاصة" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <a href="Article.dc.html" style="display:block;border-radius:20px;overflow:hidden;position:relative;height:400px;transition:all .3s" style-hover="box-shadow:0 22px 48px rgba(20,31,73,.3)">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Umayyad_Mosque%2C_the_Courtyard%2C_Damascus%2C_Syria.jpg?width=1600" alt="دمشق — الجامع الأموي" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+      <span style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(20,31,73,.94) 0%,rgba(20,31,73,.75) 38%,rgba(20,31,73,.1) 75%)"></span>
+      <div style="position:absolute;top:0;bottom:0;right:0;width:56%;padding:44px 48px;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box">
+        <div style="display:flex;align-items:center;gap:10px;margin:0 0 16px">
+          <span style="background:#EB6224;color:#fff;font-size:12px;font-weight:700;padding:5px 16px;border-radius:100px">تغطية خاصة</span>
+          <span style="color:rgba(255,255,255,.7);font-size:12.5px">ملف موسع · يُحدَّث باستمرار</span>
+        </div>
+        <h2 style="color:#fff;font-size:32px;font-weight:700;line-height:1.5;margin:0 0 14px;text-wrap:pretty">عام على التحول: سوريا الجديدة بين استحقاقات الداخل وضغوط الخارج</h2>
+        <p style="color:rgba(255,255,255,.78);font-size:15px;line-height:1.9;margin:0 0 24px;max-width:520px;text-wrap:pretty">ملف تفاعلي يجمع تحليلات المركز وتقديراته وخرائطه حول عام كامل من إعادة تشكيل الدولة السورية.</p>
+        <div style="display:flex;align-items:center;gap:16px">
+          <span style="background:#fff;color:#141F49;font-size:14px;font-weight:700;padding:12px 26px;border-radius:100px;display:inline-block">اقرأ الملف كاملاً ←</span>
+          <span style="color:rgba(255,255,255,.65);font-size:12.5px"><span style="font-family:'Roboto',sans-serif">12</span> مادة بحثية</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ===== زاوية المشهد: صفوف متعرجة صورة/نص ===== -->
+  <div data-screen-label="زاوية المشهد" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:12px;margin:0 0 32px">
+      <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+      <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">زاوية المشهد</h2>
+      <span style="color:#6F7891;font-size:13px;margin-top:6px">قراءات موسعة في ملفات الجوار</span>
+      <span style="flex:1;height:1px;background:#EEF1F6"></span>
+    </div>
+    <!-- صف 1: صورة يمين -->
+    <a href="Article.dc.html" style="display:grid;grid-template-columns:460px 1fr;gap:36px;align-items:center;padding:0 0 32px;border-bottom:1px solid #EEF1F6">
+      <div style="border-radius:16px;overflow:hidden;position:relative;height:240px;transition:all .25s" style-hover="box-shadow:0 14px 32px rgba(36,50,107,.18)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg/960px-Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg" alt="وسط بيروت" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <span style="position:absolute;bottom:12px;right:0;background:#fff;color:#24326B;font-size:11.5px;font-weight:600;padding:5px 14px;border-radius:100px 0 0 100px">5 تموز/يوليو, 2026</span>
+      </div>
+      <div>
+        <span style="background:#FDEFE7;color:#EB6224;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:100px;display:inline-block">تقدير موقف · الملف اللبناني</span>
+        <h3 style="color:#24326B;font-size:22px;line-height:1.6;font-weight:700;margin:14px 0 10px;text-wrap:pretty">جنوب الليطاني: قراءة ميدانية في ترتيبات ما بعد وقف إطلاق النار</h3>
+        <p style="color:#3D4763;font-size:14.5px;line-height:1.95;margin:0 0 14px;max-width:640px;text-wrap:pretty">الوضع الميداني جنوب لبنان بين إعادة الانتشار والدور الدولي — وأي مسار ينتظر التسوية الداخلية في المرحلة المقبلة؟</p>
+        <div style="display:flex;align-items:center;gap:12px;color:#5A6480;font-size:12.5px">
+          <span style="color:#24326B;font-weight:600">وحدة الرصد والتحليل</span>
+          <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+          <span><span style="font-family:'Roboto',sans-serif">7</span> دقائق قراءة</span>
+          <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+          <span style="color:#EB6224;font-weight:600">اقرأ التقدير ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- صف 2: صورة يسار -->
+    <a href="Article.dc.html" style="display:grid;grid-template-columns:1fr 460px;gap:36px;align-items:center;padding:32px 0 0">
+      <div style="order:1">
+        <span style="background:#EEF3FF;color:#287EAB;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:100px;display:inline-block">إحاطة دورية · القرن الإفريقي</span>
+        <h3 style="color:#24326B;font-size:22px;line-height:1.6;font-weight:700;margin:14px 0 10px;text-wrap:pretty">التنافس الدولي على موانئ البحر الأحمر: من يرسم خريطة الملاحة الجديدة؟</h3>
+        <p style="color:#3D4763;font-size:14.5px;line-height:1.95;margin:0 0 14px;max-width:640px;text-wrap:pretty">خريطة المصالح المتشابكة للقوى الإقليمية والدولية على الساحل الإفريقي الشرقي، وانعكاساتها على أمن الممرات البحرية.</p>
+        <div style="display:flex;align-items:center;gap:12px;color:#5A6480;font-size:12.5px">
+          <span style="color:#24326B;font-weight:600">وحدة الشؤون الإفريقية</span>
+          <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+          <span><span style="font-family:'Roboto',sans-serif">21</span> دقيقة قراءة</span>
+          <span style="width:4px;height:4px;background:#EB6224;transform:rotate(45deg)"></span>
+          <span style="color:#EB6224;font-weight:600">اقرأ الإحاطة ←</span>
+        </div>
+      </div>
+      <div style="order:2;border-radius:16px;overflow:hidden;position:relative;height:240px;transition:all .25s" style-hover="box-shadow:0 14px 32px rgba(36,50,107,.18)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Addis_Ababa_City_view.jpg/960px-Addis_Ababa_City_view.jpg" alt="أديس أبابا" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <span style="position:absolute;bottom:12px;left:0;background:#fff;color:#24326B;font-size:11.5px;font-weight:600;padding:5px 14px;border-radius:0 100px 100px 0">28 حزيران/يونيو, 2026</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- ===== نبض المنطقة: تدوينة مباشرة عمودية ===== -->
+  <div data-screen-label="نبض المنطقة" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <div style="display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:start">
+      <!-- عنوان جانبي لاصق -->
+      <div style="position:sticky;top:76px">
+        <div style="display:inline-flex;align-items:center;gap:9px;background:#FDEFE7;border:1px solid rgba(235,98,36,.35);color:#EB6224;font-size:12.5px;font-weight:700;padding:6px 16px;border-radius:100px">
+          <span style="width:8px;height:8px;background:#EB6224;border-radius:50%;animation:qPulse 1.4s infinite"></span>
+          مباشر
+        </div>
+        <h2 style="color:#24326B;font-size:30px;font-weight:700;margin:16px 0 10px">نبض المنطقة</h2>
+        <p style="color:#3D4763;font-size:14px;line-height:1.9;margin:0 0 20px;text-wrap:pretty">تدوينة رصد لحظية من وحدة المتابعة — تُحدَّث على مدار الساعة أيام التصعيد.</p>
+        <a href="Research.dc.html" style="color:#EB6224;font-size:13.5px;font-weight:600" style-hover="color:#FF7635">سجل الرصد الكامل ←</a>
+      </div>
+      <!-- الخيط الزمني العمودي -->
+      <div style="position:relative;padding:4px 26px 4px 0">
+        <span style="position:absolute;top:10px;bottom:10px;right:5px;width:2px;background:linear-gradient(180deg,#EB6224,#EEF1F6 55%)"></span>
+        <div style="display:flex;flex-direction:column;gap:26px">
+          <a href="Article.dc.html" style="display:block;position:relative;background:#F7F9FC;border:1px solid #EEF1F6;border-radius:12px;padding:16px 20px;transition:all .25s" style-hover="background:#fff;box-shadow:0 10px 24px rgba(36,50,107,.1);transform:translateX(-3px)">
+            <span style="position:absolute;right:-26px;top:5px;width:12px;height:12px;background:#EB6224;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 1.5px #EB6224;animation:qPulse 1.4s infinite"></span>
+            <div style="display:flex;align-items:center;gap:10px;margin:0 0 6px">
+              <span style="font-family:'Roboto',sans-serif;color:#EB6224;font-size:13px;font-weight:700;direction:ltr">14:20</span>
+              <span style="background:#FDEFE7;color:#EB6224;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:100px">عاجل</span>
+            </div>
+            <div style="color:#24326B;font-size:16px;font-weight:700;line-height:1.65" style-hover="color:#EB6224">مصادر ميدانية: تعزيزات أمنية إضافية تصل ريف حلب الشمالي بعد ظهر اليوم</div>
+          </a>
+          <a href="Article.dc.html" style="display:block;position:relative;background:#F7F9FC;border:1px solid #EEF1F6;border-radius:12px;padding:16px 20px;transition:all .25s" style-hover="background:#fff;box-shadow:0 10px 24px rgba(36,50,107,.1);transform:translateX(-3px)">
+            <span style="position:absolute;right:-26px;top:5px;width:12px;height:12px;background:#24326B;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 1.5px #24326B"></span>
+            <div style="display:flex;align-items:center;gap:10px;margin:0 0 6px">
+              <span style="font-family:'Roboto',sans-serif;color:#5A6480;font-size:13px;font-weight:700;direction:ltr">12:45</span>
+              <span style="background:#EBEEF8;color:#24326B;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:100px">سياسي</span>
+            </div>
+            <div style="color:#24326B;font-size:16px;font-weight:600;line-height:1.65" style-hover="color:#EB6224">الخارجية السورية تعلن جولة مشاورات مع الجانب الأوروبي حول رفع العقوبات</div>
+          </a>
+          <a href="Article.dc.html" style="display:block;position:relative;background:#F7F9FC;border:1px solid #EEF1F6;border-radius:12px;padding:16px 20px;transition:all .25s" style-hover="background:#fff;box-shadow:0 10px 24px rgba(36,50,107,.1);transform:translateX(-3px)">
+            <span style="position:absolute;right:-26px;top:5px;width:12px;height:12px;background:#287EAB;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 1.5px #287EAB"></span>
+            <div style="display:flex;align-items:center;gap:10px;margin:0 0 6px">
+              <span style="font-family:'Roboto',sans-serif;color:#5A6480;font-size:13px;font-weight:700;direction:ltr">10:30</span>
+              <span style="background:#EEF3FF;color:#287EAB;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:100px">اقتصادي</span>
+            </div>
+            <div style="color:#24326B;font-size:16px;font-weight:600;line-height:1.65" style-hover="color:#EB6224">البنك المركزي يطرح حزمة تسهيلات جديدة لتحويلات المغتربين</div>
+          </a>
+          <a href="Article.dc.html" style="display:block;position:relative;background:#F7F9FC;border:1px solid #EEF1F6;border-radius:12px;padding:16px 20px;transition:all .25s" style-hover="background:#fff;box-shadow:0 10px 24px rgba(36,50,107,.1);transform:translateX(-3px)">
+            <span style="position:absolute;right:-26px;top:5px;width:12px;height:12px;background:#5A6480;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 1.5px #5A6480"></span>
+            <div style="display:flex;align-items:center;gap:10px;margin:0 0 6px">
+              <span style="font-family:'Roboto',sans-serif;color:#5A6480;font-size:13px;font-weight:700;direction:ltr">08:15</span>
+              <span style="background:#F0F1F4;color:#4A5474;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:100px">إقليمي</span>
+            </div>
+            <div style="color:#24326B;font-size:16px;font-weight:600;line-height:1.65" style-hover="color:#EB6224">وفد عراقي رفيع يبدأ زيارة رسمية إلى دمشق لبحث ملفات الحدود والطاقة</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== جدل الساعة: وجهتا نظر ===== -->
+  <div data-screen-label="جدل الساعة" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:12px;margin:0 0 28px">
+      <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+      <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">جدل الساعة</h2>
+      <span style="color:#6F7891;font-size:13px;margin-top:6px">قراءتان متقابلتان لمشهد واحد</span>
+      <span style="flex:1;height:1px;background:#EEF1F6"></span>
+    </div>
+    <div style="border:1px solid #EEF1F6;border-radius:20px;overflow:hidden;position:relative;background:#fff">
+      <div style="background:#F7F9FC;border-bottom:1px solid #EEF1F6;padding:18px 32px;text-align:center">
+        <span style="color:#24326B;font-size:17px;font-weight:700">مستقبل الوجود الأجنبي على الأرض السورية: انحسار أم إعادة تموضع؟</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;position:relative">
+        <span style="position:absolute;top:0;bottom:0;right:50%;width:1px;background:#EEF1F6"></span>
+        <span style="position:absolute;top:50%;right:50%;transform:translate(50%,-50%) rotate(45deg);width:38px;height:38px;background:#141F49;border-radius:8px;display:flex;align-items:center;justify-content:center;z-index:2"></span>
+        <span style="position:absolute;top:50%;right:50%;transform:translate(50%,-50%);color:#fff;font-size:12px;font-weight:700;z-index:3">أم</span>
+        <!-- وجهة 1 -->
+        <div style="padding:34px 36px;background:linear-gradient(180deg,rgba(235,98,36,.045),transparent 40%)">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:#FDEFE7;color:#EB6224;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;margin:0 0 16px">
+            <span style="width:6px;height:6px;background:#EB6224;transform:rotate(45deg)"></span>
+            قراءة أولى: انحسار تدريجي
+          </div>
+          <p style="color:#3D4763;font-size:14.5px;line-height:2;margin:0 0 18px;text-wrap:pretty">تشير مؤشرات إعادة التفاوض على القواعد والتخفيضات المتتالية في القوام إلى مسار انسحاب متدرج تفرضه كلفة البقاء وتحولات الأولويات الدولية.</p>
+          <div style="display:flex;flex-direction:column;gap:9px;margin:0 0 20px">
+            <div style="display:flex;gap:9px;align-items:baseline;color:#3D4763;font-size:13px;line-height:1.7"><span style="width:5px;height:5px;background:#EB6224;transform:rotate(45deg);flex:none"></span>تقليص القوام العسكري في ثلاث قواعد رئيسية</div>
+            <div style="display:flex;gap:9px;align-items:baseline;color:#3D4763;font-size:13px;line-height:1.7"><span style="width:5px;height:5px;background:#EB6224;transform:rotate(45deg);flex:none"></span>تحول الأولويات نحو ساحات تنافس أخرى</div>
+          </div>
+          <a href="Article.dc.html" style="color:#EB6224;font-size:13.5px;font-weight:700" style-hover="color:#FF7635">اقرأ القراءة الأولى ←</a>
+        </div>
+        <!-- وجهة 2 -->
+        <div style="padding:34px 36px;background:linear-gradient(180deg,rgba(40,126,171,.05),transparent 40%)">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:#EEF3FF;color:#287EAB;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;margin:0 0 16px">
+            <span style="width:6px;height:6px;background:#287EAB;transform:rotate(45deg)"></span>
+            قراءة ثانية: إعادة تموضع
+          </div>
+          <p style="color:#3D4763;font-size:14.5px;line-height:2;margin:0 0 18px;text-wrap:pretty">ما يبدو انسحاباً هو إعادة توزيع للأدوار: قواعد أقل وأدوات نفوذ أكثر — من الاقتصاد إلى الطاقة إلى اتفاقيات الأمن الثنائية طويلة الأمد.</p>
+          <div style="display:flex;flex-direction:column;gap:9px;margin:0 0 20px">
+            <div style="display:flex;gap:9px;align-items:baseline;color:#3D4763;font-size:13px;line-height:1.7"><span style="width:5px;height:5px;background:#287EAB;transform:rotate(45deg);flex:none"></span>اتفاقيات طاقة وموانئ تعوّض الحضور العسكري</div>
+            <div style="display:flex;gap:9px;align-items:baseline;color:#3D4763;font-size:13px;line-height:1.7"><span style="width:5px;height:5px;background:#287EAB;transform:rotate(45deg);flex:none"></span>ترتيبات أمنية ثنائية تُرسّخ النفوذ بأدوات جديدة</div>
+          </div>
+          <a href="Article.dc.html" style="color:#287EAB;font-size:13.5px;font-weight:700" style-hover="color:#EB6224">اقرأ القراءة الثانية ←</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== جولة سريعة: شريط تمرير أفقي ===== -->
+  <div data-screen-label="جولة سريعة" style="background:#F7F9FC;border-top:1px solid #EEF1F6;border-bottom:1px solid #EEF1F6;margin:64px 0 0">
+    <div style="max-width:1440px;margin:0 auto;padding:52px 48px 56px;box-sizing:border-box">
+      <div style="display:flex;align-items:center;gap:12px;margin:0 0 28px">
+        <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+        <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">جولة سريعة</h2>
+        <span style="color:#6F7891;font-size:13px;margin-top:6px">سلايدر — اسحب أو استخدم الأسهم</span>
+        <span style="flex:1;height:1px;background:#E4E8F0"></span>
+        <button id="qTourPrev" style="width:42px;height:42px;border-radius:50%;border:1.5px solid #D2D4D4;background:#fff;color:#24326B;font-size:17px;cursor:pointer;transition:all .2s;flex:none" style-hover="border:1.5px solid #EB6224;color:#EB6224">→</button>
+        <button id="qTourNext" style="width:42px;height:42px;border-radius:50%;border:1.5px solid #D2D4D4;background:#fff;color:#24326B;font-size:17px;cursor:pointer;transition:all .2s;flex:none" style-hover="border:1.5px solid #EB6224;color:#EB6224">←</button>
+        <a href="Research.dc.html" style="color:#EB6224;font-size:14px;font-weight:600;flex:none;margin-right:6px" style-hover="color:#FF7635">كل الإنتاج ←</a>
+      </div>
+      <div class="swiper" id="qTourSwiper" dir="rtl" style="overflow:hidden;padding:4px 2px 8px">
+        <div class="swiper-wrapper">
+        <div class="swiper-slide" style="width:290px"><a href="Article.dc.html" style="background:#fff;border:1px solid #EEF1F6;border-radius:14px;overflow:hidden;display:block;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(36,50,107,.14)">
+          <div style="height:150px;position:relative;background:#EAF0F7">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Damascus%2C_Syria%2C_The_Umayyad_Mosque%2C_The_Courtyard.jpg?width=600" alt="دمشق" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <span style="position:absolute;top:10px;right:10px;background:#24326B;color:#fff;font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:100px">تحليل</span>
+          </div>
+          <div style="padding:16px 18px 18px">
+            <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:0 0 8px">مسارات إعادة بناء الدولة في بيئة متحوّلة</div>
+            <div style="color:#6F7891;font-size:11.5px">7 تموز · <span style="font-family:'Roboto',sans-serif">18</span> دقيقة</div>
+          </div>
+        </a></div>
+        <div class="swiper-slide" style="width:290px"><a href="Article.dc.html" style="background:#fff;border:1px solid #EEF1F6;border-radius:14px;overflow:hidden;display:block;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(36,50,107,.14)">
+          <div style="height:150px;position:relative;background:#EAF0F7">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Tigris_River_in_Baghdad_%282016%29.jpg/960px-Tigris_River_in_Baghdad_%282016%29.jpg" alt="بغداد" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <span style="position:absolute;top:10px;right:10px;background:#EB6224;color:#fff;font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:100px">تقدير موقف</span>
+          </div>
+          <div style="padding:16px 18px 18px">
+            <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:0 0 8px">حصر السلاح بيد الدولة: الضغوط والتوازنات</div>
+            <div style="color:#6F7891;font-size:11.5px">2 تموز · <span style="font-family:'Roboto',sans-serif">14</span> دقيقة</div>
+          </div>
+        </a></div>
+        <div class="swiper-slide" style="width:290px"><a href="Article.dc.html" style="background:#fff;border:1px solid #EEF1F6;border-radius:14px;overflow:hidden;display:block;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(36,50,107,.14)">
+          <div style="height:150px;position:relative;background:#EAF0F7">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg/960px-Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg" alt="بيروت" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <span style="position:absolute;top:10px;right:10px;background:#EB6224;color:#fff;font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:100px">تقدير موقف</span>
+          </div>
+          <div style="padding:16px 18px 18px">
+            <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:0 0 8px">ترتيبات ما بعد وقف إطلاق النار جنوب الليطاني</div>
+            <div style="color:#6F7891;font-size:11.5px">5 تموز · <span style="font-family:'Roboto',sans-serif">7</span> دقائق</div>
+          </div>
+        </a></div>
+        <div class="swiper-slide" style="width:290px"><a href="Article.dc.html" style="background:#fff;border:1px solid #EEF1F6;border-radius:14px;overflow:hidden;display:block;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(36,50,107,.14)">
+          <div style="height:150px;position:relative;background:#EAF0F7">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Jerusalem_Knesset_Building_%282543665854%29.jpg/960px-Jerusalem_Knesset_Building_%282543665854%29.jpg" alt="الكنيست" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <span style="position:absolute;top:10px;right:10px;background:#4A5474;color:#fff;font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:100px">ترجمة</span>
+          </div>
+          <div style="padding:16px 18px 18px">
+            <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:0 0 8px">إعادة التموضع الإسرائيلي بعد حرب يونيو 2025</div>
+            <div style="color:#6F7891;font-size:11.5px">6 تموز · <span style="font-family:'Roboto',sans-serif">9</span> دقائق</div>
+          </div>
+        </a></div>
+        <div class="swiper-slide" style="width:290px"><a href="Article.dc.html" style="background:#fff;border:1px solid #EEF1F6;border-radius:14px;overflow:hidden;display:block;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(36,50,107,.14)">
+          <div style="height:150px;position:relative;background:#EAF0F7">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Addis_Ababa_City_view.jpg/960px-Addis_Ababa_City_view.jpg" alt="أديس أبابا" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <span style="position:absolute;top:10px;right:10px;background:#287EAB;color:#fff;font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:100px">إحاطة</span>
+          </div>
+          <div style="padding:16px 18px 18px">
+            <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:0 0 8px">التنافس الدولي على موانئ البحر الأحمر</div>
+            <div style="color:#6F7891;font-size:11.5px">28 حزيران · <span style="font-family:'Roboto',sans-serif">21</span> دقيقة</div>
+          </div>
+        </a></div>
+        <div class="swiper-slide" style="width:290px"><a href="Article.dc.html" style="background:#fff;border:1px solid #EEF1F6;border-radius:14px;overflow:hidden;display:block;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(36,50,107,.14)">
+          <div style="height:150px;position:relative;background:#EAF0F7">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Syria_location_map.svg?width=600" alt="خريطة سوريا" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <span style="position:absolute;top:10px;right:10px;background:#2E7D4F;color:#fff;font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:100px">خريطة</span>
+          </div>
+          <div style="padding:16px 18px 18px">
+            <div style="color:#24326B;font-size:14.5px;font-weight:700;line-height:1.65;margin:0 0 8px">خريطة السيطرة الميدانية — تموز 2026</div>
+            <div style="color:#6F7891;font-size:11.5px">3 تموز · <span style="font-family:'Roboto',sans-serif">5,120</span> زيارة</div>
+          </div>
+        </a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- شريط تعريفي نحيف -->
+  <div data-screen-label="عن المركز — شريط" style="background:#F7F9FC;border-top:1px solid #EEF1F6;border-bottom:1px solid #EEF1F6;margin:56px 0 0;position:relative;overflow:hidden">
+    <img src="assets/logo-mark.png" alt="" style="position:absolute;left:-40px;bottom:-90px;height:300px;opacity:.06;pointer-events:none">
+    <div style="max-width:1440px;margin:0 auto;padding:44px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative">
+      <div>
+        <h2 style="color:#24326B;font-size:27px;font-weight:700;margin:0 0 8px">رؤية علمية في <span style="color:#EB6224">قلب الحدث</span></h2>
+        <p style="color:#3D4763;font-size:15px;line-height:1.9;margin:0;max-width:640px;text-wrap:pretty">مركزٌ بحثي متخصص في تحليل التفاعلات السياسية والأمنية والعسكرية، يُعنى بالشأن السوري أساساً ويمتد إلى ساحات التوتر والنزاع في المنطقة والعالم.</p>
+      </div>
+      <a href="About.dc.html" style="flex:none;background:#24326B;color:#fff;font-size:15px;font-weight:600;padding:14px 30px;border-radius:10px;transition:background .2s" style-hover="background:#EB6224;color:#fff">تعرّف على المركز</a>
+    </div>
+  </div>
+
+  <!-- أبرز ما نقدم -->
+  <div data-screen-label="أبرز ما نقدم" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:12px;margin:0 0 30px">
+      <span style="width:8px;height:8px;background:#EB6224;transform:rotate(45deg)"></span>
+      <h2 style="color:#24326B;font-size:28px;font-weight:700;margin:0">أبرز ما نقدّم</h2>
+      <span style="flex:1;height:1px;background:#EEF1F6"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px">
+      <a href="Research.dc.html" style="border:1px solid #EEF1F6;border-radius:14px;padding:24px 20px;transition:all .25s;display:block;background:#fff" style-hover="border:1px solid rgba(235,98,36,.4);box-shadow:0 12px 28px rgba(36,50,107,.1);transform:translateY(-4px)">
+        <span style="width:13px;height:13px;background:#EB6224;transform:rotate(45deg);border-radius:3px;display:block;margin:0 0 16px"></span>
+        <h3 style="color:#24326B;font-size:16.5px;font-weight:700;margin:0 0 8px">تقديرات يومية</h3>
+        <p style="color:#3D4763;font-size:13px;line-height:1.8;margin:0">رصد ميداني دقيق لأبرز التطورات كل يوم.</p>
+      </a>
+      <a href="Research.dc.html" style="border:1px solid #EEF1F6;border-radius:14px;padding:24px 20px;transition:all .25s;display:block;background:#fff" style-hover="border:1px solid rgba(235,98,36,.4);box-shadow:0 12px 28px rgba(36,50,107,.1);transform:translateY(-4px)">
+        <span style="width:13px;height:13px;background:#287EAB;transform:rotate(45deg);border-radius:3px;display:block;margin:0 0 16px"></span>
+        <h3 style="color:#24326B;font-size:16.5px;font-weight:700;margin:0 0 8px">إحاطات دورية</h3>
+        <p style="color:#3D4763;font-size:13px;line-height:1.8;margin:0">تقارير شهرية معمّقة للملفات الساخنة.</p>
+      </a>
+      <a href="Research.dc.html" style="border:1px solid #EEF1F6;border-radius:14px;padding:24px 20px;transition:all .25s;display:block;background:#fff" style-hover="border:1px solid rgba(235,98,36,.4);box-shadow:0 12px 28px rgba(36,50,107,.1);transform:translateY(-4px)">
+        <span style="width:13px;height:13px;background:#24326B;transform:rotate(45deg);border-radius:3px;display:block;margin:0 0 16px"></span>
+        <h3 style="color:#24326B;font-size:16.5px;font-weight:700;margin:0 0 8px">تحليلات استراتيجية</h3>
+        <p style="color:#3D4763;font-size:13px;line-height:1.8;margin:0">قراءات في التحولات الكبرى في المنطقة.</p>
+      </a>
+      <a href="Research.dc.html" style="border:1px solid #EEF1F6;border-radius:14px;padding:24px 20px;transition:all .25s;display:block;background:#fff" style-hover="border:1px solid rgba(235,98,36,.4);box-shadow:0 12px 28px rgba(36,50,107,.1);transform:translateY(-4px)">
+        <span style="width:13px;height:13px;background:linear-gradient(135deg,#EB6224 50%,#24326B 50%);transform:rotate(45deg);border-radius:3px;display:block;margin:0 0 16px"></span>
+        <h3 style="color:#24326B;font-size:16.5px;font-weight:700;margin:0 0 8px">ترجمات نوعية</h3>
+        <p style="color:#3D4763;font-size:13px;line-height:1.8;margin:0">أبرز المقالات الغربية والعبرية مترجمة.</p>
+      </a>
+      <a href="Files.dc.html" style="border:1px solid #EEF1F6;border-radius:14px;padding:24px 20px;transition:all .25s;display:block;background:#fff" style-hover="border:1px solid rgba(235,98,36,.4);box-shadow:0 12px 28px rgba(36,50,107,.1);transform:translateY(-4px)">
+        <span style="width:13px;height:13px;background:linear-gradient(135deg,#287EAB 50%,#EB6224 50%);transform:rotate(45deg);border-radius:3px;display:block;margin:0 0 16px"></span>
+        <h3 style="color:#24326B;font-size:16.5px;font-weight:700;margin:0 0 8px">ملفات مُغطاة باستمرار</h3>
+        <p style="color:#3D4763;font-size:13px;line-height:1.8;margin:0">تغطية مستمرة للملفات الجغرافية والموضوعية.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- أرقام المركز -->
+  <div data-screen-label="أرقام المركز" style="max-width:1440px;margin:0 auto;padding:64px 48px 0;box-sizing:border-box">
+    <div style="border:1px solid #EEF1F6;border-radius:18px;padding:44px 40px;display:grid;grid-template-columns:1.1fr repeat(4,1fr);gap:28px;align-items:center;background:linear-gradient(160deg,#FDFDFE,#F7F9FC)">
+      <div>
+        <div style="display:flex;align-items:center;gap:9px;color:#EB6224;font-size:13px;font-weight:700">
+          <span style="width:7px;height:7px;background:#EB6224;transform:rotate(45deg)"></span>
+          أرقام المركز
+        </div>
+        <h2 style="color:#24326B;font-size:24px;font-weight:700;margin:10px 0 6px">منذ تأسيسنا أصدرنا</h2>
+        <p style="color:#5A6480;font-size:12.5px;margin:0;line-height:1.8">إحصائيات محدّثة تلقائياً لعدد الأبحاث والمنشورات</p>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Roboto',sans-serif;font-size:44px;font-weight:700;color:#24326B;line-height:1;direction:ltr">{{ statTaqdir }}<span style="color:#EB6224">+</span></div>
+        <div style="color:#3D4763;font-size:14px;font-weight:600;margin:12px 0 0">تقدير موقف</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Roboto',sans-serif;font-size:44px;font-weight:700;color:#24326B;line-height:1;direction:ltr">{{ statIhata }}<span style="color:#EB6224">+</span></div>
+        <div style="color:#3D4763;font-size:14px;font-weight:600;margin:12px 0 0">إحاطة دورية</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Roboto',sans-serif;font-size:44px;font-weight:700;color:#24326B;line-height:1;direction:ltr">{{ statTahlil }}<span style="color:#EB6224">+</span></div>
+        <div style="color:#3D4763;font-size:14px;font-weight:600;margin:12px 0 0">تحليل استراتيجي</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Roboto',sans-serif;font-size:44px;font-weight:700;color:#24326B;line-height:1;direction:ltr">{{ statFiles }}</div>
+        <div style="color:#3D4763;font-size:14px;font-weight:600;margin:12px 0 0">ملفات مُغطاة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- النشرة + تابعنا -->
+  <div id="newsletter" data-screen-label="النشرة البريدية" style="max-width:1440px;margin:0 auto;padding:64px 48px 72px;box-sizing:border-box">
+    <div style="border:1px solid #EEF1F6;border-radius:18px;padding:44px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;overflow:hidden;background:#fff">
+      <img src="assets/logo-mark.png" alt="" style="position:absolute;left:-50px;top:-60px;height:260px;opacity:.05;pointer-events:none">
+      <div style="position:relative">
+        <div style="display:flex;align-items:center;gap:9px;color:#EB6224;font-size:13px;font-weight:700">
+          <span style="width:7px;height:7px;background:#EB6224;transform:rotate(45deg)"></span>
+          النشرة البريدية
+        </div>
+        <h2 style="color:#24326B;font-size:26px;font-weight:700;margin:10px 0 8px">التحليل إلى بريدك مباشرة</h2>
+        <p style="color:#5A6480;font-size:14.5px;line-height:1.9;margin:0 0 18px">نشرة أسبوعية أو شهرية تصلك تلقائياً حسب اختيارك — وتابعنا على منصاتنا.</p>
+        <div style="display:flex;gap:10px">
+          <a href="Contact.dc.html" style="border:1.5px solid #EEF1F6;color:#24326B;font-size:13.5px;font-weight:600;padding:9px 22px;border-radius:100px;transition:all .2s" style-hover="border:1.5px solid #287EAB;color:#287EAB">تيلجرام</a>
+          <a href="Contact.dc.html" style="border:1.5px solid #EEF1F6;color:#24326B;font-size:13.5px;font-weight:600;padding:9px 22px;border-radius:100px;transition:all .2s" style-hover="border:1.5px solid #24326B">إكس (X)</a>
+          <a href="Contact.dc.html" style="border:1.5px solid #EEF1F6;color:#24326B;font-size:13.5px;font-weight:600;padding:9px 22px;border-radius:100px;transition:all .2s" style-hover="border:1.5px solid #287EAB;color:#287EAB">فيسبوك</a>
+        </div>
+      </div>
+      <div style="position:relative">
+        <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;gap:10px;margin:0 0 16px">
+            <input value="{{ email }}" onChange="{{ onEmailChange }}" placeholder="بريدك الإلكتروني" style="flex:1;background:#F7F9FC;border:1px solid #E4E8F0;border-radius:10px;color:#24326B;font-size:14.5px;font-family:'IBM Plex Sans Arabic',sans-serif;padding:13px 16px;outline:none" style-focus="border:1px solid #EB6224;background:#fff">
+            <button onClick="{{ onSubscribe }}" style="background:#EB6224;color:#fff;border:none;font-size:15px;font-weight:700;font-family:'IBM Plex Sans Arabic',sans-serif;padding:13px 28px;border-radius:10px;cursor:pointer;transition:background .2s" style-hover="background:#FF7635">اشترك</button>
+          </div>
+          <div style="display:flex;gap:20px">
+            <label onClick="{{ setFreqWeekly }}" style="display:flex;align-items:center;gap:8px;color:#4A5474;font-size:13.5px;cursor:pointer">
+              <span style="width:16px;height:16px;border-radius:50%;border:1.5px solid #C9CFDD;display:inline-flex;align-items:center;justify-content:center"><sc-if value="{{ isWeekly }}" hint-placeholder-val="{{ true }}"><span style="width:8px;height:8px;border-radius:50%;background:#EB6224"></span></sc-if></span>
+              نشرة أسبوعية
+            </label>
+            <label onClick="{{ setFreqMonthly }}" style="display:flex;align-items:center;gap:8px;color:#4A5474;font-size:13.5px;cursor:pointer">
+              <span style="width:16px;height:16px;border-radius:50%;border:1.5px solid #C9CFDD;display:inline-flex;align-items:center;justify-content:center"><sc-if value="{{ isMonthly }}" hint-placeholder-val="{{ false }}"><span style="width:8px;height:8px;border-radius:50%;background:#EB6224"></span></sc-if></span>
+              نشرة شهرية
+            </label>
+          </div>
+        </sc-if>
+        <sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#EAF5EE;border:1px solid #BFE3CC;border-radius:10px;padding:16px 20px;color:#2E7D4F;font-size:14.5px;font-weight:600">تم الاشتراك بنجاح — ستصلك النشرة {{ freqLabel }} على بريدك.</div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="SiteFooter" hint-size="100%,380px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showTicker&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;الرئيسية&quot;}}">
+class Component extends DCLogic {
+  // final values as initial state — the count-up animation is a progressive enhancement.
+  state = {
+    statTaqdir: 1240, statIhata: 96, statTahlil: 210, statFiles: 6,
+    email: '', freq: 'weekly', subscribed: false
+  };
+
+  componentDidMount() {
+    const targets = { statTaqdir: 1240, statIhata: 96, statTahlil: 210, statFiles: 6 };
+    const dur = 1600;
+    const start = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / dur);
+      const e = 1 - Math.pow(1 - t, 3);
+      this.setState({
+        statTaqdir: Math.round(targets.statTaqdir * e),
+        statIhata: Math.round(targets.statIhata * e),
+        statTahlil: Math.round(targets.statTahlil * e),
+        statFiles: Math.round(targets.statFiles * e)
+      });
+      if (t < 1) this._raf = requestAnimationFrame(step);
+      else this._raf = null;
+    };
+    this._raf = requestAnimationFrame(step);
+
+    // init Swiper slider (waits for the CDN bundle to load)
+    this._swiperTry = setInterval(() => {
+      if (window.Swiper && document.querySelector('#qTourSwiper') && !this._swiper) {
+        this._swiper = new window.Swiper('#qTourSwiper', {
+          slidesPerView: 'auto',
+          spaceBetween: 18,
+          grabCursor: true,
+          keyboard: { enabled: true },
+          navigation: { nextEl: '#qTourNext', prevEl: '#qTourPrev' }
+        });
+        clearInterval(this._swiperTry);
+      }
+    }, 300);
+  }
+
+  componentWillUnmount() {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    clearInterval(this._swiperTry);
+    if (this._swiper) this._swiper.destroy(true, false);
+  }
+
+  renderVals() {
+    const s = this.state;
+    return {
+      showTicker: this.props.showTicker ?? true,
+      statTaqdir: s.statTaqdir.toLocaleString('en-US'),
+      statIhata: String(s.statIhata),
+      statTahlil: String(s.statTahlil),
+      statFiles: String(s.statFiles),
+      email: s.email,
+      onEmailChange: (e) => this.setState({ email: e.target.value }),
+      isWeekly: s.freq === 'weekly',
+      isMonthly: s.freq === 'monthly',
+      setFreqWeekly: () => this.setState({ freq: 'weekly' }),
+      setFreqMonthly: () => this.setState({ freq: 'monthly' }),
+      onSubscribe: () => { if (s.email.trim()) this.setState({ subscribed: true }); },
+      subscribed: s.subscribed,
+      notSubscribed: !s.subscribed,
+      freqLabel: s.freq === 'weekly' ? 'أسبوعياً' : 'شهرياً'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff;font-family:'IBM Plex Sans Arabic','Roboto',sans-serif}
+a{color:#24326B;text-decoration:none}
+a:hover{color:#EB6224}
+::selection{background:#EB6224;color:#fff}
+</style>
+</helmet>
+<div dir="rtl" data-screen-label="مقالة" style="font-family:'IBM Plex Sans Arabic','Roboto',sans-serif;background:#fff">
+
+  <!-- reading progress bar -->
+  <div style="position:fixed;top:0;right:0;left:0;height:4px;background:rgba(36,50,107,.12);z-index:300;pointer-events:none">
+    <div style="{{ barStyle }}"></div>
+  </div>
+
+  <!-- remaining pill -->
+  <div style="{{ pillStyle }}">باقي <span style="font-family:'Roboto',sans-serif">{{ remaining }}%</span> لإكمال القراءة</div>
+
+  <dc-import name="SiteHeader" active="research" hint-size="100%,158px"></dc-import>
+
+  <!-- article head -->
+  <div style="background:#F7F9FC;border-bottom:1px solid #EEF1F6;position:relative;overflow:hidden;padding:42px 48px 48px">
+    <img src="assets/logo-mark.png" alt="" style="position:absolute;left:-40px;bottom:-120px;height:380px;opacity:.06;pointer-events:none">
+    <div style="max-width:900px;margin:0 auto;position:relative">
+      <div style="display:flex;align-items:center;gap:8px;color:#6F7891;font-size:13px;margin:0 0 16px">
+        <a href="Home.dc.html" style="color:#6F7891;font-size:13px" style-hover="color:#EB6224">الرئيسية</a>
+        <span>/</span>
+        <a href="Research.dc.html" style="color:#6F7891;font-size:13px" style-hover="color:#EB6224">الإنتاج البحثي</a>
+        <span>/</span>
+        <span style="color:#EB6224;font-weight:600">تحليل استراتيجي</span>
+      </div>
+      <span style="background:#EB6224;color:#fff;font-size:12.5px;font-weight:700;padding:6px 16px;border-radius:100px;display:inline-block">تحليل استراتيجي</span>
+      <h1 style="color:#24326B;font-size:36px;line-height:1.5;font-weight:700;margin:16px 0 20px;text-wrap:pretty">سوريا ما بعد الأسد: مسارات إعادة بناء الدولة في بيئة إقليمية متحوّلة</h1>
+      <div style="display:flex;align-items:center;gap:16px;color:#5A6480;font-size:13.5px;flex-wrap:wrap">
+        <span style="color:#24326B;font-weight:600">وحدة الدراسات السورية</span>
+        <span style="width:5px;height:5px;background:#EB6224;transform:rotate(45deg)"></span>
+        <span>7 تموز 2026</span>
+        <span style="width:5px;height:5px;background:#EB6224;transform:rotate(45deg)"></span>
+        <span><span style="font-family:'Roboto',sans-serif">18</span> دقيقة قراءة تقديرية</span>
+        <span style="width:5px;height:5px;background:#EB6224;transform:rotate(45deg)"></span>
+        <span><span style="font-family:'Roboto',sans-serif">{{ views }}</span> زيارة</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- body -->
+  <div id="article-body" style="max-width:900px;margin:0 auto;padding:56px 48px 0;box-sizing:border-box">
+    <div style="height:380px;border-radius:18px;background:repeating-linear-gradient(45deg,#24326B 0 14px,#2A3A7A 14px 28px);display:flex;align-items:center;justify-content:center;margin:0 0 44px">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Damascus%2C_Syria%2C_The_Umayyad_Mosque%2C_The_Courtyard.jpg?width=1400" alt="الجامع الأموي في دمشق" style="width:100%;height:100%;object-fit:cover;border-radius:18px">
+    </div>
+
+    <div style="background:#fff;border:1px solid #E4E8F0;border-right:4px solid #EB6224;border-radius:14px;padding:26px 30px;margin:0 0 40px">
+      <div style="color:#EB6224;font-size:13px;font-weight:700;margin:0 0 10px">موجز تنفيذي</div>
+      <p style="color:#3D4763;font-size:15.5px;line-height:2;margin:0;text-wrap:pretty">تدخل سوريا مرحلة إعادة بناء الدولة وسط بيئة إقليمية بالغة التعقيد: إرادات دولية متقاطعة على الأرض، واستحقاقات داخلية ضاغطة تمتد من دمج الفصائل إلى ملف العودة. تقرأ هذه الدراسة مسارات المرحلة الانتقالية وتستشرف سيناريوهاتها حتى نهاية 2026.</p>
+    </div>
+
+    <p style="color:#3D4763;font-size:16.5px;line-height:2.15;margin:0 0 28px;text-wrap:pretty">شكّل سقوط النظام السابق لحظة مفصلية في التاريخ السوري الحديث، غير أن ما تلاها لم يكن نهاية المشهد بل بدايته الأكثر تعقيداً. فالدولة التي تُعيد بناء نفسها اليوم تفعل ذلك تحت أنظار قوى إقليمية ودولية لكلٍّ منها حساباتها الخاصة، وفي ظل اقتصاد منهك وبنية اجتماعية أرهقتها سنوات الحرب الطويلة.</p>
+
+    <h2 style="color:#24326B;font-size:26px;font-weight:700;margin:0 0 18px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:#EB6224;transform:rotate(45deg);flex:none"></span>مسار الانتقال السياسي</h2>
+    <p style="color:#3D4763;font-size:16.5px;line-height:2.15;margin:0 0 28px;text-wrap:pretty">يتقدم مسار تشكيل مؤسسات الدولة ببطء محسوب، إذ تتوازن الحكومة الانتقالية بين استحقاقات التمثيل الداخلي ومتطلبات الاعتراف الدولي. وتشير المؤشرات الميدانية إلى أن معركة بناء المؤسسات ستكون أطول أمداً من معركة إسقاط النظام ذاتها، وأن نجاحها مرهون بقدرة الدولة على احتكار السلاح وتحقيق تسوية مستدامة مع مكونات الشمال الشرقي.</p>
+    <p style="color:#3D4763;font-size:16.5px;line-height:2.15;margin:0 0 28px;text-wrap:pretty">في الموازاة، يمضي ملف إعادة دمج الفصائل المسلحة في الجيش الوطني عبر مراحل متدرجة تصطدم دورياً بعقبات التمويل والولاءات المحلية، فيما يبقى ملف قسد والإدارة الذاتية المتغير الأكثر حساسية في المعادلة الداخلية، لارتباطه المباشر بالحسابات الأمريكية والتركية.</p>
+
+    <div style="background:#24326B;border-radius:16px;padding:32px 36px;margin:0 0 40px;position:relative;overflow:hidden">
+      <img src="assets/logo-mark-white.png" alt="" style="position:absolute;left:-30px;bottom:-60px;height:220px;opacity:.07;pointer-events:none">
+      <div style="color:#EB6224;font-size:38px;line-height:1;font-family:Georgia,serif">”</div>
+      <p style="color:#fff;font-size:20px;line-height:1.9;font-weight:600;margin:4px 0 0;position:relative;text-wrap:pretty">سوريا ما بعد الأسد ليست صفحة بيضاء، بل ساحة تتقاطع فيها إرادات إقليمية ودولية تُعيد رسم حدود النفوذ.</p>
+    </div>
+
+    <h2 style="color:#24326B;font-size:26px;font-weight:700;margin:0 0 18px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:#EB6224;transform:rotate(45deg);flex:none"></span>موازين النفوذ الإقليمي والدولي</h2>
+    <p style="color:#3D4763;font-size:16.5px;line-height:2.15;margin:0 0 28px;text-wrap:pretty">تتوزع خريطة النفوذ على الأرض السورية بين وجود تركي متجذر في الشمال، وحضور روسي يُعاد التفاوض على مداه في الساحل، وتموضع أمريكي مرتبط بمعادلات الشمال الشرقي، إضافة إلى الاحتلال الإسرائيلي المتقدم في الجنوب. وتحاول الدولة الناشئة أن تحوّل هذا التنافس من عبء سيادي إلى ورقة توازن، عبر سياسة خارجية تقوم على تعدد القنوات وتجنب الاصطفاف الحاد.</p>
+
+    <h2 style="color:#24326B;font-size:26px;font-weight:700;margin:0 0 18px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:#EB6224;transform:rotate(45deg);flex:none"></span>الاقتصاد وإعادة الإعمار</h2>
+    <p style="color:#3D4763;font-size:16.5px;line-height:2.15;margin:0 0 28px;text-wrap:pretty">يمثل ملف إعادة الإعمار البوابة الفعلية لاستقرار المرحلة الانتقالية؛ فبدون تعافٍ اقتصادي ملموس ستبقى شرعية المؤسسات الجديدة هشة أمام الضغوط الاجتماعية. وترتبط تدفقات التمويل الخارجي بمسار رفع العقوبات وبقدرة الحكومة على تقديم ضمانات الشفافية، فيما يشكل ملف عودة اللاجئين اختباراً مزدوجاً: إنسانياً في جوهره، واقتصادياً في متطلباته.</p>
+
+    <h2 style="color:#24326B;font-size:26px;font-weight:700;margin:0 0 18px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:#EB6224;transform:rotate(45deg);flex:none"></span>استشراف: ثلاثة سيناريوهات حتى نهاية 2026</h2>
+    <p style="color:#3D4763;font-size:16.5px;line-height:2.15;margin:0 0 20px;text-wrap:pretty">ترجّح الدراسة سينارio التقدم المتعثر: استمرار بناء المؤسسات بوتيرة بطيئة مع احتواء التوترات الموضعية، مقابل سيناريو التسارع الإيجابي المرتبط باختراق دبلوماسي في ملف العقوبات، وسيناريو الانتكاسة المرهون بانفجار أحد الملفات الأمنية المؤجلة.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:0 0 44px">
+      <div style="background:#fff;border:1px solid #E4E8F0;border-radius:12px;padding:20px"><div style="color:#EB6224;font-size:13px;font-weight:700;margin:0 0 8px">السيناريو الأرجح</div><div style="color:#24326B;font-size:15px;font-weight:700;margin:0 0 6px">التقدم المتعثر</div><div style="color:#5A6480;font-size:13px;line-height:1.8">بناء مؤسسات بطيء مع احتواء التوترات.</div></div>
+      <div style="background:#fff;border:1px solid #E4E8F0;border-radius:12px;padding:20px"><div style="color:#287EAB;font-size:13px;font-weight:700;margin:0 0 8px">سيناريو التسارع</div><div style="color:#24326B;font-size:15px;font-weight:700;margin:0 0 6px">اختراق دبلوماسي</div><div style="color:#5A6480;font-size:13px;line-height:1.8">رفع تدريجي للعقوبات وتدفق تمويل الإعمار.</div></div>
+      <div style="background:#fff;border:1px solid #E4E8F0;border-radius:12px;padding:20px"><div style="color:#C43D3D;font-size:13px;font-weight:700;margin:0 0 8px">سيناريو الانتكاسة</div><div style="color:#24326B;font-size:15px;font-weight:700;margin:0 0 6px">انفجار ملف مؤجل</div><div style="color:#5A6480;font-size:13px;line-height:1.8">تصعيد أمني يعيد خلط أولويات المرحلة.</div></div>
+    </div>
+  </div>
+
+  <!-- share + related -->
+  <div style="max-width:900px;margin:0 auto;padding:0 48px 72px;box-sizing:border-box">
+    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #E4E8F0;border-bottom:1px solid #E4E8F0;padding:18px 0;margin:0 0 44px">
+      <span style="color:#24326B;font-size:14px;font-weight:700">شارك التحليل:</span>
+      <div style="display:flex;gap:10px">
+        <button onClick="{{ onShare }}" style="background:#F4F6FA;border:1px solid #E4E8F0;color:#24326B;font-size:13px;font-weight:600;font-family:'IBM Plex Sans Arabic',sans-serif;padding:9px 20px;border-radius:100px;cursor:pointer;transition:all .2s" style-hover="border:1px solid #287EAB;color:#287EAB">تيلجرام</button>
+        <button onClick="{{ onShare }}" style="background:#F4F6FA;border:1px solid #E4E8F0;color:#24326B;font-size:13px;font-weight:600;font-family:'IBM Plex Sans Arabic',sans-serif;padding:9px 20px;border-radius:100px;cursor:pointer;transition:all .2s" style-hover="border:1px solid #24326B">إكس (X)</button>
+        <button onClick="{{ onShare }}" style="background:#F4F6FA;border:1px solid #E4E8F0;color:#24326B;font-size:13px;font-weight:600;font-family:'IBM Plex Sans Arabic',sans-serif;padding:9px 20px;border-radius:100px;cursor:pointer;transition:all .2s" style-hover="border:1px solid #287EAB;color:#287EAB">فيسبوك</button>
+        <button onClick="{{ onShare }}" style="background:#F4F6FA;border:1px solid #E4E8F0;color:#24326B;font-size:13px;font-weight:600;font-family:'IBM Plex Sans Arabic',sans-serif;padding:9px 20px;border-radius:100px;cursor:pointer;transition:all .2s" style-hover="border:1px solid #EB6224;color:#EB6224">{{ copyLabel }}</button>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:9px;color:#EB6224;font-size:13.5px;font-weight:700;margin:0 0 8px">
+      <span style="width:7px;height:7px;background:#EB6224;transform:rotate(45deg)"></span>
+      اقرأ أيضاً
+    </div>
+    <h2 style="color:#24326B;font-size:26px;font-weight:700;margin:0 0 24px">منشورات ذات صلة</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px">
+      <a href="Research.dc.html" style="background:#fff;border:1px solid #E4E8F0;border-radius:14px;padding:20px;display:block;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 12px 28px rgba(36,50,107,.12)">
+        <span style="background:#FDEFE7;color:#EB6224;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:100px">تقدير موقف</span>
+        <div style="color:#24326B;font-size:15.5px;font-weight:700;line-height:1.65;margin:12px 0 8px">قراءة في الانتشار العسكري شمال شرق سوريا ودلالاته</div>
+        <div style="color:#8A93AB;font-size:12px">8 تموز 2026 · <span style="font-family:'Roboto',sans-serif">6</span> دقائق</div>
+      </a>
+      <a href="Research.dc.html" style="background:#fff;border:1px solid #E4E8F0;border-radius:14px;padding:20px;display:block;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 12px 28px rgba(36,50,107,.12)">
+        <span style="background:#EEF3FF;color:#287EAB;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:100px">إحاطة دورية</span>
+        <div style="color:#24326B;font-size:15.5px;font-weight:700;line-height:1.65;margin:12px 0 8px">إحاطة سوريا الشهرية — حزيران/يونيو 2026</div>
+        <div style="color:#8A93AB;font-size:12px">30 حزيران 2026 · <span style="font-family:'Roboto',sans-serif">25</span> دقيقة</div>
+      </a>
+      <a href="Research.dc.html" style="background:#fff;border:1px solid #E4E8F0;border-radius:14px;padding:20px;display:block;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 12px 28px rgba(36,50,107,.12)">
+        <span style="background:#F0F1F4;color:#4A5474;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:100px">ترجمة نوعية</span>
+        <div style="color:#24326B;font-size:15.5px;font-weight:700;line-height:1.65;margin:12px 0 8px">من الصحافة الغربية: مستقبل الوجود الروسي في الساحل السوري</div>
+        <div style="color:#8A93AB;font-size:12px">26 حزيران 2026 · <span style="font-family:'Roboto',sans-serif">8</span> دقائق</div>
+      </a>
+    </div>
+  </div>
+
+  <dc-import name="SiteFooter" hint-size="100%,380px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { progress: 0, views: 4820, copied: false };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const el = document.getElementById('article-body');
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const winH = window.innerHeight;
+      const total = rect.height - winH * 0.4;
+      const passed = Math.min(Math.max(-rect.top + winH * 0.6, 0), Math.max(total, 1));
+      const p = Math.round((passed / Math.max(total, 1)) * 100);
+      if (p !== this.state.progress) this.setState({ progress: Math.min(100, Math.max(0, p)) });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+    // simulate live visit counter
+    this._t = setTimeout(() => this.setState({ views: this.state.views + 1 }), 4000);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    clearTimeout(this._t);
+  }
+
+  renderVals() {
+    const { progress, views, copied } = this.state;
+    const started = progress > 2;
+    return {
+      views: views.toLocaleString('en-US'),
+      remaining: String(100 - progress),
+      barStyle: {
+        position: 'absolute', top: 0, right: 0, height: 4,
+        width: progress + '%', background: 'linear-gradient(90deg,#FF7635,#EB6224)',
+        transition: 'width .15s linear'
+      },
+      pillStyle: {
+        position: 'fixed', bottom: 26, left: 26, zIndex: 250,
+        background: '#141F49', color: '#fff', fontSize: 13, fontWeight: 600,
+        fontFamily: "'IBM Plex Sans Arabic','Roboto',sans-serif",
+        padding: '10px 18px', borderRadius: 100,
+        boxShadow: '0 10px 26px rgba(16,24,60,.35)',
+        border: '1px solid rgba(255,255,255,.15)',
+        opacity: started && progress < 100 ? 1 : 0,
+        transform: started && progress < 100 ? 'translateY(0)' : 'translateY(12px)',
+        transition: 'all .3s', pointerEvents: 'none'
+      },
+      onShare: () => this.setState({ copied: true }),
+      copyLabel: copied ? '✓ تم نسخ الرابط' : 'نسخ الرابط'
+    };
+  }
+}
+</script>
+</body>
+</html>
