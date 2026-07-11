@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>وسائط — مركز قاسيون للدراسات الاستراتيجية</title>
+  <link rel="icon" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="media">
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <img class="page-hero__bg" src="assets/img/logo-mark.png" alt="">
+    <div class="page-hero__inner">
+      <nav class="breadcrumb"><a href="index.html">الرئيسية</a><span>/</span><span class="current">وسائط</span></nav>
+      <h1>وسائط</h1>
+      <p>محتوى بصري متخصص يُترجم التحليل إلى صورة، ويُقرّب المشهد المعقد إلى القارئ العام والمتخصص على حد سواء.</p>
+    </div>
+  </section>
+
+  <!-- الإنفوغرافيك -->
+  <section class="section">
+    <div class="container">
+      <div class="head-split">
+        <div>
+          <div class="eyebrow"><span class="diamond diamond--sm"></span>رسوم بيانية ومعلوماتية</div>
+          <h2>الإنفوغرافيك</h2>
+        </div>
+        <a href="library.html" class="head-split__action">النسخ عالية الدقة في المكتبة ←</a>
+      </div>
+      <div class="grid-4">
+        <article class="media-card card--hover">
+          <div class="media-card__img hatch hatch--navy"><span class="ph-badge ph-badge--dark">إنفوغرافيك: اللجوء والنزوح</span></div>
+          <div class="media-card__cap">إحصاءات اللجوء والنزوح في المنطقة والعالم</div>
+        </article>
+        <article class="media-card card--hover">
+          <div class="media-card__img hatch hatch--light"><span class="ph-badge">إنفوغرافيك: موازين القوى</span></div>
+          <div class="media-card__cap">موازين القوى العسكرية</div>
+        </article>
+        <article class="media-card card--hover">
+          <div class="media-card__img hatch hatch--light"><span class="ph-badge">إنفوغرافيك: خريطة السيطرة</span></div>
+          <div class="media-card__cap">التوزيع الجغرافي للفصائل والسيطرة الميدانية</div>
+        </article>
+        <article class="media-card card--hover">
+          <div class="media-card__img hatch hatch--light"><span class="ph-badge">إنفوغرافيك: بيانات اقتصادية</span></div>
+          <div class="media-card__cap">البيانات الاقتصادية والسياسية</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- الخرائط -->
+  <section class="section">
+    <div class="container">
+      <div class="head-split">
+        <div>
+          <div class="eyebrow"><span class="diamond diamond--sm"></span>خرائط ميدانية محدّثة</div>
+          <h2>الخرائط</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="media-card card--hover">
+          <div class="media-card__img media-card__img--tall hatch hatch--map"><span class="ph-badge ph-badge--dark">خريطة: خطوط التماس — سوريا</span></div>
+          <div class="media-card__cap">خطوط التماس والسيطرة في سوريا</div>
+        </article>
+        <article class="media-card card--hover">
+          <div class="media-card__img media-card__img--tall hatch hatch--map"><span class="ph-badge ph-badge--dark">خريطة: جنوب لبنان</span></div>
+          <div class="media-card__cap">العمليات العسكرية في جنوب لبنان</div>
+        </article>
+        <article class="media-card card--hover">
+          <div class="media-card__img media-card__img--tall hatch hatch--map"><span class="ph-badge ph-badge--dark">خريطة: التمركزات الدولية</span></div>
+          <div class="media-card__cap">التمركزات الدولية والإقليمية في المنطقة</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- مقتطفات وبطاقات: كاروسيل -->
+  <section class="section section--last">
+    <div class="container">
+      <div class="head-split">
+        <div>
+          <div class="eyebrow"><span class="diamond diamond--sm"></span>للمشاركة على منصات التواصل</div>
+          <h2>مقتطفات وبطاقات</h2>
+        </div>
+        <div class="head-nav">
+          <button class="round-btn" id="cardPrev" aria-label="السابق">→</button>
+          <button class="round-btn" id="cardNext" aria-label="التالي">←</button>
+        </div>
+      </div>
+      <div class="quote-carousel">
+        <div class="quote-slide">
+          <img class="quote-slide__bg" src="assets/img/logo-mark-white.png" alt="">
+          <div class="quote-mark quote-slide__mark">”</div>
+          <p class="quote-slide__quote" id="cardQuote"></p>
+          <div class="quote-slide__source"><span class="diamond diamond--sm"></span><span id="cardSource"></span></div>
+          <div class="quote-slide__dots" id="cardDots"></div>
+        </div>
+        <div class="quote-detail">
+          <h3 id="cardTitle"></h3>
+          <p id="cardSummary"></p>
+          <div class="quote-detail__actions">
+            <button class="btn" id="cardShare">مشاركة البطاقة</button>
+            <a href="article.html" class="head-split__action">قراءة التحليل الكامل ←</a>
+          </div>
+          <div class="notice notice--success quote-detail__shared" id="cardShared" hidden>تم نسخ رابط البطاقة — شاركها على منصتك المفضلة.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/pages/media.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تواصل معنا — مركز قاسيون للدراسات الاستراتيجية</title>
+  <link rel="icon" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="contact">
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <img class="page-hero__bg" src="assets/img/logo-mark.png" alt="">
+    <div class="page-hero__inner">
+      <nav class="breadcrumb"><a href="index.html">الرئيسية</a><span>/</span><span class="current">تواصل معنا</span></nav>
+      <h1>تواصل معنا</h1>
+      <p>نرحب بتواصلكم سواء للاستفسار عن أعمالنا البحثية، أو لاقتراح موضوع للدراسة، أو للتعاون الأكاديمي والإعلامي.</p>
+    </div>
+  </section>
+
+  <section class="section section--last">
+    <div class="container contact-grid">
+
+      <!-- form -->
+      <div class="contact-card">
+        <h2 class="contact-card__title">نموذج التواصل</h2>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="grid-2">
+            <div class="field">
+              <label for="c-name">الاسم <span class="req">*</span></label>
+              <input class="input" id="c-name" name="name" placeholder="اسمك الكامل">
+            </div>
+            <div class="field">
+              <label for="c-email">البريد الإلكتروني <span class="req">*</span></label>
+              <input class="input input--ltr" id="c-email" name="email" type="email" placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="c-org">الجهة / المؤسسة <span class="opt">(اختياري)</span></label>
+              <input class="input" id="c-org" name="org" placeholder="اسم الجهة أو المؤسسة">
+            </div>
+            <div class="field">
+              <label for="c-kind">طبيعة التواصل</label>
+              <select class="select" id="c-kind" name="kind">
+                <option>استفسار بحثي</option>
+                <option>تعاون مؤسسي</option>
+                <option>طلب إعلامي</option>
+                <option>أخرى</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-msg">الرسالة <span class="req">*</span></label>
+            <textarea class="textarea" id="c-msg" name="msg" rows="6" placeholder="اكتب رسالتك هنا…"></textarea>
+          </div>
+          <div class="notice notice--error" id="contactError" hidden>يرجى تعبئة الحقول الإلزامية (الاسم، البريد، الرسالة).</div>
+          <button type="submit" class="btn contact-form__submit">إرسال الرسالة</button>
+        </form>
+
+        <div class="contact-success" id="contactSuccess" hidden>
+          <div class="contact-success__icon">✓</div>
+          <div class="contact-success__title">تم استلام رسالتك بنجاح</div>
+          <div class="contact-success__text">شكراً لتواصلك مع مركز قاسيون — سيرد عليك فريقنا على بريدك الإلكتروني في أقرب وقت.</div>
+        </div>
+      </div>
+
+      <!-- direct channels -->
+      <aside class="contact-side">
+        <div class="contact-channels">
+          <img class="contact-channels__bg" src="assets/img/logo-mark-white.png" alt="">
+          <h3 class="contact-channels__title">قنوات التواصل المباشر</h3>
+          <div class="contact-channels__list">
+            <div class="contact-channel"><span class="contact-channel__k">البريد الإلكتروني</span><span class="contact-channel__v num">info@qasiounstudies.com</span></div>
+            <div class="contact-channel"><span class="contact-channel__k">تيلجرام</span><span class="contact-channel__v num">@QasiounStudies</span></div>
+            <div class="contact-channel"><span class="contact-channel__k">إكس (X)</span><span class="contact-channel__v num">@QasiounStudies</span></div>
+            <div class="contact-channel"><span class="contact-channel__k">فيسبوك</span><span class="contact-channel__v">مركز قاسيون للدراسات الاستراتيجية</span></div>
+          </div>
+        </div>
+        <div class="contact-press">
+          <div class="eyebrow"><span class="diamond diamond--sm"></span>للصحفيين والإعلاميين</div>
+          <p class="contact-press__text">يسعدنا تقديم تعليق أو تحليل متخصص للمؤسسات الإعلامية. تواصلوا معنا عبر البريد الإلكتروني مع ذكر المؤسسة الإعلامية والموضوع المطلوب.</p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/pages/contact.js"></script>
+</body>
+</html>

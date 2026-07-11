@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>المكتبة — مركز قاسيون للدراسات الاستراتيجية</title>
+  <link rel="icon" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="library">
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <img class="page-hero__bg" src="assets/img/logo-mark.png" alt="">
+    <div class="page-hero__inner">
+      <nav class="breadcrumb"><a href="index.html">الرئيسية</a><span>/</span><span class="current">المكتبة</span></nav>
+      <h1>المكتبة</h1>
+      <p>أرشيف رقمي شامل لجميع إصدارات المركز قابل للتصفح والتحميل — مرجع بحثي متاح للباحثين والمهتمين والصحفيين. التحميل بصيغة PDF بجودة عالية، مجاناً.</p>
+    </div>
+  </section>
+
+  <section class="section--tight section--last">
+    <div class="container">
+
+      <!-- controls -->
+      <div class="filter-bar">
+        <div class="filter-bar__top">
+          <div class="filter-search">
+            <input class="input" id="libSearch" placeholder="ابحث في المكتبة بالكلمات المفتاحية…">
+            <svg class="filter-search__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#8A93AB" stroke-width="1.6"></circle><line x1="11" y1="11" x2="15" y2="15" stroke="#8A93AB" stroke-width="1.6"></line></svg>
+          </div>
+          <select class="select filter-select" id="libMonth">
+            <option value="all">حسب التاريخ: الكل</option>
+            <option value="2026-07">تموز/يوليو 2026</option>
+            <option value="2026-06">حزيران/يونيو 2026</option>
+          </select>
+        </div>
+        <div class="filter-row">
+          <span class="filter-row__label">حسب النوع:</span>
+          <div class="filter-row__chips" id="libTypeChips"></div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-row__label">حسب الملف:</span>
+          <div class="filter-row__chips" id="libFileChips"></div>
+        </div>
+      </div>
+
+      <div class="lib-meta">
+        <span class="lib-meta__count"><span class="num" id="libCount">0</span> إصدار</span>
+        <span class="pdf-note">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="1" width="10" height="12" rx="1.5" stroke="#2E7D4F" stroke-width="1.4"></rect><line x1="7" y1="4.5" x2="7" y2="9.5" stroke="#2E7D4F" stroke-width="1.4"></line><path d="M4.8 7.8 L7 10 L9.2 7.8" stroke="#2E7D4F" stroke-width="1.4" fill="none"></path></svg>
+          جميع الإصدارات قابلة للتحميل PDF مجاناً
+        </span>
+      </div>
+
+      <div class="grid-3" id="libGrid"></div>
+      <div class="empty" id="libEmpty" hidden>لا توجد نتائج مطابقة — جرّب تعديل الفلاتر أو كلمات البحث.</div>
+
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/data/publications.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/pages/library.js"></script>
+</body>
+</html>
