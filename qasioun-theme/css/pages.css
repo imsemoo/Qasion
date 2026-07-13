@@ -1692,32 +1692,54 @@
 /* ---- Newsletter ---- */
 .newsletter {
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   padding: 44px 48px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+  gap: 0;
+  align-items: start;
   position: relative;
   overflow: hidden;
   background: #fff;
 }
 .newsletter__bg { position: absolute; left: -50px; top: -60px; height: 260px; opacity: .05; pointer-events: none; }
-.newsletter__intro { position: relative; }
+/* نصفان: تابعنا (يمين) | النشرة (شمال) بفاصل رأسي */
+.newsletter__col { position: relative; padding-inline-end: 44px; }
+.newsletter__col--form {
+  border-inline-start: 1px solid var(--line);
+  padding-inline-start: 44px;
+  padding-inline-end: 0;
+}
 .newsletter__title { color: var(--navy); font-size: 26px; font-weight: 700; margin: 10px 0 8px; }
-.newsletter__text { color: var(--text-2); font-size: 14.5px; line-height: 1.9; margin: 0 0 18px; }
+.newsletter__text { color: var(--text-2); font-size: 14.5px; line-height: 1.9; margin: 0 0 20px; }
 .newsletter__social { display: flex; gap: 10px; flex-wrap: wrap; }
 .social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   border: 1.5px solid var(--line);
   color: var(--navy);
   font-size: 13.5px;
   font-weight: 600;
-  padding: 9px 22px;
+  padding: 8px 18px 8px 22px;
   border-radius: 100px;
   transition: all .2s;
 }
-.social-pill:hover { border-color: var(--blue); color: var(--blue); }
-.newsletter__form-wrap { position: relative; }
+.social-pill__ic {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--pal-navy-bg);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  transition: all .2s;
+}
+.social-pill:hover { border-color: var(--orange); color: var(--orange); }
+.social-pill:hover .social-pill__ic { background: var(--orange); color: #fff; }
 .newsletter__row { display: flex; gap: 10px; margin: 0 0 16px; }
 .newsletter__email { flex: 1; padding: 13px 16px; font-size: 14.5px; }
 .newsletter__submit { padding: 13px 28px; font-size: 15px; }
@@ -1778,7 +1800,14 @@
   .zz-row--reverse .zz-row__img { order: -1; }
   .versus__grid { grid-template-columns: 1fr; gap: 14px; }
   .versus__vs { padding: 2px 0; }
-  .newsletter { grid-template-columns: 1fr; gap: 32px; }
+  .newsletter { grid-template-columns: 1fr; gap: 28px; }
+  .newsletter__col { padding-inline-end: 0; }
+  .newsletter__col--form {
+    border-inline-start: none;
+    border-top: 1px solid var(--line);
+    padding-inline-start: 0;
+    padding-top: 28px;
+  }
   .offers { grid-template-columns: 1fr; }
   .offers .offer { display: flex; gap: 18px; align-items: center; padding: 18px 20px; }
   .offers .offer .offer__icon { margin: 0; flex: none; width: 56px; height: 56px; }

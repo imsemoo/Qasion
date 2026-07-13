@@ -10,12 +10,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="css/fonts.css?v=20260713a">
+  <link rel="stylesheet" href="css/fonts.css?v=20260713b">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/base.css?v=20260713a">
-  <link rel="stylesheet" href="css/layout.css?v=20260713a">
-  <link rel="stylesheet" href="css/components.css?v=20260713a">
-  <link rel="stylesheet" href="css/pages.css?v=20260713a">
+  <link rel="stylesheet" href="css/base.css?v=20260713b">
+  <link rel="stylesheet" href="css/layout.css?v=20260713b">
+  <link rel="stylesheet" href="css/components.css?v=20260713b">
+  <link rel="stylesheet" href="css/pages.css?v=20260713b">
 </head>
 <body data-page="home">
 
@@ -741,20 +741,27 @@
   <div class="container section section--last" id="newsletter">
     <div class="newsletter">
       <img class="newsletter__bg" src="assets/img/logo-mark.png" alt="">
-      <div class="newsletter__intro">
-        <div class="eyebrow"><span class="diamond diamond--sm"></span>النشرة البريدية</div>
-        <h2 class="newsletter__title">التحليل إلى بريدك مباشرة</h2>
-        <p class="newsletter__text">نشرة أسبوعية أو شهرية تصلك تلقائياً حسب اختيارك — وتابعنا على منصاتنا.</p>
+
+      <!-- النصف الأيمن: تابعنا -->
+      <div class="newsletter__col">
+        <div class="eyebrow"><span class="diamond diamond--sm"></span>تابعنا</div>
+        <h2 class="newsletter__title">تابعنا على منصاتنا</h2>
+        <p class="newsletter__text">تغطياتنا وتقديراتنا لحظة صدورها على قنوات المركز الرسمية.</p>
         <div class="newsletter__social">
-          <a href="contact.html" class="social-pill">تيلجرام</a>
-          <a href="contact.html" class="social-pill">إكس (X)</a>
-          <a href="contact.html" class="social-pill">فيسبوك</a>
+          <a href="contact.html" class="social-pill"><span class="social-pill__ic num">t</span>تيلجرام</a>
+          <a href="contact.html" class="social-pill"><span class="social-pill__ic num">X</span>إكس (X)</a>
+          <a href="contact.html" class="social-pill"><span class="social-pill__ic num">f</span>فيسبوك</a>
         </div>
       </div>
-      <div class="newsletter__form-wrap">
+
+      <!-- النصف الأيسر: النشرة البريدية -->
+      <div class="newsletter__col newsletter__col--form">
+        <div class="eyebrow"><span class="diamond diamond--sm"></span>النشرة البريدية</div>
+        <h2 class="newsletter__title">التحليل إلى بريدك مباشرة</h2>
+        <p class="newsletter__text">نشرة أسبوعية أو شهرية تصلك تلقائياً حسب اختيارك.</p>
         <form id="newsletterForm" class="newsletter__form" novalidate>
           <div class="newsletter__row">
-            <input class="input newsletter__email" id="nlEmail" type="email" placeholder="بريدك الإلكتروني">
+            <input class="input newsletter__email" id="nlEmail" type="email" placeholder="بريدك الإلكتروني" aria-label="البريد الإلكتروني">
             <button class="btn newsletter__submit" type="submit">اشترك</button>
           </div>
           <div class="newsletter__freq">
@@ -762,7 +769,7 @@
             <label class="radio"><input type="radio" name="freq" value="monthly"><span class="radio__dot"></span>نشرة شهرية</label>
           </div>
         </form>
-        <div class="notice notice--success newsletter__success" id="nlSuccess" hidden></div>
+        <div class="notice notice--success newsletter__success" id="nlSuccess" role="status" hidden></div>
       </div>
     </div>
   </div>
@@ -770,8 +777,8 @@
   <div id="site-footer"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="js/layout.js?v=20260713a"></script>
-  <script src="js/motion.js?v=20260713a"></script>
-  <script src="js/pages/home.js?v=20260713a"></script>
+  <script src="js/layout.js?v=20260713b"></script>
+  <script src="js/motion.js?v=20260713b"></script>
+  <script src="js/pages/home.js?v=20260713b"></script>
 </body>
 </html>
