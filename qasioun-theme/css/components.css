@@ -8,17 +8,25 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 0 0 28px;
+  margin: 0 0 30px;
 }
 .sec-head h2 {
   color: var(--navy);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
+  letter-spacing: -.2px;
 }
-.sec-head .sub { color: var(--muted); font-size: 13px; margin-top: 6px; }
-.sec-head .rule { flex: 1; height: 1px; background: var(--line); }
-.sec-head .more { color: var(--orange); font-size: 14px; font-weight: 600; flex: none; }
-.sec-head .more:hover { color: var(--orange-2); }
+.sec-head .sub { color: var(--muted-2); font-size: 12.5px; margin-top: 8px; font-weight: 500; }
+.sec-head .rule { flex: 1; height: 1px; background: linear-gradient(to left, var(--line-2), transparent); }
+.sec-head .more {
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 700;
+  flex: none;
+  display: inline-block;
+  transition: color .2s, transform .25s var(--ease-out);
+}
+.sec-head .more:hover { color: var(--orange-2); transform: translateX(-4px); }
 .sec-head--sm h2 { font-size: 20px; }
 
 /* Eyebrow label (diamond + small caption above a heading) */
@@ -54,8 +62,7 @@
   border: 1px solid var(--line-2);
   color: var(--text);
   font-weight: 600;
-  padding: 6px 14px;
-  font-size: 12px;
+  padding: 4px 14px;
 }
 
 /* Category text tag (colored word only) */
@@ -77,34 +84,45 @@
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: all .2s;
+  transition: all .22s var(--ease-out);
   background: var(--orange);
   color: #fff;
+  box-shadow: 0 6px 16px rgba(235, 98, 36, .22);
 }
-.btn:hover { background: var(--orange-2); color: #fff; }
-.btn--navy { background: var(--navy); }
-.btn--navy:hover { background: var(--orange); color: #fff; }
+.btn:hover { background: var(--orange-2); color: #fff; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(235, 98, 36, .3); }
+.btn:active { transform: translateY(0) scale(.98); box-shadow: 0 4px 10px rgba(235, 98, 36, .2); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; transform: none; box-shadow: none; }
+.btn--navy { background: var(--navy); box-shadow: 0 6px 16px rgba(20, 31, 73, .2); }
+.btn--navy:hover { background: var(--orange); color: #fff; box-shadow: 0 10px 22px rgba(235, 98, 36, .3); }
 .btn--outline {
   background: transparent;
   border: 1.5px solid var(--line-2);
   color: var(--navy);
   font-weight: 600;
+  box-shadow: none;
 }
-.btn--outline:hover { border-color: var(--navy); color: var(--navy); background: transparent; }
-.btn--sm { padding: 9px 18px; font-size: 13px; border-radius: 8px; }
+.btn--outline:hover { border-color: var(--navy); color: var(--navy); background: transparent; transform: translateY(-1px); box-shadow: 0 6px 14px rgba(36, 50, 107, .1); }
+.btn--sm { padding: 9px 18px; font-size: 13px; box-shadow: none; }
 
-/* Pill link ("browse more →") */
+/* Pill link — the page's PRIMARY call-to-action ("browse the research") */
 .pill-link {
   display: inline-block;
-  border: 1.5px solid var(--line-2);
-  color: var(--navy);
-  font-size: 14.5px;
-  font-weight: 600;
-  padding: 12px 34px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 44px;
   border-radius: 100px;
-  transition: all .2s;
+  box-shadow: 0 12px 28px rgba(235, 98, 36, .35);
+  transition: all .25s var(--ease-out);
 }
-.pill-link:hover { border-color: var(--orange); color: var(--orange); }
+.pill-link:hover {
+  background: var(--orange-2);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(235, 98, 36, .42);
+}
+.pill-link:active { transform: translateY(0) scale(.98); }
 
 /* ---- Cards ---- */
 .card {
@@ -247,6 +265,19 @@
   color: rgba(255, 255, 255, .7);
   background: rgba(0, 0, 0, .3);
   border: none;
+}
+
+/* ---- Motion: scroll reveal ----
+   js/motion.js adds .reveal then .in-view via IntersectionObserver.
+   No-JS / reduced-motion → class never added → content fully visible. */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s var(--ease-out), transform .55s var(--ease-out); }
+.reveal.in-view { opacity: 1; transform: none; }
+
+/* Keyboard focus */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* Split section header: eyebrow+title on one side, action on the other */

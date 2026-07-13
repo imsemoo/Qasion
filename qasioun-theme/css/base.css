@@ -60,6 +60,7 @@
   --shadow-card:  0 12px 28px rgba(36, 50, 107, .12);
   --shadow-lift:  0 16px 36px rgba(36, 50, 107, .16);
   --ease: .25s;
+  --ease-out: cubic-bezier(.22, .61, .36, 1);
 }
 
 /* ---- Reset ---- */

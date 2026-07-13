@@ -21,19 +21,17 @@
 
   <div id="site-header"></div>
 
-  <!-- موجز اليوم -->
+  <!-- موجز اليوم — marquee لا نهائي: home.js يستنسخ المجموعة حتى يمتلئ المسار -->
   <div class="ticker">
     <div class="ticker__label"><span class="ticker__label-dot"></span>موجز اليوم</div>
-    <div class="ticker__track">
+    <div class="ticker__track" aria-label="موجز أخبار اليوم">
       <div class="ticker__inner">
-        <span class="ticker__item">صدور إحاطة سوريا الشهرية لشهر حزيران/يونيو <span class="ticker__sep">◆</span></span>
-        <span class="ticker__item">تقدير موقف: قراءة في الانتشار العسكري شمال شرق سوريا <span class="ticker__sep">◆</span></span>
-        <span class="ticker__item">ترجمة نوعية من الصحافة العبرية حول إعادة التموضع الإقليمي <span class="ticker__sep">◆</span></span>
-        <span class="ticker__item">تحليل استراتيجي جديد: مستقبل إعادة الإعمار والاقتصاد السياسي السوري <span class="ticker__sep">◆</span></span>
-        <span class="ticker__item">صدور إحاطة سوريا الشهرية لشهر حزيران/يونيو <span class="ticker__sep">◆</span></span>
-        <span class="ticker__item">تقدير موقف: قراءة في الانتشار العسكري شمال شرق سوريا <span class="ticker__sep">◆</span></span>
-        <span class="ticker__item">ترجمة نوعية من الصحافة العبرية حول إعادة التموضع الإقليمي <span class="ticker__sep">◆</span></span>
-        <span class="ticker__item">تحليل استراتيجي جديد: مستقبل إعادة الإعمار والاقتصاد السياسي السوري <span class="ticker__sep">◆</span></span>
+        <div class="ticker__group">
+          <span class="ticker__item"><span class="ticker__sep">◆</span> صدور إحاطة سوريا الشهرية لشهر حزيران/يونيو</span>
+          <span class="ticker__item"><span class="ticker__sep">◆</span> تقدير موقف: قراءة في الانتشار العسكري شمال شرق سوريا</span>
+          <span class="ticker__item"><span class="ticker__sep">◆</span> ترجمة نوعية من الصحافة العبرية حول إعادة التموضع الإقليمي</span>
+          <span class="ticker__item"><span class="ticker__sep">◆</span> تحليل استراتيجي جديد: مستقبل إعادة الإعمار والاقتصاد السياسي السوري</span>
+        </div>
       </div>
     </div>
   </div>
@@ -166,30 +164,54 @@
         <span class="rule"></span>
         <a href="files.html" class="more more--soft">كل الملفات ←</a>
       </div>
-      <div class="files-cols">
-        <div class="files-col">
-          <div class="files-col__head"><span class="diamond diamond--sm"></span>الملف السوري</div>
-          <a href="article.html" class="files-col__link">مسار تشكيل مؤسسات الدولة بعد التعديل الحكومي الأخير</a>
-          <a href="article.html" class="files-col__link">ملف قسد: جولة تفاوض جديدة برعاية أمريكية</a>
-          <a href="article.html" class="files-col__link files-col__link--last">تمويل إعادة الإعمار بين العقوبات وضمانات الشفافية</a>
+      <div class="dossier">
+        <div class="dossier__tabs" role="tablist" aria-label="الملفات">
+          <button class="dossier__tab is-active" data-panel="sy" role="tab" aria-selected="true">
+            <span class="diamond diamond--sm"></span>
+            <span class="dossier__tab-name">الملف السوري</span>
+            <span class="dossier__tab-count num">3</span>
+          </button>
+          <button class="dossier__tab" data-panel="iq" role="tab" aria-selected="false">
+            <span class="diamond diamond--sm"></span>
+            <span class="dossier__tab-name">الملف العراقي</span>
+            <span class="dossier__tab-count num">3</span>
+          </button>
+          <button class="dossier__tab" data-panel="lb" role="tab" aria-selected="false">
+            <span class="diamond diamond--sm"></span>
+            <span class="dossier__tab-name">الملف اللبناني</span>
+            <span class="dossier__tab-count num">3</span>
+          </button>
+          <button class="dossier__tab" data-panel="af" role="tab" aria-selected="false">
+            <span class="diamond diamond--sm"></span>
+            <span class="dossier__tab-name">القرن الإفريقي</span>
+            <span class="dossier__tab-count num">3</span>
+          </button>
         </div>
-        <div class="files-col">
-          <div class="files-col__head"><span class="diamond diamond--sm"></span>الملف العراقي</div>
-          <a href="article.html" class="files-col__link">التوازنات السياسية قبيل الاستحقاق الانتخابي المقبل</a>
-          <a href="article.html" class="files-col__link">مستقبل الفصائل المسلحة بين الدمج والحل</a>
-          <a href="article.html" class="files-col__link files-col__link--last">ملف الطاقة: عقود جديدة وضغوط إقليمية</a>
-        </div>
-        <div class="files-col">
-          <div class="files-col__head"><span class="diamond diamond--sm"></span>الملف اللبناني</div>
-          <a href="article.html" class="files-col__link">ترتيبات ما بعد وقف إطلاق النار جنوب الليطاني</a>
-          <a href="article.html" class="files-col__link">مسار التسوية الداخلية واستحقاقات إعادة الإعمار</a>
-          <a href="article.html" class="files-col__link files-col__link--last">الدور الدولي وتنفيذ القرار 1701</a>
-        </div>
-        <div class="files-col files-col--last">
-          <div class="files-col__head"><span class="diamond diamond--sm"></span>القرن الإفريقي</div>
-          <a href="article.html" class="files-col__link">التنافس الدولي على موانئ البحر الأحمر</a>
-          <a href="article.html" class="files-col__link">الأزمة السياسية في الصومال: خريطة الفاعلين</a>
-          <a href="article.html" class="files-col__link files-col__link--last">ملف اللاجئين والأزمات الإنسانية المتشابكة</a>
+        <div class="dossier__panels">
+          <div class="dossier__panel is-active" data-panel="sy" role="tabpanel">
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">01</span><span class="dossier__title">مسار تشكيل مؤسسات الدولة بعد التعديل الحكومي الأخير</span><span class="dossier__arrow">←</span></a>
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">02</span><span class="dossier__title">ملف قسد: جولة تفاوض جديدة برعاية أمريكية</span><span class="dossier__arrow">←</span></a>
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">03</span><span class="dossier__title">تمويل إعادة الإعمار بين العقوبات وضمانات الشفافية</span><span class="dossier__arrow">←</span></a>
+            <a href="files.html" class="dossier__more">تصفح الملف السوري كاملاً ←</a>
+          </div>
+          <div class="dossier__panel" data-panel="iq" role="tabpanel">
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">01</span><span class="dossier__title">التوازنات السياسية قبيل الاستحقاق الانتخابي المقبل</span><span class="dossier__arrow">←</span></a>
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">02</span><span class="dossier__title">مستقبل الفصائل المسلحة بين الدمج والحل</span><span class="dossier__arrow">←</span></a>
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">03</span><span class="dossier__title">ملف الطاقة: عقود جديدة وضغوط إقليمية</span><span class="dossier__arrow">←</span></a>
+            <a href="files.html" class="dossier__more">تصفح الملف العراقي كاملاً ←</a>
+          </div>
+          <div class="dossier__panel" data-panel="lb" role="tabpanel">
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">01</span><span class="dossier__title">ترتيبات ما بعد وقف إطلاق النار جنوب الليطاني</span><span class="dossier__arrow">←</span></a>
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">02</span><span class="dossier__title">مسار التسوية الداخلية واستحقاقات إعادة الإعمار</span><span class="dossier__arrow">←</span></a>
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">03</span><span class="dossier__title">الدور الدولي وتنفيذ القرار 1701</span><span class="dossier__arrow">←</span></a>
+            <a href="files.html" class="dossier__more">تصفح الملف اللبناني كاملاً ←</a>
+          </div>
+          <div class="dossier__panel" data-panel="af" role="tabpanel">
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">01</span><span class="dossier__title">التنافس الدولي على موانئ البحر الأحمر</span><span class="dossier__arrow">←</span></a>
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">02</span><span class="dossier__title">الأزمة السياسية في الصومال: خريطة الفاعلين</span><span class="dossier__arrow">←</span></a>
+            <a href="article.html" class="dossier__row"><span class="dossier__num num">03</span><span class="dossier__title">ملف اللاجئين والأزمات الإنسانية المتشابكة</span><span class="dossier__arrow">←</span></a>
+            <a href="files.html" class="dossier__more">تصفح ملف القرن الإفريقي كاملاً ←</a>
+          </div>
         </div>
       </div>
     </div>
@@ -326,14 +348,51 @@
         <span class="sub">أبرز المحطات يوماً بيوم</span>
         <span class="rule"></span>
       </div>
-      <div class="timeline-h">
-        <span class="timeline-h__line"></span>
-        <div class="timeline-h__grid">
-          <div class="tl-node"><span class="tl-node__dot"></span><div class="tl-node__date">الأحد 5 تموز</div><a href="article.html" class="tl-node__title">تقدير موقف: قراءة ميدانية في ترتيبات جنوب الليطاني</a></div>
-          <div class="tl-node"><span class="tl-node__dot tl-node__dot--blue"></span><div class="tl-node__date tl-node__date--blue">الاثنين 6 تموز</div><a href="article.html" class="tl-node__title">ترجمة: إعادة التموضع الإسرائيلي بعد حرب يونيو 2025</a></div>
-          <div class="tl-node"><span class="tl-node__dot tl-node__dot--navy"></span><div class="tl-node__date tl-node__date--navy">الثلاثاء 7 تموز</div><a href="article.html" class="tl-node__title">تحليل استراتيجي: مسارات إعادة بناء الدولة السورية</a></div>
-          <div class="tl-node"><span class="tl-node__dot"></span><div class="tl-node__date">الأربعاء 8 تموز</div><a href="article.html" class="tl-node__title">تقدير موقف: الانتشار العسكري شمال شرق سوريا ودلالاته</a></div>
-        </div>
+      <div class="agenda">
+        <a href="article.html" class="agenda-card">
+          <span class="agenda-card__date agenda-card__date--orange">
+            <span class="agenda-card__day">الأحد</span>
+            <span class="agenda-card__num num">5</span>
+            <span class="agenda-card__month">تموز</span>
+          </span>
+          <span class="agenda-card__body">
+            <span class="badge badge--orange">تقدير موقف</span>
+            <span class="agenda-card__title">قراءة ميدانية في ترتيبات جنوب الليطاني</span>
+          </span>
+        </a>
+        <a href="article.html" class="agenda-card">
+          <span class="agenda-card__date agenda-card__date--blue">
+            <span class="agenda-card__day">الاثنين</span>
+            <span class="agenda-card__num num">6</span>
+            <span class="agenda-card__month">تموز</span>
+          </span>
+          <span class="agenda-card__body">
+            <span class="badge badge--gray">ترجمة نوعية</span>
+            <span class="agenda-card__title">إعادة التموضع الإسرائيلي بعد حرب يونيو 2025</span>
+          </span>
+        </a>
+        <a href="article.html" class="agenda-card">
+          <span class="agenda-card__date agenda-card__date--navy">
+            <span class="agenda-card__day">الثلاثاء</span>
+            <span class="agenda-card__num num">7</span>
+            <span class="agenda-card__month">تموز</span>
+          </span>
+          <span class="agenda-card__body">
+            <span class="badge badge--navy">تحليل استراتيجي</span>
+            <span class="agenda-card__title">مسارات إعادة بناء الدولة السورية</span>
+          </span>
+        </a>
+        <a href="article.html" class="agenda-card">
+          <span class="agenda-card__date agenda-card__date--orange">
+            <span class="agenda-card__day">الأربعاء</span>
+            <span class="agenda-card__num num">8</span>
+            <span class="agenda-card__month">تموز</span>
+          </span>
+          <span class="agenda-card__body">
+            <span class="badge badge--orange">تقدير موقف</span>
+            <span class="agenda-card__title">الانتشار العسكري شمال شرق سوريا ودلالاته</span>
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -347,34 +406,78 @@
       <span class="rule"></span>
       <a href="library.html" class="more">تصفح المكتبة ←</a>
     </div>
-    <div class="shelf">
-      <a href="library.html" class="shelf-book">
-        <div class="shelf-book__cover shelf-book__cover--navy">
-          <img class="shelf-book__logo" src="assets/img/logo-mark-white.png" alt="">
-          <div><div class="shelf-book__kicker">إحاطة دورية</div><div class="shelf-book__title">إحاطة سوريا الشهرية — حزيران 2026</div></div>
-        </div>
-        <div class="shelf-book__meta"><span class="num">25</span> صفحة · PDF</div>
+    <div class="pubshelf">
+      <a href="library.html" class="pub-card pub-card--orange">
+        <span class="pub-card__row">
+          <span class="badge badge--blue">إحاطة دورية</span>
+          <span class="pub-card__ext num">PDF</span>
+        </span>
+        <span class="pub-card__icon">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path><polyline points="14 2 14 7 19 7"></polyline><line x1="9" y1="12" x2="15" y2="12"></line><line x1="9" y1="16" x2="13" y2="16"></line></svg>
+        </span>
+        <span class="pub-card__title">إحاطة سوريا الشهرية — حزيران 2026</span>
+        <span class="pub-card__meta">
+          <span><span class="num">25</span> صفحة</span>
+          <span class="pub-card__sep"></span>
+          <span class="pub-card__dl">
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="9.5" stroke="currentColor" stroke-width="1.5"></line><path d="M4 7 L7 10 L10 7" stroke="currentColor" stroke-width="1.5" fill="none"></path><line x1="3" y1="12.5" x2="11" y2="12.5" stroke="currentColor" stroke-width="1.5"></line></svg>
+            <span class="num">1,845</span> تحميل
+          </span>
+        </span>
       </a>
-      <a href="library.html" class="shelf-book">
-        <div class="shelf-book__cover shelf-book__cover--blue">
-          <img class="shelf-book__logo" src="assets/img/logo-mark-white.png" alt="">
-          <div><div class="shelf-book__kicker shelf-book__kicker--muted">إحاطة دورية</div><div class="shelf-book__title">إحاطة العراق الشهرية — حزيران 2026</div></div>
-        </div>
-        <div class="shelf-book__meta"><span class="num">22</span> صفحة · PDF</div>
+      <a href="library.html" class="pub-card pub-card--blue">
+        <span class="pub-card__row">
+          <span class="badge badge--blue">إحاطة دورية</span>
+          <span class="pub-card__ext num">PDF</span>
+        </span>
+        <span class="pub-card__icon">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path><polyline points="14 2 14 7 19 7"></polyline><line x1="9" y1="12" x2="15" y2="12"></line><line x1="9" y1="16" x2="13" y2="16"></line></svg>
+        </span>
+        <span class="pub-card__title">إحاطة العراق الشهرية — حزيران 2026</span>
+        <span class="pub-card__meta">
+          <span><span class="num">22</span> صفحة</span>
+          <span class="pub-card__sep"></span>
+          <span class="pub-card__dl">
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="9.5" stroke="currentColor" stroke-width="1.5"></line><path d="M4 7 L7 10 L10 7" stroke="currentColor" stroke-width="1.5" fill="none"></path><line x1="3" y1="12.5" x2="11" y2="12.5" stroke="currentColor" stroke-width="1.5"></line></svg>
+            <span class="num">1,210</span> تحميل
+          </span>
+        </span>
       </a>
-      <a href="library.html" class="shelf-book">
-        <div class="shelf-book__cover shelf-book__cover--orange">
-          <img class="shelf-book__logo" src="assets/img/logo-mark-white.png" alt="">
-          <div><div class="shelf-book__kicker shelf-book__kicker--muted">تحليل استراتيجي</div><div class="shelf-book__title">سوريا ما بعد الأسد: مسارات إعادة بناء الدولة</div></div>
-        </div>
-        <div class="shelf-book__meta"><span class="num">34</span> صفحة · PDF</div>
+      <a href="library.html" class="pub-card pub-card--navy">
+        <span class="pub-card__row">
+          <span class="badge badge--navy">تحليل استراتيجي</span>
+          <span class="pub-card__ext num">PDF</span>
+        </span>
+        <span class="pub-card__icon">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path><polyline points="14 2 14 7 19 7"></polyline><line x1="9" y1="12" x2="15" y2="12"></line><line x1="9" y1="16" x2="13" y2="16"></line></svg>
+        </span>
+        <span class="pub-card__title">سوريا ما بعد الأسد: مسارات إعادة بناء الدولة</span>
+        <span class="pub-card__meta">
+          <span><span class="num">34</span> صفحة</span>
+          <span class="pub-card__sep"></span>
+          <span class="pub-card__dl">
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="9.5" stroke="currentColor" stroke-width="1.5"></line><path d="M4 7 L7 10 L10 7" stroke="currentColor" stroke-width="1.5" fill="none"></path><line x1="3" y1="12.5" x2="11" y2="12.5" stroke="currentColor" stroke-width="1.5"></line></svg>
+            <span class="num">2,940</span> تحميل
+          </span>
+        </span>
       </a>
-      <a href="library.html" class="shelf-book">
-        <div class="shelf-book__cover shelf-book__cover--gray">
-          <img class="shelf-book__logo" src="assets/img/logo-mark-white.png" alt="">
-          <div><div class="shelf-book__kicker">إحاطة دورية</div><div class="shelf-book__title">إحاطة القرن الإفريقي — التنافس على البحر الأحمر</div></div>
-        </div>
-        <div class="shelf-book__meta"><span class="num">18</span> صفحة · PDF</div>
+      <a href="library.html" class="pub-card pub-card--orange">
+        <span class="pub-card__row">
+          <span class="badge badge--blue">إحاطة دورية</span>
+          <span class="pub-card__ext num">PDF</span>
+        </span>
+        <span class="pub-card__icon">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path><polyline points="14 2 14 7 19 7"></polyline><line x1="9" y1="12" x2="15" y2="12"></line><line x1="9" y1="16" x2="13" y2="16"></line></svg>
+        </span>
+        <span class="pub-card__title">إحاطة القرن الإفريقي — التنافس على البحر الأحمر</span>
+        <span class="pub-card__meta">
+          <span><span class="num">18</span> صفحة</span>
+          <span class="pub-card__sep"></span>
+          <span class="pub-card__dl">
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="9.5" stroke="currentColor" stroke-width="1.5"></line><path d="M4 7 L7 10 L10 7" stroke="currentColor" stroke-width="1.5" fill="none"></path><line x1="3" y1="12.5" x2="11" y2="12.5" stroke="currentColor" stroke-width="1.5"></line></svg>
+            <span class="num">890</span> تحميل
+          </span>
+        </span>
       </a>
     </div>
   </div>
@@ -434,30 +537,42 @@
         <div class="pulse__badge"><span class="live-dot"></span>مباشر</div>
         <h2 class="pulse__title">نبض المنطقة</h2>
         <p class="pulse__text">تدوينة رصد لحظية من وحدة المتابعة — تُحدَّث على مدار الساعة أيام التصعيد.</p>
-        <a href="research.html" class="pulse__link">سجل الرصد الكامل ←</a>
       </div>
-      <div class="pulse__timeline">
-        <span class="pulse__line"></span>
-        <a href="article.html" class="pulse-item">
-          <span class="pulse-item__dot pulse-item__dot--live"></span>
-          <div class="pulse-item__head"><span class="pulse-item__time num">14:20</span><span class="badge badge--orange">عاجل</span></div>
-          <div class="pulse-item__title">مصادر ميدانية: تعزيزات أمنية إضافية تصل ريف حلب الشمالي بعد ظهر اليوم</div>
-        </a>
-        <a href="article.html" class="pulse-item">
-          <span class="pulse-item__dot pulse-item__dot--navy"></span>
-          <div class="pulse-item__head"><span class="pulse-item__time num">12:45</span><span class="badge badge--navy">سياسي</span></div>
-          <div class="pulse-item__title">الخارجية السورية تعلن جولة مشاورات مع الجانب الأوروبي حول رفع العقوبات</div>
-        </a>
-        <a href="article.html" class="pulse-item">
-          <span class="pulse-item__dot pulse-item__dot--blue"></span>
-          <div class="pulse-item__head"><span class="pulse-item__time num">10:30</span><span class="badge badge--blue">اقتصادي</span></div>
-          <div class="pulse-item__title">البنك المركزي يطرح حزمة تسهيلات جديدة لتحويلات المغتربين</div>
-        </a>
-        <a href="article.html" class="pulse-item">
-          <span class="pulse-item__dot pulse-item__dot--gray"></span>
-          <div class="pulse-item__head"><span class="pulse-item__time num">08:15</span><span class="badge badge--gray">إقليمي</span></div>
-          <div class="pulse-item__title">وفد عراقي رفيع يبدأ زيارة رسمية إلى دمشق لبحث ملفات الحدود والطاقة</div>
-        </a>
+      <!-- شاشة غرفة الرصد -->
+      <div class="monitor">
+        <div class="monitor__bar">
+          <span class="live-dot"></span>
+          <span class="monitor__name">غرفة الرصد — تحديث مباشر</span>
+          <span class="monitor__day" title="تقدّم اليوم"><i id="dayProgress"></i></span>
+          <span class="monitor__clock num" id="pulseClock">--:--</span>
+        </div>
+        <div class="monitor__feed">
+          <a href="article.html" class="monitor__row monitor__row--fresh monitor__row--orange">
+            <span class="monitor__ico monitor__ico--orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
+            <span class="monitor__time num">14:20</span>
+            <span class="badge badge--orange">عاجل</span>
+            <span class="monitor__text">مصادر ميدانية: تعزيزات أمنية إضافية تصل ريف حلب الشمالي بعد ظهر اليوم<span class="monitor__src">وحدة الرصد والتحليل · منذ دقائق</span></span>
+          </a>
+          <a href="article.html" class="monitor__row monitor__row--navy">
+            <span class="monitor__ico monitor__ico--navy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6"></path><line x1="4" y1="21" x2="20" y2="21"></line><line x1="6" y1="21" x2="6" y2="11"></line><line x1="10" y1="21" x2="10" y2="11"></line><line x1="14" y1="21" x2="14" y2="11"></line><line x1="18" y1="21" x2="18" y2="11"></line></svg></span>
+            <span class="monitor__time num">12:45</span>
+            <span class="badge badge--navy">سياسي</span>
+            <span class="monitor__text">الخارجية السورية تعلن جولة مشاورات مع الجانب الأوروبي حول رفع العقوبات<span class="monitor__src">وحدة الدراسات السورية · متابعة رسمية</span></span>
+          </a>
+          <a href="article.html" class="monitor__row monitor__row--blue">
+            <span class="monitor__ico monitor__ico--blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"></polyline><polyline points="15 7 21 7 21 13"></polyline></svg></span>
+            <span class="monitor__time num">10:30</span>
+            <span class="badge badge--blue">اقتصادي</span>
+            <span class="monitor__text">البنك المركزي يطرح حزمة تسهيلات جديدة لتحويلات المغتربين<span class="monitor__src">وحدة الشؤون الاقتصادية · بيان رسمي</span></span>
+          </a>
+          <a href="article.html" class="monitor__row monitor__row--gray">
+            <span class="monitor__ico monitor__ico--gray"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span>
+            <span class="monitor__time num">08:15</span>
+            <span class="badge badge--gray">إقليمي</span>
+            <span class="monitor__text">وفد عراقي رفيع يبدأ زيارة رسمية إلى دمشق لبحث ملفات الحدود والطاقة<span class="monitor__src">وحدة الدراسات العراقية · مصادر دبلوماسية</span></span>
+          </a>
+        </div>
+        <a href="research.html" class="monitor__foot">سجل الرصد الكامل ←</a>
       </div>
     </div>
   </div>
@@ -470,30 +585,39 @@
       <span class="sub">قراءتان متقابلتان لمشهد واحد</span>
       <span class="rule"></span>
     </div>
-    <div class="debate">
-      <div class="debate__q">مستقبل الوجود الأجنبي على الأرض السورية: انحسار أم إعادة تموضع؟</div>
-      <div class="debate__cols">
-        <span class="debate__divider"></span>
-        <span class="debate__vs-shape"></span>
-        <span class="debate__vs">أم</span>
-        <div class="debate__side debate__side--a">
-          <div class="debate__label debate__label--orange"><span class="diamond diamond--sm"></span>قراءة أولى: انحسار تدريجي</div>
-          <p class="debate__text">تشير مؤشرات إعادة التفاوض على القواعد والتخفيضات المتتالية في القوام إلى مسار انسحاب متدرج تفرضه كلفة البقاء وتحولات الأولويات الدولية.</p>
-          <div class="debate__points">
-            <div class="debate__point"><span class="diamond diamond--sm"></span>تقليص القوام العسكري في ثلاث قواعد رئيسية</div>
-            <div class="debate__point"><span class="diamond diamond--sm"></span>تحول الأولويات نحو ساحات تنافس أخرى</div>
+    <div class="versus">
+      <div class="versus__q">
+        <span class="versus__q-topic">مستقبل الوجود الأجنبي على الأرض السورية</span>
+        <strong class="versus__q-title">انحسار أم إعادة تموضع؟</strong>
+      </div>
+      <div class="versus__grid">
+        <article class="versus__side versus__side--a">
+          <span class="versus__ghost num">01</span>
+          <div class="versus__head">
+            <span class="versus__chip versus__chip--orange">القراءة الأولى</span>
+            <h3>انحسار تدريجي</h3>
           </div>
-          <a href="article.html" class="debate__link">اقرأ القراءة الأولى ←</a>
-        </div>
-        <div class="debate__side debate__side--b">
-          <div class="debate__label debate__label--blue"><span class="diamond diamond--sm diamond--blue"></span>قراءة ثانية: إعادة تموضع</div>
-          <p class="debate__text">ما يبدو انسحاباً هو إعادة توزيع للأدوار: قواعد أقل وأدوات نفوذ أكثر — من الاقتصاد إلى الطاقة إلى اتفاقيات الأمن الثنائية طويلة الأمد.</p>
-          <div class="debate__points">
-            <div class="debate__point"><span class="diamond diamond--sm diamond--blue"></span>اتفاقيات طاقة وموانئ تعوّض الحضور العسكري</div>
-            <div class="debate__point"><span class="diamond diamond--sm diamond--blue"></span>ترتيبات أمنية ثنائية تُرسّخ النفوذ بأدوات جديدة</div>
+          <p class="versus__text">تشير مؤشرات إعادة التفاوض على القواعد والتخفيضات المتتالية في القوام إلى مسار انسحاب متدرج تفرضه كلفة البقاء وتحولات الأولويات الدولية.</p>
+          <div class="versus__points">
+            <div class="versus__point"><span class="diamond diamond--sm"></span>تقليص القوام العسكري في ثلاث قواعد رئيسية</div>
+            <div class="versus__point"><span class="diamond diamond--sm"></span>تحول الأولويات نحو ساحات تنافس أخرى</div>
           </div>
-          <a href="article.html" class="debate__link debate__link--blue">اقرأ القراءة الثانية ←</a>
-        </div>
+          <a href="article.html" class="versus__cta versus__cta--orange">اقرأ القراءة الأولى ←</a>
+        </article>
+        <div class="versus__vs" aria-hidden="true"><span>أم</span></div>
+        <article class="versus__side versus__side--b">
+          <span class="versus__ghost num">02</span>
+          <div class="versus__head">
+            <span class="versus__chip versus__chip--blue">القراءة الثانية</span>
+            <h3>إعادة تموضع</h3>
+          </div>
+          <p class="versus__text">ما يبدو انسحاباً هو إعادة توزيع للأدوار: قواعد أقل وأدوات نفوذ أكثر — من الاقتصاد إلى الطاقة إلى اتفاقيات الأمن الثنائية طويلة الأمد.</p>
+          <div class="versus__points">
+            <div class="versus__point"><span class="diamond diamond--sm diamond--blue"></span>اتفاقيات طاقة وموانئ تعوّض الحضور العسكري</div>
+            <div class="versus__point"><span class="diamond diamond--sm diamond--blue"></span>ترتيبات أمنية ثنائية تُرسّخ النفوذ بأدوات جديدة</div>
+          </div>
+          <a href="article.html" class="versus__cta versus__cta--blue">اقرأ القراءة الثانية ←</a>
+        </article>
       </div>
     </div>
   </div>
@@ -542,27 +666,74 @@
       <h2>أبرز ما نقدّم</h2>
       <span class="rule"></span>
     </div>
-    <div class="grid-5">
-      <a href="research.html" class="offer-card"><span class="diamond diamond--lg offer-card__mark"></span><h3>تقديرات يومية</h3><p>رصد ميداني دقيق لأبرز التطورات كل يوم.</p></a>
-      <a href="research.html" class="offer-card"><span class="diamond diamond--lg diamond--blue offer-card__mark"></span><h3>إحاطات دورية</h3><p>تقارير شهرية معمّقة للملفات الساخنة.</p></a>
-      <a href="research.html" class="offer-card"><span class="diamond diamond--lg diamond--navy offer-card__mark"></span><h3>تحليلات استراتيجية</h3><p>قراءات في التحولات الكبرى في المنطقة.</p></a>
-      <a href="research.html" class="offer-card"><span class="diamond diamond--lg offer-card__mark offer-card__mark--split"></span><h3>ترجمات نوعية</h3><p>أبرز المقالات الغربية والعبرية مترجمة.</p></a>
-      <a href="files.html" class="offer-card"><span class="diamond diamond--lg offer-card__mark offer-card__mark--split2"></span><h3>ملفات مُغطاة باستمرار</h3><p>تغطية مستمرة للملفات الجغرافية والموضوعية.</p></a>
+    <div class="offers">
+      <a href="research.html" class="offer">
+        <span class="offer__icon offer__icon--orange">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 12 6 12 9 5 13 19 16 12 22 12"></polyline></svg>
+        </span>
+        <h3>تقديرات يومية</h3>
+        <p>رصد ميداني دقيق لأبرز التطورات كل يوم.</p>
+      </a>
+      <a href="research.html" class="offer">
+        <span class="offer__icon offer__icon--blue">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"></rect><line x1="9" y1="8" x2="15" y2="8"></line><line x1="9" y1="12" x2="15" y2="12"></line><line x1="9" y1="16" x2="13" y2="16"></line></svg>
+        </span>
+        <h3>إحاطات دورية</h3>
+        <p>تقارير شهرية معمّقة للملفات الساخنة.</p>
+      </a>
+      <a href="research.html" class="offer">
+        <span class="offer__icon offer__icon--navy">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="20" x2="20" y2="20"></line><line x1="7.5" y1="20" x2="7.5" y2="12" stroke-width="3"></line><line x1="12" y1="20" x2="12" y2="6" stroke-width="3"></line><line x1="16.5" y1="20" x2="16.5" y2="14" stroke-width="3"></line></svg>
+        </span>
+        <h3>تحليلات استراتيجية</h3>
+        <p>قراءات في التحولات الكبرى في المنطقة.</p>
+      </a>
+      <a href="research.html" class="offer">
+        <span class="offer__icon offer__icon--orange">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h8M7 3v2c0 4.5-2.5 8-6 9.5"></path><path d="M5 9c1.5 3 4 5 7 5.5"></path><path d="m12.5 21 4.5-10 4.5 10"></path><line x1="14.2" y1="17" x2="19.8" y2="17"></line></svg>
+        </span>
+        <h3>ترجمات نوعية</h3>
+        <p>أبرز المقالات الغربية والعبرية مترجمة.</p>
+      </a>
+      <a href="files.html" class="offer">
+        <span class="offer__icon offer__icon--blue">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        </span>
+        <h3>ملفات مُغطاة باستمرار</h3>
+        <p>تغطية مستمرة للملفات الجغرافية والموضوعية.</p>
+      </a>
     </div>
   </div>
 
   <!-- أرقام المركز -->
   <div class="container section">
-    <div class="stats">
-      <div class="stats__intro">
-        <div class="eyebrow"><span class="diamond diamond--sm"></span>أرقام المركز</div>
-        <h2 class="stats__title">منذ تأسيسنا أصدرنا</h2>
-        <p class="stats__sub">إحصائيات محدّثة تلقائياً لعدد الأبحاث والمنشورات</p>
+    <div class="sec-head">
+      <span class="diamond"></span>
+      <h2>أرقام المركز</h2>
+      <span class="sub">منذ تأسيسنا أصدرنا</span>
+      <span class="rule"></span>
+    </div>
+    <div class="bignums">
+      <div class="bignum">
+        <span class="bignum__icon bignum__icon--orange"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 12 6 12 9 5 13 19 16 12 22 12"></polyline></svg></span>
+        <div class="stat__num num" data-count="1240" data-suffix="+">1,240<span class="accent">+</span></div>
+        <div class="bignum__label">تقدير موقف</div>
       </div>
-      <div class="stat"><div class="stat__num num" data-count="1240" data-suffix="+">1,240<span class="accent">+</span></div><div class="stat__label">تقدير موقف</div></div>
-      <div class="stat"><div class="stat__num num" data-count="96" data-suffix="+">96<span class="accent">+</span></div><div class="stat__label">إحاطة دورية</div></div>
-      <div class="stat"><div class="stat__num num" data-count="210" data-suffix="+">210<span class="accent">+</span></div><div class="stat__label">تحليل استراتيجي</div></div>
-      <div class="stat"><div class="stat__num num" data-count="6">6</div><div class="stat__label">ملفات مُغطاة</div></div>
+      <div class="bignum">
+        <span class="bignum__icon bignum__icon--blue"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"></rect><line x1="9" y1="8" x2="15" y2="8"></line><line x1="9" y1="12" x2="15" y2="12"></line><line x1="9" y1="16" x2="13" y2="16"></line></svg></span>
+        <div class="stat__num num" data-count="96" data-suffix="+">96<span class="accent">+</span></div>
+        <div class="bignum__label">إحاطة دورية</div>
+      </div>
+      <div class="bignum">
+        <span class="bignum__icon bignum__icon--navy"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="20" x2="20" y2="20"></line><line x1="7.5" y1="20" x2="7.5" y2="12" stroke-width="3"></line><line x1="12" y1="20" x2="12" y2="6" stroke-width="3"></line><line x1="16.5" y1="20" x2="16.5" y2="14" stroke-width="3"></line></svg></span>
+        <div class="stat__num num" data-count="210" data-suffix="+">210<span class="accent">+</span></div>
+        <div class="bignum__label">تحليل استراتيجي</div>
+      </div>
+      <div class="bignum">
+        <span class="bignum__icon bignum__icon--orange"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span>
+        <div class="stat__num num" data-count="6">6</div>
+        <div class="bignum__label">ملفات مُغطاة</div>
+      </div>
     </div>
   </div>
 
@@ -600,6 +771,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/layout.js"></script>
+  <script src="js/motion.js"></script>
   <script src="js/pages/home.js"></script>
 </body>
 </html>
