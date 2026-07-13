@@ -2,38 +2,60 @@
 (function () {
   "use strict";
 
-  /* ---- News ticker: seamless infinite marquee ----
-     Clones the group until the strip is ≥ 2× the track width (never an empty
-     gap, whatever the CMS provides), then animates by exactly -50% so the
-     loop restart is pixel-identical. Speed is constant (px/s), not fixed-time. */
-  function initTicker() {
+  /* ---- News ticker: self-healing infinite marquee ----
+     build() clones the base group until the strip covers ≥ 2× the track,
+     then the CSS -50% loop is pixel-exact and can never show a gap.
+     Idempotent (clears old clones first) and re-audited after fonts/resize,
+     so late layout, slow fonts or a resize can't leave the strip empty. */
+  (function tickerModule() {
     var inner = document.querySelector(".ticker__inner");
-    if (!inner || inner.dataset.ready) return;
-    var group = inner.querySelector(".ticker__group");
+    if (!inner) return;
     var track = inner.parentElement;
-    if (!group || !group.children.length) return;
 
-    var g = group.getBoundingClientRect().width;
-    var t = track.getBoundingClientRect().width;
-    if (!g || !t) return;
-    inner.dataset.ready = "1";
-
-    // copies per half-strip: enough to cover the track with a 25% buffer
-    var perHalf = Math.max(1, Math.ceil((t * 1.25) / g));
-    var total = perHalf * 2;
-    for (var i = 1; i < total; i++) {
-      var clone = group.cloneNode(true);
-      clone.setAttribute("aria-hidden", "true");
-      inner.appendChild(clone);
+    function covered() {
+      var t = track.getBoundingClientRect().width;
+      return t > 0 && inner.getBoundingClientRect().width >= t * 2 - 2;
     }
-    // constant speed ≈ 70px/s (min 18s so short strips don't race)
-    inner.style.animationDuration = Math.max(18, Math.round((perHalf * g) / 70)) + "s";
-  }
-  // measure after brand fonts load (widths change), with a load-event safety net
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(initTicker);
-  }
-  window.addEventListener("load", initTicker);
+
+    function build() {
+      var base = inner.querySelector(".ticker__group:not([aria-hidden])");
+      if (!base || !base.children.length) return false;
+      inner.querySelectorAll(".ticker__group[aria-hidden]").forEach(function (c) { c.remove(); });
+      var g = base.getBoundingClientRect().width;
+      var t = track.getBoundingClientRect().width;
+      if (!g || !t) return false;
+      // نسخ كافية لتغطية المسار ×1.25 في كل نصف — النصفان متطابقان دائماً
+      var perHalf = Math.max(1, Math.ceil((t * 1.25) / g));
+      for (var i = 1; i < perHalf * 2; i++) {
+        var clone = base.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        inner.appendChild(clone);
+      }
+      // سرعة ثابتة ≈ 70px/ث مهما بلغ عدد الأخبار
+      inner.style.animationDuration = Math.max(18, Math.round((perHalf * g) / 70)) + "s";
+      return true;
+    }
+
+    // ابنِ فور توفر أبعاد، وأعد المحاولة لو اللياوت لسه بيتكوّن
+    var tries = 0;
+    function ensure() {
+      if (build()) return;
+      if (++tries < 24) setTimeout(ensure, 250);
+    }
+    ensure();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { if (!covered()) build(); });
+    }
+    window.addEventListener("load", function () { if (!covered()) build(); });
+
+    // تدقيق ذاتي: تغيّر المقاس أو أي حالة غير مغطاة → إعادة بناء
+    var resizeT;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(function () { if (!covered()) build(); }, 200);
+    });
+    setTimeout(function () { if (!covered()) build(); }, 3000);
+  })();
 
   /* ---- Dossier tabs (من الملفات) ---- */
   var dossierTabs = document.querySelectorAll(".dossier__tab");
