@@ -48,6 +48,8 @@
 
 الخطوط self-hosted في `fonts/` (تعريفات `css/fonts.css`). Neo Sans Arabic مرخّص — يُضاف يدوياً (راجع `fonts/neo-sans-arabic/README.txt`)، وCairo هو الفallback المرفق.
 
+**الأيقونات:** Font Awesome 6 Free — self-hosted في `vendor/fontawesome/` (solid + brands + regular). الاستخدام: `<i class="fa-solid fa-…">` داخل حاويات الأيقونات؛ المقاس يُضبط من حاوية الأيقونة لا من الـ`i` مباشرة (راجع بلوك "Font Awesome sizing" في pages.css).
+
 ### سلّم الأحجام
 | الدور | الحجم | الوزن |
 |---|---|---|
