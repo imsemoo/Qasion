@@ -51,8 +51,22 @@
   align-items: center;
   gap: 9px;
 }
-.site-header__cta {
+.site-header__side {
   justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.social--light .social__btn {
+  border-color: var(--line-2);
+  color: var(--text-2);
+}
+.social--light a.social__btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: var(--pal-orange-bg);
+}
+.site-header__cta {
   background: var(--orange);
   color: #fff;
   font-size: 13px;
@@ -420,8 +434,9 @@ a.social__btn:hover { border-color: var(--orange); color: var(--orange); backgro
   .nav-sub a { color: rgba(255, 255, 255, .85); }
   .nav-sub a:hover { background: rgba(255, 255, 255, .08); color: #fff; }
   .site-nav__right { order: 2; flex: 1; gap: 10px; }
-  .site-nav__right .social,
   .site-nav__divider { display: none; }
+  .site-nav__right .lang-toggle { display: none; }
+  .site-header__side .social { display: none; }
   .searchbox { flex: 1 1 auto; }
   /* فوتر اللوحة: سوشيال + مبدّل اللغة */
   .nav-panel-foot {
@@ -436,6 +451,7 @@ a.social__btn:hover { border-color: var(--orange); color: var(--orange); backgro
   .nav-panel-foot .lang-toggle { margin-inline-start: 8px; }
   .site-header__date { display: none; }
   .site-header__top { grid-template-columns: auto auto; justify-content: space-between; }
+  .site-header__side { gap: 0; }
 
   .site-footer__grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .site-footer__about { max-width: none; }

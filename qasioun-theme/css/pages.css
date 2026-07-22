@@ -1164,43 +1164,58 @@
 .mostread__title { color: var(--navy); font-size: 14.5px; font-weight: 700; line-height: 1.65; margin: 12px 0 8px; }
 .mostread__visits { color: var(--muted); font-size: 12px; padding: 0 0 18px; }
 
-/* ---- Weekly agenda — بطاقات تقويم ---- */
-.agenda { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+/* ---- Weekly agenda — شريط أسبوع كامل (7 أيام) ---- */
+.agenda { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
 .agenda-card {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
   background: #fff;
   border: 1px solid var(--line-2);
-  border-radius: 14px;
-  padding: 16px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 0 0 14px;
   transition: all .28s var(--ease-out);
 }
-.agenda-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
-.agenda-card__date {
-  flex: none;
-  width: 64px;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-  border: 1px solid var(--line-2);
-  background: #fff;
-}
+a.agenda-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+.agenda-card__date { display: block; text-align: center; }
 .agenda-card__day {
   display: block;
   color: #fff;
   font-size: 11px;
   font-weight: 700;
-  padding: 4px 0;
+  padding: 5px 0;
 }
 .agenda-card__date--orange .agenda-card__day { background: var(--orange); }
 .agenda-card__date--blue   .agenda-card__day { background: var(--blue); }
 .agenda-card__date--navy   .agenda-card__day { background: var(--navy); }
-.agenda-card__num { display: block; color: var(--navy); font-size: 26px; font-weight: 700; line-height: 1.1; padding-top: 5px; }
-.agenda-card__month { display: block; color: var(--muted-2); font-size: 10.5px; font-weight: 600; padding: 0 0 6px; }
-.agenda-card__body { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
-.agenda-card__title { color: var(--navy); font-size: 14px; font-weight: 700; line-height: 1.65; transition: color .2s; }
-.agenda-card:hover .agenda-card__title { color: var(--orange); }
+.agenda-card__date--off    .agenda-card__day { background: var(--line-3); color: var(--text-2); }
+.agenda-card__num { display: block; color: var(--navy); font-size: 24px; font-weight: 700; line-height: 1.15; padding-top: 7px; }
+.agenda-card__month { display: block; color: var(--muted-2); font-size: 10.5px; font-weight: 600; }
+.agenda-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 12px;
+  min-width: 0;
+}
+.agenda-card__title {
+  color: var(--navy);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.65;
+  transition: color .2s;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+a.agenda-card:hover .agenda-card__title { color: var(--orange); }
+/* يوم بلا إصدارات */
+.agenda-card--empty { background: var(--bg-soft); border-style: dashed; }
+.agenda-card--empty .agenda-card__num { color: var(--muted-2); }
+.agenda-card__none { color: var(--muted-2); font-size: 11.5px; text-align: center; padding: 6px 10px 0; }
 
 /* ---- Library shelf — بطاقات إصدارات فاتحة بكعب ملوّن ---- */
 .pubshelf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -1727,7 +1742,8 @@
   .mostread { grid-template-columns: repeat(3, 1fr); }
   .mostread__item:nth-child(3) { border-left: none; }
   .bignums { grid-template-columns: repeat(2, 1fr); }
-  .agenda { grid-template-columns: repeat(2, 1fr); }
+  .agenda { display: flex; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x proximity; }
+  .agenda-card { flex: 0 0 158px; min-width: 158px; scroll-snap-align: start; }
   .offers { grid-template-columns: repeat(3, 1fr); }
   .pubshelf { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1834,7 +1850,7 @@
   .versus__q-title { font-size: 20px; }
   .versus__side { padding: 24px 20px; }
   .contact-card, .vm-card, .file-card { padding: 26px 22px; }
-  .agenda { grid-template-columns: 1fr; }
+  .agenda-card { flex-basis: 150px; min-width: 150px; }
   .monitor__row { flex-wrap: wrap; gap: 8px 12px; padding: 13px 16px; }
   .monitor__text { flex-basis: 100%; font-size: 14px; }
   .dossier__title { font-size: 14.5px; }
