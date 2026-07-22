@@ -77,6 +77,18 @@
     return '<div class="' + cls + '">' + a + sub + "</div>";
   }
 
+  function socialHTML() {
+    return '' +
+      '<a href="contact.html" class="social__btn" title="تيلجرام" aria-label="تيلجرام"><i class="fa-brands fa-telegram"></i></a>' +
+      '<a href="contact.html" class="social__btn" title="إكس (X)" aria-label="إكس"><i class="fa-brands fa-x-twitter"></i></a>' +
+      '<a href="contact.html" class="social__btn" title="فيسبوك" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>' +
+      '<a href="contact.html" class="social__btn" title="انستغرام" aria-label="انستغرام"><i class="fa-brands fa-instagram"></i></a>' +
+      '<div class="lang-toggle num" data-cms="locale-switch" title="التبديل إلى الإنجليزية — يُفعَّل مع النسخة الإنجليزية" role="group" aria-label="اللغة">' +
+      '<span class="lang-toggle__opt is-active" aria-current="true">ع</span>' +
+      '<span class="lang-toggle__opt">EN</span>' +
+      '</div>';
+  }
+
   function headerHTML(active) {
     var links = NAV.map(function (n) { return navItemHTML(n, active); }).join("");
 
@@ -91,7 +103,9 @@
 '  </div>' +
 '  <nav class="site-nav" aria-label="التنقل الرئيسي">' +
 '    <button class="nav-toggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>' +
-'    <div class="site-nav__links">' + links + '</div>' +
+'    <div class="site-nav__links">' + links +
+'      <div class="nav-panel-foot">' + socialHTML() + '</div>' +
+'    </div>' +
 '    <div class="site-nav__right">' +
 '      <form class="searchbox" role="search" action="research.html">' +
 '        <input type="search" name="q" placeholder="ادخل كلمة البحث…" aria-label="بحث">' +
@@ -100,16 +114,7 @@
 '        </button>' +
 '      </form>' +
 '      <span class="site-nav__divider">|</span>' +
-'      <div class="social">' +
-'        <a href="contact.html" class="social__btn" title="تيلجرام" aria-label="تيلجرام"><i class="fa-brands fa-telegram"></i></a>' +
-'        <a href="contact.html" class="social__btn" title="إكس (X)" aria-label="إكس"><i class="fa-brands fa-x-twitter"></i></a>' +
-'        <a href="contact.html" class="social__btn" title="فيسبوك" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>' +
-'        <a href="contact.html" class="social__btn" title="انستغرام" aria-label="انستغرام"><i class="fa-brands fa-instagram"></i></a>' +
-'        <div class="lang-toggle num" data-cms="locale-switch" title="التبديل إلى الإنجليزية — يُفعَّل مع النسخة الإنجليزية" role="group" aria-label="اللغة">' +
-'          <span class="lang-toggle__opt is-active" aria-current="true">ع</span>' +
-'          <span class="lang-toggle__opt">EN</span>' +
-'        </div>' +
-'      </div>' +
+'      <div class="social">' + socialHTML() + '</div>' +
 '    </div>' +
 '  </nav>' +
 '</header>';
