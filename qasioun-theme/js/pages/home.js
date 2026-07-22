@@ -1,61 +1,6 @@
-/* Home page — news ticker, stat count-up, newsletter form, "quick tour" Swiper slider. */
+/* Home page — stat count-up, newsletter form, "quick tour" Swiper slider. */
 (function () {
   "use strict";
-
-  /* ---- News ticker: self-healing infinite marquee ----
-     build() clones the base group until the strip covers ≥ 2× the track,
-     then the CSS -50% loop is pixel-exact and can never show a gap.
-     Idempotent (clears old clones first) and re-audited after fonts/resize,
-     so late layout, slow fonts or a resize can't leave the strip empty. */
-  (function tickerModule() {
-    var inner = document.querySelector(".ticker__inner");
-    if (!inner) return;
-    var track = inner.parentElement;
-
-    function covered() {
-      var t = track.getBoundingClientRect().width;
-      return t > 0 && inner.getBoundingClientRect().width >= t * 2 - 2;
-    }
-
-    function build() {
-      var base = inner.querySelector(".ticker__group:not([aria-hidden])");
-      if (!base || !base.children.length) return false;
-      inner.querySelectorAll(".ticker__group[aria-hidden]").forEach(function (c) { c.remove(); });
-      var g = base.getBoundingClientRect().width;
-      var t = track.getBoundingClientRect().width;
-      if (!g || !t) return false;
-      // نسخ كافية لتغطية المسار ×1.25 في كل نصف — النصفان متطابقان دائماً
-      var perHalf = Math.max(1, Math.ceil((t * 1.25) / g));
-      for (var i = 1; i < perHalf * 2; i++) {
-        var clone = base.cloneNode(true);
-        clone.setAttribute("aria-hidden", "true");
-        inner.appendChild(clone);
-      }
-      // سرعة ثابتة ≈ 70px/ث مهما بلغ عدد الأخبار
-      inner.style.animationDuration = Math.max(18, Math.round((perHalf * g) / 70)) + "s";
-      return true;
-    }
-
-    // ابنِ فور توفر أبعاد، وأعد المحاولة لو اللياوت لسه بيتكوّن
-    var tries = 0;
-    function ensure() {
-      if (build()) return;
-      if (++tries < 24) setTimeout(ensure, 250);
-    }
-    ensure();
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(function () { if (!covered()) build(); });
-    }
-    window.addEventListener("load", function () { if (!covered()) build(); });
-
-    // تدقيق ذاتي: تغيّر المقاس أو أي حالة غير مغطاة → إعادة بناء
-    var resizeT;
-    window.addEventListener("resize", function () {
-      clearTimeout(resizeT);
-      resizeT = setTimeout(function () { if (!covered()) build(); }, 200);
-    });
-    setTimeout(function () { if (!covered()) build(); }, 3000);
-  })();
 
   /* ---- Dossier tabs (من الملفات) ---- */
   var dossierTabs = document.querySelectorAll(".dossier__tab");

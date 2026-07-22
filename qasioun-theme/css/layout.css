@@ -6,33 +6,53 @@
 /* ============================ HEADER ============================ */
 .site-header { font-family: var(--font); }
 
-/* Logo row */
+/* شريط علوي نحيف: لوجو يمين (صغير) · التاريخ · اشترك يسار */
 .site-header__top {
   background: #fff;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: center;
-  padding: 18px var(--pad-x);
+  gap: 22px;
+  padding: 12px var(--pad-x);
   border-bottom: 1px solid var(--line);
-  position: relative;
 }
-.site-header__logo img { height: 64px; }
-.site-header__date {
+/* لمعة ضوء دورية تمر على خطوط الشعار فقط —
+   gradient مقنّع بألفا اللوجو نفسه فلا يلمع إلا الرسم */
+.site-header__logo { position: relative; display: inline-block; }
+.site-header__logo img { height: 46px; display: block; }
+.site-header__logo::after {
+  content: "";
   position: absolute;
-  right: var(--pad-x);
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--pal-gray-fg);
+  inset: 0;
+  background: linear-gradient(105deg,
+    transparent 40%,
+    rgba(255, 255, 255, .55) 47%,
+    rgba(255, 180, 140, .9) 50%,
+    rgba(255, 255, 255, .55) 53%,
+    transparent 60%);
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  background-position: 200% 0;
+  -webkit-mask: url("../assets/img/logo-horizontal.png") center / contain no-repeat;
+  mask: url("../assets/img/logo-horizontal.png") center / contain no-repeat;
+  animation: qLogoShine 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes qLogoShine {
+  0%       { background-position: 200% 0; }
+  32%, 100% { background-position: -100% 0; }
+}
+.site-header__logo:hover::after { animation-play-state: paused; }
+.site-header__date {
+  justify-self: center;
+  color: var(--muted);
   font-size: 12.5px;
   display: flex;
   align-items: center;
   gap: 9px;
 }
 .site-header__cta {
-  position: absolute;
-  left: var(--pad-x);
-  top: 50%;
-  transform: translateY(-50%);
+  justify-self: end;
   background: var(--orange);
   color: #fff;
   font-size: 13px;
@@ -60,19 +80,23 @@
 .site-nav__links {
   display: flex;
   align-items: center;
-  gap: clamp(12px, 2vw, 26px);
+  gap: clamp(10px, 1.6vw, 22px);
   flex: none;
 }
-.site-nav__links a {
+.nav-item { position: relative; display: flex; align-items: center; }
+.nav-item > a {
   color: rgba(255, 255, 255, .95);
   font-size: 14.5px;
   font-weight: 600;
   padding: 16px 2px;
   position: relative;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
-.site-nav__links a:hover { color: #fff; }
-.site-nav__links a::after {
+.nav-item > a:hover { color: #fff; }
+.nav-item > a::after {
   content: "";
   position: absolute;
   right: 0; left: 0; bottom: 0;
@@ -82,8 +106,54 @@
   transform-origin: center;
   transition: transform .25s var(--ease-out);
 }
-.site-nav__links a:hover::after { transform: scaleX(1); }
-.site-nav__links a.is-active::after { transform: scaleX(1); }
+.nav-item > a:hover::after,
+.nav-item > a.is-active::after { transform: scaleX(1); }
+.nav-caret { opacity: .55; margin-top: 2px; flex: none; transition: transform .25s var(--ease-out), opacity .2s; }
+.nav-item--sub:hover .nav-caret,
+.nav-item--sub.is-open .nav-caret { transform: rotate(180deg); opacity: 1; }
+
+/* القائمة المنسدلة — سطح المكتب */
+.nav-sub-toggle { display: none; }
+.nav-sub {
+  position: absolute;
+  top: 100%;
+  right: -12px;
+  min-width: 196px;
+  background: #fff;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(20, 31, 73, .18);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .18s var(--ease-out), transform .18s var(--ease-out);
+  z-index: 200;
+}
+.nav-sub::before {
+  content: "";
+  position: absolute;
+  top: -14px; right: 0; left: 0;
+  height: 14px; /* جسر hover بين الرابط واللوحة */
+}
+.nav-item--sub:hover .nav-sub,
+.nav-item--sub:focus-within .nav-sub,
+.nav-item--sub.is-open .nav-sub {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(4px);
+}
+.nav-sub a {
+  color: var(--navy);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background .15s, color .15s;
+}
+.nav-sub a:hover { background: var(--bg-soft); color: var(--orange); }
 
 .site-nav__right {
   display: flex;
@@ -129,23 +199,57 @@
   transition: background .2s;
 }
 .searchbox__btn:hover { background: var(--orange-2); }
+.searchbox__btn i { color: #fff; font-size: 13px; }
 
 .site-nav__divider { color: rgba(255, 255, 255, .25); }
 
-.social { display: flex; gap: 8px; flex: none; }
-.social a {
-  width: 29px; height: 29px;
+.social { display: flex; align-items: center; gap: 7px; flex: none; }
+.social__btn {
+  width: 30px; height: 30px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, .3);
-  display: flex;
+  border: 1px solid rgba(255, 255, 255, .28);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, .85);
-  font-size: 11.5px;
-  font-family: var(--font-num);
-  font-weight: 700;
+  color: rgba(255, 255, 255, .82);
+  flex: none;
+  transition: all .2s;
 }
-.social a:hover { border-color: var(--orange); color: var(--orange); }
+.social__btn svg { display: block; }
+a.social__btn:hover { border-color: var(--orange); color: var(--orange); background: rgba(235, 98, 36, .1); }
+.social__btn i { font-size: 13px; }
+/* سويتش اللغة — segmented control (يُفعَّل مع النسخة الإنجليزية) */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 100px;
+  padding: 3px;
+  margin-inline-start: 5px;
+  cursor: default;
+  flex: none;
+}
+.lang-toggle__opt {
+  min-width: 30px;
+  height: 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 9px;
+  border-radius: 100px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  color: rgba(255, 255, 255, .6);
+  transition: all .2s;
+}
+.lang-toggle__opt.is-active {
+  background: #fff;
+  color: var(--navy);
+  box-shadow: 0 2px 6px rgba(16, 24, 60, .25);
+}
 
 /* Mobile nav toggle (hidden on desktop) */
 .nav-toggle {
@@ -268,16 +372,52 @@
     gap: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height .25s ease;
+    transition: max-height .3s ease;
   }
-  .site-nav.is-open .site-nav__links { max-height: 420px; }
-  .site-nav__links a { padding: 12px 4px; border-bottom: 1px solid rgba(255,255,255,.08); }
-  .site-nav__links a::after { display: none; }
-  .site-nav__links a.is-active { color: var(--orange-soft); }
+  .site-nav.is-open .site-nav__links { max-height: 80vh; overflow-y: auto; }
+  .nav-item { flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .nav-item > a { padding: 12px 4px; flex: 1; }
+  .nav-item > a::after { display: none; }
+  .nav-item > a.is-active { color: var(--orange-soft); }
+  /* أكورديون الفروع */
+  .nav-item > a .nav-caret { display: none; }
+  .nav-sub-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, .7);
+    cursor: pointer;
+  }
+  .nav-item--sub.is-open .nav-sub-toggle svg { transform: rotate(180deg); }
+  .nav-sub-toggle svg { transition: transform .25s; }
+  .nav-sub {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, .05);
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: max-height .3s ease, padding .3s ease;
+  }
+  .nav-sub::before { display: none; }
+  .nav-item--sub.is-open .nav-sub { max-height: 420px; padding: 6px 10px 10px; }
+  .nav-item--sub:hover .nav-sub { transform: none; }
+  .nav-sub a { color: rgba(255, 255, 255, .85); }
+  .nav-sub a:hover { background: rgba(255, 255, 255, .08); color: #fff; }
   .site-nav__right { order: 2; flex: 1; }
+  .lang-toggle { display: none; }
   .site-header__date { display: none; }
-  .site-header__top { justify-content: flex-start; }
-  .site-header__cta { position: static; transform: none; margin-inline-start: auto; }
+  .site-header__top { grid-template-columns: auto auto; justify-content: space-between; }
 
   .site-footer__grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .site-footer__about { max-width: none; }

@@ -6,6 +6,14 @@
 
   var state = { q: "", sort: "newest", month: "all", day: "", type: "الكل", file: "الكل" };
 
+  // روابط عميقة من القوائم المنسدلة والبحث: research.html?type=…&q=…
+  try {
+    var params = new URLSearchParams(location.search);
+    var pType = params.get("type"), pQ = params.get("q");
+    if (pType && types.indexOf(pType) !== -1) state.type = pType;
+    if (pQ) state.q = pQ;
+  } catch (e) {}
+
   var list = document.getElementById("resList");
   var empty = document.getElementById("resEmpty");
   var count = document.getElementById("resCount");
@@ -69,6 +77,7 @@
     Q.buildChips(fileChips, files, state.file, function (v) { state.file = v; render(); });
   }
 
+  search.value = state.q;
   search.addEventListener("input", function () { state.q = search.value; render(); });
   sort.addEventListener("change", function () { state.sort = sort.value; render(); });
   month.addEventListener("change", function () { state.month = month.value; render(); });

@@ -91,8 +91,7 @@ input, textarea, select { font-family: var(--font); }
 ::selection { background: var(--orange); color: #fff; }
 
 /* ---- Keyframes ---- */
-@keyframes qTicker { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-@keyframes qPulse  { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+@keyframes qPulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
 
 /* ---- Utilities ---- */
 .num { font-family: var(--font-num); direction: ltr; unicode-bidi: isolate; }

@@ -311,3 +311,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .round-btn:hover { border-color: var(--orange); color: var(--orange); }
 .round-btn--sm { width: 42px; height: 42px; font-size: 17px; }
+
+.pdf-note i { font-size: 13px; }
+.share-btn i { font-size: 12px; margin-inline-end: 5px; }

@@ -20,7 +20,7 @@ npx serve .
 qasioun-theme/
 ├── index.html          الصفحة الرئيسية
 ├── about.html          عن المركز
-├── research.html       الإنتاج البحثي + الأرشيف (بحث/فرز/فلترة)
+├── research.html       إصدارات المركز + الأرشيف (بحث/فرز/فلترة)
 ├── files.html          الملفات
 ├── library.html        المكتبة (شبكة إصدارات + تحميل PDF)
 ├── media.html          الوسائط (إنفوغرافيك/خرائط/كاروسيل)

@@ -747,51 +747,6 @@
 .more--soft { color: var(--orange-soft); }
 .more--soft:hover { color: var(--orange); }
 
-/* ---- Ticker ---- */
-.ticker {
-  background: var(--bg-soft);
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  align-items: stretch;
-  overflow: hidden;
-}
-.ticker__label {
-  background: var(--orange);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 10px 22px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex: none;
-  z-index: 1;
-}
-.ticker__label-dot { width: 6px; height: 6px; background: #fff; transform: rotate(45deg); }
-.ticker__track { overflow: hidden; flex: 1; display: flex; align-items: center; }
-.ticker__inner {
-  display: flex;
-  width: max-content;
-  animation: qTicker 46s linear infinite;
-  will-change: transform;
-}
-/* كل مجموعة نسخة كاملة من الأخبار؛ padding البداية = فاصل الوصل بين النسخ،
-   فالإزاحة بمقدار نصف الشريط (-50%) تطابق بداية النسخة التالية تماماً — لوب بلا قطع */
-.ticker__group {
-  display: flex;
-  align-items: center;
-  gap: 56px;
-  padding-inline-start: 56px;
-  white-space: nowrap;
-  flex: none;
-}
-/* الوقفة عند hover هي آلية الإيقاف (WCAG 2.2.2)؛ لا نوقف الشريط مع
-   prefers-reduced-motion لأن الشريط محتوى إخباري لا زخرفة، وإيقافه
-   يخفي الأخبار كلياً على أجهزة Windows المطفَّل فيها Animation effects. */
-.ticker:hover .ticker__inner { animation-play-state: paused; }
-.ticker__item { color: #333F63; font-size: 13px; }
-.ticker__sep { color: var(--orange); }
-
 /* ---- Latest updates — newswire accent-bar list (not boxed cards) ---- */
 .update-card {
   border-right: 3px solid var(--line-2);
@@ -964,6 +919,17 @@
 .wire__loc { color: var(--orange); font-size: 11.5px; font-weight: 700; margin: 0 0 5px; }
 .wire__title { color: var(--navy); font-size: 15.5px; font-weight: 600; line-height: 1.65; }
 .wire__item:hover .wire__title { color: var(--orange); }
+
+/* ---- Brief notes (تحليلات موجزة) ---- */
+.brief-note { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 22px 22px 20px; }
+.brief-note__title { color: var(--navy); font-size: 15.5px; font-weight: 700; line-height: 1.65; transition: color .2s; }
+.brief-note:hover .brief-note__title { color: var(--orange); }
+.brief-note__text {
+  color: var(--text-2); font-size: 13px; line-height: 1.8;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.brief-note__meta { display: flex; align-items: center; gap: 9px; color: var(--text-2); font-size: 12px; margin-top: auto; }
+.brief-note__author { color: var(--navy); font-weight: 600; }
 
 /* ---- Files band ---- */
 .files-band {
@@ -1854,11 +1820,6 @@
   .site-header__logo img { height: 44px; }
   .site-header__top { padding-block: 14px; }
 
-  /* Ticker */
-  .ticker__label { padding: 9px 14px; font-size: 12.5px; }
-  .ticker__item { font-size: 12.5px; }
-  .ticker__group { gap: 32px; padding-inline-start: 32px; }
-
   /* Right-size the big display headings */
   .featured__title { font-size: 22px; }
   .article-head__title { font-size: 24px; }
@@ -1908,3 +1869,15 @@
   .site-nav__right { gap: 10px; }
   .searchbox { flex-basis: 150px; }
 }
+
+/* أنكورز القوائم المنسدلة */
+.file-card, #infographics, #maps, #cards { scroll-margin-top: 76px; }
+
+/* Font Awesome sizing داخل الحاويات */
+.offer__icon i { font-size: 26px; }
+.bignum__icon i { font-size: 28px; }
+.monitor__ico i { font-size: 14px; }
+.pub-card__icon i { font-size: 40px; }
+.pub-card__dl i { font-size: 11px; }
+.social-pill__ic i { font-size: 12px; }
+.contact-channel__k i { width: 18px; text-align: center; color: var(--orange-soft); margin-inline-end: 4px; }
