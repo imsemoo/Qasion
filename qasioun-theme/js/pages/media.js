@@ -29,7 +29,8 @@
   var summary = document.getElementById("cardSummary");
   var dots = document.getElementById("cardDots");
   var shared = document.getElementById("cardShared");
-  if (!q) return;
+  var _prev=document.getElementById('cardPrev'),_next=document.getElementById('cardNext'),_share=document.getElementById('cardShare');
+  if (!q || !_prev || !_next || !_share) return;
 
   function render() {
     var c = cards[idx];

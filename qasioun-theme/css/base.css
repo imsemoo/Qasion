@@ -13,6 +13,7 @@
   --orange:      #EB6224;
   --orange-2:    #FF7635;
   --orange-soft: #FFB48C;
+  --orange-text: #C2410C;   /* برتقالي نصّي — تباين AA على الأبيض */
   --blue:        #287EAB;
   --blue-deep:   #1B5E82;
 
@@ -37,7 +38,7 @@
   --red:        #C43D3D;
 
   /* Badge palettes (type colors) */
-  --pal-orange-bg: #FDEFE7;  --pal-orange-fg: #EB6224;
+  --pal-orange-bg: #FDEFE7;  --pal-orange-fg: #B0400F;
   --pal-blue-bg:   #EEF3FF;  --pal-blue-fg:   #287EAB;
   --pal-navy-bg:   #EBEEF8;  --pal-navy-fg:   #24326B;
   --pal-gray-bg:   #F0F1F4;  --pal-gray-fg:   #4A5474;

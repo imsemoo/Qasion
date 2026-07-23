@@ -50,7 +50,16 @@
   ];
 
 
+  var LEVANT_MONTHS = ["كانون الثاني","شباط","آذار","نيسان","أيار","حزيران","تموز","آب","أيلول","تشرين الأول","تشرين الثاني","كانون الأول"];
+  var WEEKDAYS = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
   function today() {
+    try {
+      var d = new Date();
+      var greg = { 0:"يناير",1:"فبراير",2:"مارس",3:"أبريل",4:"مايو",5:"يونيو",6:"يوليو",7:"أغسطس",8:"سبتمبر",9:"أكتوبر",10:"نوفمبر",11:"ديسمبر" }[d.getMonth()];
+      return WEEKDAYS[d.getDay()] + "، " + d.getDate() + " " + LEVANT_MONTHS[d.getMonth()] + "/" + greg + " " + d.getFullYear();
+    } catch (e) { return ""; }
+  }
+  function _today_unused() {
     try {
       return new Intl.DateTimeFormat("ar", {
         weekday: "long", day: "numeric", month: "long", year: "numeric"
@@ -171,7 +180,27 @@
 '</footer>';
   }
 
+  function fixMeta() {
+    try {
+      var canonicalUrl = location.origin + location.pathname + location.search;
+      var head = document.head;
+      if (!document.querySelector('link[rel="canonical"]')) {
+        var link = document.createElement("link");
+        link.rel = "canonical"; link.href = canonicalUrl; head.appendChild(link);
+      }
+      var ogu = document.querySelector('meta[property="og:url"]');
+      if (!ogu) { ogu = document.createElement("meta"); ogu.setAttribute("property","og:url"); head.appendChild(ogu); }
+      ogu.setAttribute("content", canonicalUrl);
+      var ogi = document.querySelector('meta[property="og:image"]');
+      if (ogi) {
+        var v = ogi.getAttribute("content") || "";
+        if (v && !/^https?:/i.test(v)) ogi.setAttribute("content", location.origin + "/" + v.replace(/^\//, ""));
+      }
+    } catch (e) {}
+  }
+
   function mount() {
+    fixMeta();
     var active = document.body.getAttribute("data-page") || "";
     var head = document.getElementById("site-header");
     var foot = document.getElementById("site-footer");
@@ -219,6 +248,15 @@
         item.classList.remove("is-open");
         syncAria(item, false);
       });
+    });
+    // مزامنة aria على مسار الـhover/focus في الديسكتوب (لا زر ظاهر)
+    document.querySelectorAll(".nav-item--sub").forEach(function (item) {
+      item.addEventListener("focusin", function () { syncAria(item, true); });
+      item.addEventListener("focusout", function () {
+        setTimeout(function () { if (!item.contains(document.activeElement)) syncAria(item, false); }, 0);
+      });
+      item.addEventListener("mouseenter", function () { syncAria(item, true); });
+      item.addEventListener("mouseleave", function () { if (!item.classList.contains("is-open")) syncAria(item, false); });
     });
     // إغلاق القوائم عند النقر خارجها
     document.addEventListener("click", function (e) {

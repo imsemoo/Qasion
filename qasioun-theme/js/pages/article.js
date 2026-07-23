@@ -9,7 +9,7 @@
   var views = document.getElementById("articleViews");
 
   function onScroll() {
-    if (!body) return;
+    if (!body || !bar || !remaining || !pill) return;
     var rect = body.getBoundingClientRect();
     var winH = window.innerHeight;
     var total = rect.height - winH * 0.4;

@@ -18,12 +18,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="css/fonts.css?v=20260722k">
+  <link rel="stylesheet" href="css/fonts.css?v=20260722m">
   <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="css/base.css?v=20260722k">
-  <link rel="stylesheet" href="css/layout.css?v=20260722k">
-  <link rel="stylesheet" href="css/components.css?v=20260722k">
-  <link rel="stylesheet" href="css/pages.css?v=20260722k">
+  <link rel="stylesheet" href="css/base.css?v=20260722m">
+  <link rel="stylesheet" href="css/layout.css?v=20260722m">
+  <link rel="stylesheet" href="css/components.css?v=20260722m">
+  <link rel="stylesheet" href="css/pages.css?v=20260722m">
 </head>
 <body data-page="research">
 
@@ -109,30 +109,30 @@
           <div class="eyebrow"><span class="diamond diamond--sm"></span>الأرشيف</div>
           <h2 class="archive-head__title">أرشيف المنشورات</h2>
         </div>
-        <span class="archive-head__count"><span class="num" id="resCount">0</span> نتيجة</span>
+        <span class="archive-head__count" role="status" aria-live="polite"><span class="num" id="resCount">0</span> نتيجة</span>
       </div>
 
       <!-- controls -->
       <div class="filter-bar">
         <div class="filter-bar__top">
           <div class="filter-search">
-            <input class="input" id="resSearch" placeholder="ابحث بالكلمات المفتاحية…">
+            <input class="input" id="resSearch" aria-label="ابحث في الأرشيف بالكلمات المفتاحية" placeholder="ابحث بالكلمات المفتاحية…">
             <i class="fa-solid fa-magnifying-glass filter-search__icon"></i>
           </div>
-          <select class="select filter-select" id="resSort">
+          <select class="select filter-select" id="resSort" aria-label="ترتيب النتائج">
             <option value="newest">ترتيب: الأحدث أولاً</option>
             <option value="oldest">ترتيب: الأقدم أولاً</option>
             <option value="views">ترتيب: الأكثر قراءة</option>
           </select>
-          <select class="select filter-select" id="resMonth">
+          <select class="select filter-select" id="resMonth" aria-label="فلترة حسب الشهر">
             <option value="all">الأرشيف الزمني: كل التواريخ</option>
             <option value="2026-07">تموز/يوليو 2026</option>
             <option value="2026-06">حزيران/يونيو 2026</option>
           </select>
           <div class="filter-date">
             <span class="filter-date__label">تقويم:</span>
-            <input type="date" id="resDay" class="filter-date__input">
-            <button class="filter-date__clear" id="resDayClear" title="مسح التاريخ" hidden>✕</button>
+            <input type="date" id="resDay" class="filter-date__input" aria-label="اختر تاريخاً">
+            <button class="filter-date__clear" id="resDayClear" title="مسح التاريخ" aria-label="مسح التاريخ" hidden>✕</button>
           </div>
         </div>
         <div class="filter-row">
@@ -147,16 +147,16 @@
 
       <!-- results -->
       <div class="result-list" id="resList"></div>
-      <div class="empty" id="resEmpty" hidden>لا توجد نتائج مطابقة — جرّب تعديل الفلاتر أو كلمات البحث.</div>
+      <div class="empty" id="resEmpty" role="status" hidden>لا توجد نتائج مطابقة — جرّب تعديل الفلاتر أو كلمات البحث.</div>
     </div>
   </section>
 
   <div id="site-footer"></div>
 
-  <script src="js/layout.js?v=20260722k"></script>
-  <script src="js/motion.js?v=20260722k"></script>
-  <script src="js/data/publications.js?v=20260722k"></script>
-  <script src="js/util.js?v=20260722k"></script>
-  <script src="js/pages/research.js?v=20260722k"></script>
+  <script src="js/layout.js?v=20260722m"></script>
+  <script src="js/motion.js?v=20260722m"></script>
+  <script src="js/data/publications.js?v=20260722m"></script>
+  <script src="js/util.js?v=20260722m"></script>
+  <script src="js/pages/research.js?v=20260722m"></script>
 </body>
 </html>
