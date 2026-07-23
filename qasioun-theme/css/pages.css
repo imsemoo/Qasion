@@ -1887,3 +1887,106 @@ a.agenda-card:hover .agenda-card__title { color: var(--orange); }
 .pub-card__dl i { font-size: 11px; }
 .social-pill__ic i { font-size: 12px; }
 .contact-channel__k i { width: 18px; text-align: center; color: var(--orange-soft); margin-inline-end: 4px; }
+
+/* ==== NEW TEMPLATES ==== */
+/* 404 */
+.err { position: relative; overflow: hidden; padding: 90px var(--pad-x) 110px; text-align: center; }
+.err__bg { position: absolute; left: -60px; bottom: -140px; height: 420px; opacity: .05; pointer-events: none; }
+.err__inner { position: relative; max-width: 560px; margin: 0 auto; }
+.err__code { font-size: 120px; font-weight: 900; color: var(--pal-navy-bg); line-height: 1; }
+.err__title { color: var(--navy); font-size: 30px; font-weight: 700; margin: 6px 0 12px; }
+.err__text { color: var(--text-2); font-size: 15px; line-height: 1.9; margin: 0 0 26px; }
+.err__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* قالب الملف: محاور */
+.axes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 28px; }
+.axis {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  color: var(--text);
+  font-size: 14.5px;
+  line-height: 1.85;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+/* قالب الوسائط المنفردة */
+.mi__title { color: var(--navy); font-size: 32px; font-weight: 700; margin: 14px 0 14px; line-height: 1.5; }
+.mi__meta { display: flex; align-items: center; gap: 14px; color: var(--text-2); font-size: 13.5px; flex-wrap: wrap; }
+.mi__unit { color: var(--navy); font-weight: 600; }
+.mi-viewer {
+  margin: 0 0 22px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #EAF0F7;
+}
+.mi-viewer img { width: 100%; display: block; }
+.mi-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 26px; }
+.mi-desc { max-width: 860px; }
+
+/* قالب الوحدة/الكاتب */
+.au-hero { display: flex; gap: 24px; align-items: flex-start; }
+.au-hero__avatar {
+  flex: none;
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  background: var(--pal-navy-bg);
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 26px;
+}
+.au-hero__stats { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+
+/* صفحات قانونية */
+.legal .article-h2 { margin-top: 34px; }
+.legal .article-h2:first-child { margin-top: 0; }
+
+/* روابط قانونية في الفوتر */
+.site-footer__legal { display: inline-flex; gap: 14px; margin-inline-start: 14px; }
+.site-footer__legal a { color: rgba(255, 255, 255, .45); font-size: 12.5px; }
+.site-footer__legal a:hover { color: var(--orange); }
+
+@media (max-width: 760px) {
+  .axes { grid-template-columns: 1fr; }
+  .au-hero { flex-direction: column; gap: 10px; }
+  .au-hero__avatar { margin-top: 0; width: 64px; height: 64px; font-size: 24px; }
+  .mi__title { font-size: 24px; }
+  .err__code { font-size: 84px; }
+}
+
+/* وسوم المقال */
+.article-tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 6px 0 44px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.article-tags__label { color: var(--navy); font-size: 13.5px; font-weight: 700; }
+.article-tags__label i { color: var(--orange); font-size: 12px; margin-inline-end: 4px; }
+.article-tags .chip { text-decoration: none; }
+
+/* أيقونة بحث الفلاتر (FA) */
+i.filter-search__icon { color: var(--muted-2); font-size: 14px; top: 14px; }
+
+/* طباعة المقال — نظيفة للمراكز البحثية */
+@media print {
+  .site-header, .site-footer, .read-progress, .read-pill, .to-top,
+  .article-share, .article-foot, .skip-link { display: none !important; }
+  .page-hero { background: none; border: none; padding: 0 0 14px; }
+  .page-hero__bg { display: none; }
+  .article-hero-img { height: auto; max-height: 320px; }
+  .article-p, .article-lede p { font-size: 12.5pt; line-height: 1.9; }
+  .article-quote { background: #fff; border: 1pt solid #999; }
+  .article-quote blockquote { color: #000; }
+  a { color: #000; text-decoration: none; }
+}

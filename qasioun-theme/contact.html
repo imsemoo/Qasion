@@ -5,24 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#24326B">
   <title>تواصل معنا — مركز قاسيون للدراسات الاستراتيجية</title>
+  <meta name="description" content="تواصل مع مركز قاسيون للدراسات الاستراتيجية: استفسارات بحثية، تعاون مؤسسي، وطلبات إعلامية.">
+  <meta property="og:site_name" content="مركز قاسيون للدراسات الاستراتيجية">
+  <meta property="og:title" content="تواصل معنا — مركز قاسيون للدراسات الاستراتيجية">
+  <meta property="og:description" content="تواصل مع مركز قاسيون للدراسات الاستراتيجية: استفسارات بحثية، تعاون مؤسسي، وطلبات إعلامية.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:image" content="assets/img/icon-512.png">
+  <meta name="twitter:card" content="summary">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="css/fonts.css?v=20260722i">
+  <link rel="stylesheet" href="css/fonts.css?v=20260722k">
   <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="css/base.css?v=20260722i">
-  <link rel="stylesheet" href="css/layout.css?v=20260722i">
-  <link rel="stylesheet" href="css/components.css?v=20260722i">
-  <link rel="stylesheet" href="css/pages.css?v=20260722i">
+  <link rel="stylesheet" href="css/base.css?v=20260722k">
+  <link rel="stylesheet" href="css/layout.css?v=20260722k">
+  <link rel="stylesheet" href="css/components.css?v=20260722k">
+  <link rel="stylesheet" href="css/pages.css?v=20260722k">
 </head>
 <body data-page="contact">
 
   <div id="site-header"></div>
 
-  <section class="page-hero">
-    <img class="page-hero__bg" src="assets/img/logo-mark.png" alt="">
+  <section id="main" class="page-hero">
+    <img loading="lazy" decoding="async" class="page-hero__bg" src="assets/img/logo-mark.png" alt="">
     <div class="page-hero__inner">
       <nav class="breadcrumb"><a href="index.html">الرئيسية</a><span>/</span><span class="current">تواصل معنا</span></nav>
       <h1>تواصل معنا</h1>
@@ -67,11 +75,11 @@
             <label for="c-msg">الرسالة <span class="req">*</span></label>
             <textarea class="textarea" id="c-msg" name="msg" rows="6" placeholder="اكتب رسالتك هنا…"></textarea>
           </div>
-          <div class="notice notice--error" id="contactError" hidden>يرجى تعبئة الحقول الإلزامية (الاسم، البريد، الرسالة).</div>
+          <div class="notice notice--error" id="contactError" role="alert" hidden>يرجى تعبئة الحقول الإلزامية (الاسم، البريد، الرسالة).</div>
           <button type="submit" class="btn contact-form__submit">إرسال الرسالة</button>
         </form>
 
-        <div class="contact-success" id="contactSuccess" hidden>
+        <div class="contact-success" id="contactSuccess" role="status" hidden>
           <div class="contact-success__icon">✓</div>
           <div class="contact-success__title">تم استلام رسالتك بنجاح</div>
           <div class="contact-success__text">شكراً لتواصلك مع مركز قاسيون — سيرد عليك فريقنا على بريدك الإلكتروني في أقرب وقت.</div>
@@ -81,7 +89,7 @@
       <!-- direct channels -->
       <aside class="contact-side">
         <div class="contact-channels">
-          <img class="contact-channels__bg" src="assets/img/logo-mark-white.png" alt="">
+          <img loading="lazy" decoding="async" class="contact-channels__bg" src="assets/img/logo-mark-white.png" alt="">
           <h3 class="contact-channels__title">قنوات التواصل المباشر</h3>
           <div class="contact-channels__list">
             <div class="contact-channel"><span class="contact-channel__k"><i class="fa-solid fa-envelope"></i> البريد الإلكتروني</span><span class="contact-channel__v num">info@qasiounstudies.com</span></div>
@@ -102,8 +110,8 @@
 
   <div id="site-footer"></div>
 
-  <script src="js/layout.js?v=20260722i"></script>
-  <script src="js/motion.js?v=20260722i"></script>
-  <script src="js/pages/contact.js?v=20260722i"></script>
+  <script src="js/layout.js?v=20260722k"></script>
+  <script src="js/motion.js?v=20260722k"></script>
+  <script src="js/pages/contact.js?v=20260722k"></script>
 </body>
 </html>

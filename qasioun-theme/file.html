@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#24326B">
+  <title>الملف — مركز قاسيون للدراسات الاستراتيجية</title>
+  <meta name="description" content="ملف متابعة مستمرة من مركز قاسيون: المحاور وأحدث الإنتاج البحثي المرتبط بالملف.">
+  <meta property="og:site_name" content="مركز قاسيون للدراسات الاستراتيجية">
+  <meta property="og:title" content="الملف — مركز قاسيون للدراسات الاستراتيجية">
+  <meta property="og:description" content="ملف متابعة مستمرة من مركز قاسيون: المحاور وأحدث الإنتاج البحثي المرتبط بالملف.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:image" content="assets/img/icon-512.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="css/fonts.css?v=20260722k">
+  <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="css/base.css?v=20260722k">
+  <link rel="stylesheet" href="css/layout.css?v=20260722k">
+  <link rel="stylesheet" href="css/components.css?v=20260722k">
+  <link rel="stylesheet" href="css/pages.css?v=20260722k">
+</head>
+<body data-page="files">
+
+  <div id="site-header"></div>
+
+  <!-- ترويسة الملف -->
+  <section id="main" class="page-hero">
+    <img loading="lazy" decoding="async" class="page-hero__bg" src="assets/img/logo-mark.png" alt="">
+    <div class="page-hero__inner">
+      <nav class="breadcrumb">
+        <a href="index.html">الرئيسية</a><span>/</span>
+        <a href="files.html">ملفات</a><span>/</span>
+        <span class="current" id="fileCrumb">الملف</span>
+      </nav>
+      <h1 id="fileTitle">الملف</h1>
+      <p id="fileDesc"></p>
+    </div>
+  </section>
+
+  <!-- محاور الملف -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <span class="diamond"></span>
+        <h2>محاور التغطية</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="axes" id="fileAxes"></div>
+    </div>
+  </section>
+
+  <!-- أحدث إنتاج الملف -->
+  <section class="section section--last">
+    <div class="container">
+      <div class="sec-head">
+        <span class="diamond"></span>
+        <h2>أحدث إنتاج الملف</h2>
+        <span class="sub" id="fileCount"></span>
+        <span class="rule"></span>
+        <a href="research.html" class="more" id="fileArchiveLink">كل إنتاج الملف في الأرشيف ←</a>
+      </div>
+      <div class="result-list" id="filePubs"></div>
+      <div class="empty" id="fileEmpty" hidden>لا توجد منشورات مرتبطة بهذا الملف بعد.</div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/layout.js?v=20260722k"></script>
+  <script src="js/motion.js?v=20260722k"></script>
+  <script src="js/data/publications.js?v=20260722k"></script>
+  <script src="js/util.js?v=20260722k"></script>
+  <script src="js/pages/file.js?v=20260722k"></script>
+</body>
+</html>

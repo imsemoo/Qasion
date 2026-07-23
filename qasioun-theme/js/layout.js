@@ -25,9 +25,9 @@
     {
       key: "files", label: "ملفات", labelEn: "Dossiers", href: "files.html",
       children: [
-        { label: "ملف سوريا",  href: "files.html#file-sy" },
-        { label: "ملف لبنان",  href: "files.html#file-lb" },
-        { label: "غزة",        href: "files.html#file-ps" },
+        { label: "ملف سوريا",  href: "file.html?f=sy" },
+        { label: "ملف لبنان",  href: "file.html?f=lb" },
+        { label: "غزة",        href: "file.html?f=ps" },
         { label: "إيران",      href: "files.html" }
       ]
     },
@@ -144,9 +144,9 @@
 '    <div class="site-footer__col">' +
 '      <h3>ملفات</h3>' +
 '      <div class="site-footer__links">' +
-'        <a href="files.html#file-sy">ملف سوريا</a>' +
-'        <a href="files.html#file-lb">ملف لبنان</a>' +
-'        <a href="files.html#file-ps">غزة</a>' +
+'        <a href="file.html?f=sy">ملف سوريا</a>' +
+'        <a href="file.html?f=lb">ملف لبنان</a>' +
+'        <a href="file.html?f=ps">غزة</a>' +
 '        <a href="files.html">إيران</a>' +
 '      </div>' +
 '    </div>' +
@@ -162,7 +162,7 @@
 '    </div>' +
 '  </div>' +
 '  <div class="site-footer__bottom">' +
-'    <span class="site-footer__copy">© 2026 مركز قاسيون للدراسات الاستراتيجية — جميع الحقوق محفوظة</span>' +
+'    <span class="site-footer__copy">© 2026 مركز قاسيون للدراسات الاستراتيجية — جميع الحقوق محفوظة<span class="site-footer__legal"><a href="privacy.html">سياسة الخصوصية</a><a href="terms.html">شروط الاستخدام</a></span></span>' +
 '    <div class="site-footer__meta">' +
 '      <span>زيارات الموقع: <span class="num" data-cms="visits">—</span></span>' +
 '      <div class="dot-row"><span></span><span></span><span></span></div>' +
@@ -175,7 +175,8 @@
     var active = document.body.getAttribute("data-page") || "";
     var head = document.getElementById("site-header");
     var foot = document.getElementById("site-footer");
-    if (head) head.innerHTML = headerHTML(active);
+    if (head) head.innerHTML =
+      '<a class="skip-link" href="#main">تخطي إلى المحتوى</a>' + headerHTML(active);
     if (foot) foot.innerHTML = footerHTML();
 
     // Mobile nav toggle
@@ -230,9 +231,29 @@
     });
   }
 
+  // زر الرجوع لأعلى الصفحة
+  function mountToTop() {
+    var b = document.createElement("button");
+    b.className = "to-top";
+    b.setAttribute("aria-label", "العودة إلى أعلى الصفحة");
+    b.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+    document.body.appendChild(b);
+    b.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    var t;
+    window.addEventListener("scroll", function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        b.classList.toggle("is-visible", window.scrollY > 600);
+      }, 80);
+    }, { passive: true });
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", mount);
+    document.addEventListener("DOMContentLoaded", function () { mount(); mountToTop(); });
   } else {
     mount();
+    mountToTop();
   }
 })();

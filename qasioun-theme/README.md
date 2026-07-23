@@ -26,6 +26,10 @@ qasioun-theme/
 ├── media.html          الوسائط (إنفوغرافيك/خرائط/كاروسيل)
 ├── contact.html        تواصل معنا (نموذج)
 ├── article.html        صفحة المقالة (شريط تقدّم القراءة)
+├── file.html           قالب الملف الواحد (?f=sy|iq|lb|af|ps|intl)
+├── media-item.html     قالب عرض وسائط منفردة
+├── author.html         قالب الوحدة البحثية/الكاتب (?u=الاسم)
+├── 404.html · privacy.html · terms.html   صفحات خدمية
 │
 ├── favicon.ico · site.webmanifest   أيقونات الموقع (من شعار المركز)
 │

@@ -9,9 +9,10 @@
   // روابط عميقة من القوائم المنسدلة والبحث: research.html?type=…&q=…
   try {
     var params = new URLSearchParams(location.search);
-    var pType = params.get("type"), pQ = params.get("q");
+    var pType = params.get("type"), pQ = params.get("q"), pFile = params.get("file");
     if (pType && types.indexOf(pType) !== -1) state.type = pType;
     if (pQ) state.q = pQ;
+    if (pFile && files.indexOf(pFile) !== -1) state.file = pFile;
   } catch (e) {}
 
   var list = document.getElementById("resList");
