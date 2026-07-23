@@ -25,6 +25,12 @@
   var month = document.getElementById("resMonth");
   var day = document.getElementById("resDay");
   var dayClear = document.getElementById("resDayClear");
+  var clearAll = document.getElementById("resClear");
+
+  function hasActiveFilters() {
+    return state.type !== "الكل" || state.file !== "الكل" ||
+      state.q.trim() !== "" || state.month !== "all" || state.day !== "";
+  }
 
   function filtered() {
     var l = pubs.slice();
@@ -73,9 +79,19 @@
     list.innerHTML = l.map(rowHTML).join("");
     empty.hidden = !(pubs.length > 0 && l.length === 0);
     dayClear.hidden = !state.day;
+    if (clearAll) clearAll.hidden = !hasActiveFilters();
 
     Q.buildChips(typeChips, types, state.type, function (v) { state.type = v; render(); });
     Q.buildChips(fileChips, files, state.file, function (v) { state.file = v; render(); });
+  }
+
+  if (clearAll) {
+    clearAll.addEventListener("click", function () {
+      state.q = ""; state.type = "الكل"; state.file = "الكل"; state.month = "all"; state.day = "";
+      search.value = ""; sort.value = "newest"; state.sort = "newest";
+      month.value = "all"; day.value = "";
+      render();
+    });
   }
 
   search.value = state.q;

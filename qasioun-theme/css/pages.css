@@ -361,18 +361,58 @@
   background: #fff;
   border: 1px solid var(--line-2);
   border-radius: var(--radius-lg);
-  padding: 22px 24px;
+  padding: 20px 22px;
   margin: 0 0 26px;
 }
-.filter-bar__top { display: flex; gap: 14px; margin: 0 0 18px; flex-wrap: wrap; }
-.filter-search { flex: 1; position: relative; min-width: 220px; }
+/* كل متحكمات الصف العلوي بارتفاع موحّد */
+.filter-bar__top { display: flex; gap: 12px; margin: 0 0 16px; flex-wrap: wrap; }
+.filter-bar__top .input,
+.filter-bar__top .select,
+.filter-date { height: 46px; box-sizing: border-box; }
+.filter-search { flex: 1 1 260px; position: relative; min-width: 220px; }
 .filter-search .input { padding-left: 16px; padding-right: 42px; }
-.filter-search__icon { position: absolute; right: 14px; top: 13px; }
+.filter-search__icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); }
 .filter-select { flex: none; width: auto; }
-.filter-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.filter-row + .filter-row { margin-top: 12px; }
-.filter-row__label { color: var(--muted-2); font-size: 12.5px; font-weight: 600; width: 88px; flex: none; }
-.filter-row__chips { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.filter-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-soft-2);
+  border: 1px solid var(--line-2);
+  border-radius: 10px;
+  padding: 0 12px;
+  flex: none;
+  transition: border-color .2s;
+}
+.filter-date:focus-within { border-color: var(--orange); background: #fff; }
+.filter-date__label { color: var(--text-2); font-size: 13px; font-weight: 600; white-space: nowrap; }
+
+/* صفوف الرقائق: خط فاصل خفيف بينها ومحاذاة اللابل لأعلى */
+.filter-row { display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+.filter-row + .filter-row { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+.filter-row__label { color: var(--text-2); font-size: 12.5px; font-weight: 700; width: 76px; flex: none; padding-top: 8px; }
+.filter-row__chips { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+
+/* زر مسح كل الفلاتر — يظهر عند وجود فلتر فعّال */
+.filter-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 16px;
+  background: var(--pal-orange-bg);
+  color: var(--orange-text);
+  border: 1px solid rgba(235, 98, 36, .28);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font);
+  padding: 8px 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.filter-clear:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+.filter-clear i { font-size: 11px; }
 
 /* File tag (gray outline pill) */
 .badge--file {

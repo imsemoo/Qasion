@@ -163,7 +163,16 @@
   background: #fff;
 }
 .textarea { resize: vertical; }
-.select { cursor: pointer; }
+/* Select — سهم مخصّص متّسق (يسار في RTL) بدل السهم الافتراضي المتفاوت */
+.select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-left: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3 4.5 L6 7.5 L9 4.5' stroke='%235A6480' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 13px center;
+}
 .input--ltr { direction: ltr; text-align: right; font-family: var(--font-num); }
 
 /* ---- Filter chips ---- */
